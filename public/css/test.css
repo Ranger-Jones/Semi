@@ -1,0 +1,95 @@
+.background-test {
+    height: 100%;
+    background:  #27ae60;
+    margin-top: -19px;
+    padding-bottom: 10vh;
+    padding-top: 5vh;
+}
+
+
+.text-box-link {
+    margin-left: 44vw;
+     margin-top: 42vh;
+}
+
+.btn-sp:link,
+.btn-sp:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.btn-sp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-sp:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-sp-white {
+    background-color: #fff;
+    color: #353b48;
+}
+
+.btn-sp-blue {
+    background-color: #00a8ff;
+    color: #353b48;
+}
+
+.btn-sp::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-sp-white::after {
+    background-color: #fff;
+}
+
+.btn-sp-blue::after {
+    background-color: #00a8ff;
+}
+
+.btn-sp:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-sp-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.white-link{
+    color: #ecf0f1;
+}
+
+.white-link:hover{
+    color: #e67e22;
+}
