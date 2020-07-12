@@ -52,7 +52,7 @@
                             @endif
                         @else
                             <li class="nav-item">
-                                <a  class="nav-link" href="" role="button">
+                                <a  class="nav-link" href="/h" role="button">
                                     Homework
                                 </a>
                             </li>
@@ -62,7 +62,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a  class="nav-link" href="" role="button">
+                                <a  class="nav-link" href="/m" role="button">
                                     Marks
                                 </a>
                             </li>

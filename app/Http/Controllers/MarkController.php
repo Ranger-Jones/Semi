@@ -8,6 +8,6 @@ class MarkController extends Controller
 {
     public function index()
     {
-        echo("hello");
+        return view("marks.index");
     }
 }

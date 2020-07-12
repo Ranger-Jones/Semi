@@ -17,9 +17,6 @@ use App\Mail\NewUserWelcomeMail;
 
 Auth::routes();
 
-Route::get('/email', function () {
-    return new NewUserWelcomeMail();
-});
 
 Route::post('/follow/{user}', 'FollowsController@store');
 
@@ -33,3 +30,8 @@ Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edi
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
 
 Route::get('/m', 'MarkController@index');
+
+Route::get('/h', 'HomeworkController@index');
+Route::get('/h/create', 'HomeworkController@create');
+Route::get('/h/{homework}', 'HomeworkController@show');
+Route::post('/h/store', 'HomeworkController@store');
