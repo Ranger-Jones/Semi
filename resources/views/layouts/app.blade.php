@@ -19,6 +19,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/test.css') }}" rel="stylesheet">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 </head>
 <body>
     <div id="app">
@@ -51,26 +56,50 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item">
-                                <a  class="nav-link" href="/h" role="button">
-                                    Homework
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a  class="nav-link" href="" role="button">
-                                    Timetable
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a  class="nav-link" href="/m" role="button">
-                                    Marks
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    Homepage
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                    Social <span class="caret"></span>
                                 </a>
 
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/h">
+                                        Freunde
+                                    </a>
+                                    <a class="dropdown-item" href="/m">
+                                        Chats
+                                    </a>
+                                    <a class="dropdown-item" href="/t">
+                                        Gruppen
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Services <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/h">
+                                        Homework
+                                    </a>
+                                    <a class="dropdown-item" href="/m">
+                                        Marks
+                                    </a>
+                                    <a class="dropdown-item" href="/t">
+                                        Timetable
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                    <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="rounded-circle w-100 pb-1" style="max-width: 20px;">                                </a>
+                                </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">
                                         Profile
@@ -78,6 +107,7 @@
                                     <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}/edit">
                                         Edit Profile
                                     </a>
+                                    <div class="dropdown-divder"></div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

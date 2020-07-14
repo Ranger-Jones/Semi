@@ -22,6 +22,7 @@ class CreateHomeworkTable extends Migration
             $table->string('images');
             $table->string('teacher');
             $table->string('submissionDate');
+            $table->string('currentDate');
             $table->timestamps();
         });
     }

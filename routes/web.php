@@ -35,3 +35,6 @@ Route::get('/h', 'HomeworkController@index');
 Route::get('/h/create', 'HomeworkController@create');
 Route::get('/h/{homework}', 'HomeworkController@show');
 Route::post('/h/store', 'HomeworkController@store');
+
+Route::get('/me/update', 'UserUpdateController@edit');
+Route::patch('/me/{user}', 'UserUpdateController@update');
