@@ -16,8 +16,7 @@ class HomeworkController extends Controller
 
     public function index(User $user, Homework $homework)
     {
-        $homeworks = Homework::orderBy(DB::raw('id = 5'), 'DESC')
-                        ->orderBy('created_at', 'desc');
+        $homeworks = Homework::all();
         return view('homework.index', compact('user', 'homeworks'));
     }
 

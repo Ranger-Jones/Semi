@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container offset-3">
-    <form action="/me/{{Auth::user()->username}}" enctype="multipart/form-data" method="post">
+    <form action="/me/{{Auth::user()->id}}" enctype="multipart/form-data" method="post">
         @csrf
         @method('PATCH')
         <div class="row">
@@ -60,7 +60,7 @@
                             <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" id="MathematikCheck" name="MathematikCheckN" aria-label="Checkbox for following text input">
+                                            <input type="checkbox" value="mathematik" id="MathematikCheck" name="MathematikCheckN" aria-label="Checkbox for following text input">
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Mathematik</p>
@@ -68,7 +68,7 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" id="DeutschCheck" name="DeutschCheckN" aria-label="Checkbox for following text input">
+                                            <input type="checkbox" value="deutsch" id="DeutschCheck" name="DeutschCheckN" aria-label="Checkbox for following text input">
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Deutsch</p>
@@ -76,7 +76,7 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" id="biologieCheck" name="biologieCheckN" aria-label="Checkbox for following text input">
+                                            <input type="checkbox" value="biologie" id="biologieCheck" name="biologieCheckN" aria-label="Checkbox for following text input">
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Biologie</p>
@@ -84,7 +84,7 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" id="ChemieCheck" name="ChemieCheckN" aria-label="Checkbox for following text input">
+                                            <input type="checkbox" value="chemie" id="ChemieCheck" name="ChemieCheckN" aria-label="Checkbox for following text input">
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Chemie</p>
@@ -92,7 +92,7 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" id="PhysikCheck" name="PhysikCheckN" aria-label="Checkbox for following text input">
+                                            <input type="checkbox" value="physik" id="PhysikCheck" name="PhysikCheckN" aria-label="Checkbox for following text input">
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Physik</p>
