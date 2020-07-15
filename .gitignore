@@ -11,4 +11,4 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /app/User.php
-!/storage/public/default/*
+!/storage/public/default/default-image.jpg
