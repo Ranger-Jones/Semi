@@ -5,14 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use DB;
 use App\User;
+use App\Homework;
 use Illuminate\Http\Request;
 
 class HomeworkController extends Controller
 {
-    public function index(User $user)
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
+    public function index(User $user, Homework $homework)
     {
-        $users = auth()->user()->following()->pluck('profiles.user_id');
-        return view('homework.index', compact('user', 'users'));
+        $homework = Post::orderBy(DB::raw('id = 5'), 'DESC')
+                        ->orderBy('created_at', 'desc');
+        return view('homework.index', compact('user'));
     }
 
     public function create()
@@ -20,7 +26,7 @@ class HomeworkController extends Controller
         return view('homework.create');
     }
 
-    public function store(\App\Homework $homework)
+    public function store(Homework $homework)
     {
         $data = request()->validate([
             'caption' => ['required', 'max:55'],

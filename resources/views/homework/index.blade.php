@@ -15,7 +15,9 @@
     <hr>
     <div class="row">
         <div class="col-8">
-            Kalender einfügen
+        @foreach($homeworks as $homework)
+
+        @endforeach
         </div>
         <div class="col-4">
             <div class="jumbotron">
@@ -33,13 +35,13 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="offset-2">
-            <div class="col-8">
-                test
+    @foreach($homeworks as $homework)
+        <div class="row">
+            <div class="col-12">
+                <h1>{{ $homework->caption }}</h1>
             </div>
         </div>
-    </div>
+    @endforeach
 
     
 </div>
