@@ -1,6 +1,6 @@
 .background-test {
     height: 100%;
-    background:  #27ae60;
+    background:  #157ca4;
     margin-top: -19px;
     padding-bottom: 10vh;
     padding-top: 5vh;
@@ -39,7 +39,7 @@
 }
 
 .btn-sp-blue {
-    background-color: #00a8ff;
+    background-color: #353b48;
     color: #353b48;
 }
 
@@ -61,7 +61,7 @@
 }
 
 .btn-sp-blue::after {
-    background-color: #00a8ff;
+    background-color: #353b48;
 }
 
 .btn-sp:hover::after {
