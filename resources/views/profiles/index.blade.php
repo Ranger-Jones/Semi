@@ -14,7 +14,8 @@
             </div>
             @can ('update', $user->profile)
                 <div class="d-flex justify-content-center">
-                    <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
+                    <a href="/profile/{{ $user->id }}/edit"><p class="text-dark">Edit Profile</p></a>
+
                 </div>
             @endcan
             <div class="d-flex justify-content-center">
