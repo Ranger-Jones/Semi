@@ -16,8 +16,31 @@ class HomeworkController extends Controller
 
     public function index(User $user, Homework $homework)
     {
+        $user = auth()->user();
+
         $homeworks = Homework::all();
-        return view('homework.index', compact('user', 'homeworks'));
+        $subjects = User::select('subject')->where('id', $user->id)->get();
+
+        try {
+            $subjects = preg_split('~:~', $subjects);
+
+            //removes unimportant records
+            unset($subjects[0]);
+            $last = array_key_last($subjects);
+            unset($subjects[$last]);
+
+            if( isset($subjects[1])){
+                $subjects[1] = str_replace('"', '', $subjects[1]);
+            }
+            else{
+                return redirect('/me/update/');
+            }
+            
+        } catch (Exception $e) {
+            dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
+        }
+
+        return view('homework.index', compact('user', 'homeworks', 'subjects'));
     }
 
     public function create()

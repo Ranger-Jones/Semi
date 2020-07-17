@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use Validator;
+use App\Poll;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -25,12 +27,21 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
         $data = request()->validate([
             'caption' => ['required', 'max:55'],
+            'description' => ['max:55000'],
+            'topic' => [''],
+            'addresses' => [''],
             'image' => ['required','image','mimes:jpeg,png,jpg,gif,svg','max:16000']
         ]);
+
+        $validator = Validator::make($request->all(), [
+            'pollitem.*' => 'max:100'
+        ]);
+
+        dd($validator);
 
         $imagePath = request('image')->store('uploads', 'public');
 

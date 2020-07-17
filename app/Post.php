@@ -13,4 +13,9 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function polls()
+    {
+        return $this->hasMany(Poll::class);
+    }
 }

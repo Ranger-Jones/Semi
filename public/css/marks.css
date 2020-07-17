@@ -1,4 +1,12 @@
-table.a {
+table {
+    border: 1px solid black;
+  } 
+  
+  th,td {
+    border: 1px solid black;
+  }
+  
+  table.a {
     table-layout: auto;
-    width: max-content;
-}
+    width: 300px;  
+  }

@@ -21,25 +21,51 @@ class UserUpdateController extends Controller
 
         $getSubjects = User::select('subject')->where('id', $user->id)->get();
 
-        $subjects = explode(':', $getSubjects);
+        $allSubjects = [
+            'biologie' => 'unchecked',
+            'deutsch' => 'unchecked',
+            'mathematik' => 'unchecked',
+            'chemie' => 'unchecked',
+            'physik' => 'unchecked',
+        ];
 
-        //removes unimportant records
-        unset($subjects[0]);
-        $last = array_key_last($subjects);
-        unset($subjects[$last]);
+        try {
+            $subjects = preg_split('~:~', $getSubjects);
 
-        dd($subjects);
-        return view('userupdate.edit', compact('user', 'subjects'));
+            //removes unimportant records
+            unset($subjects[0]);
+            $last = array_key_last($subjects);
+            unset($subjects[$last]);
+
+            if( isset($subjects[1])){
+                $subjects[1] = str_replace('"', '', $subjects[1]);
+            }
+
+        } catch (Exception $e) {
+            dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
+        }
+
+        foreach ($allSubjects as $s) {
+            foreach ($subjects as $subject) {
+                if($s !== $subject){
+                    $allSubjects[$subject] = 'checked';
+                }
+            }
+        }
+
+        //dd($getClass);
+
+        return view('userupdate.edit', compact('user', 'allSubjects'));
     }
 
     public function update(User $user)
     {
         $subjects = request()->validate([
             'biologieCheckN' => '',
-            'DeutschCheckN' => '',
-            'PhysikCheckN' => '',
-            'MathematikCheckN' => '',
-            'ChemieCheckN' => '',
+            'deutschCheckN' => '',
+            'physikCheckN' => '',
+            'mathematikCheckN' => '',
+            'chemieCheckN' => '',
         ]);
 
         $inclass = request()->validate([
@@ -56,7 +82,7 @@ class UserUpdateController extends Controller
 
         $updateUser = DB::table('users')->where('id', $user->id)->update([
                         'subject' => $subjectText,
-                        'inclass' => $inclass
+                        'inclass' => $inclass['inclass']
                         ]);
 
         //dd($subjectArray);

@@ -17,7 +17,11 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('caption');
-            $table->string('image');
+            $table->string('description')->nullable();
+            $table->string('topic')->nullable();
+            $table->string('addressees')->nullable();
+            $table->string('poll')->nullable();
+            $table->string('image')->nullable();
             $table->timestamps();
 
             $table->index('user_id');

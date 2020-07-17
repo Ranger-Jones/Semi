@@ -15,19 +15,7 @@
 <html>
 <head>
 <style>
-table {
-  border-collapse: collapse;
-  border: 1px solid black;
-} 
 
-th,td {
-  border: 1px solid black;
-}
-
-table.a {
-  table-layout: auto;
-  width: 300px;  
-}
 
 </style>
 </head>

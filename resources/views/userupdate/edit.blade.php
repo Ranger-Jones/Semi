@@ -20,6 +20,7 @@
                                             id="inclass" 
                                             type="text" 
                                             name="inclass">
+                                        <option hidden>{{$user->inclass}}</option>
                                         <option>5a</option>
                                         <option>5b</option>
                                         <option>6a</option>
@@ -60,7 +61,16 @@
                             <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" value="mathematik" id="MathematikCheck" name="MathematikCheckN" aria-label="Checkbox for following text input">
+                                            <input 
+                                                type="checkbox" 
+                                                value="mathematik" 
+                                                id="mathematikCheck" 
+                                                name="mathematikCheckN" 
+                                                aria-label="Checkbox for following text input" 
+                                                @if ($allSubjects['mathematik'] == 'checked')
+                                                    checked
+                                                @endif
+                                            >  
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Mathematik</p>
@@ -68,15 +78,32 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" value="deutsch" id="DeutschCheck" name="DeutschCheckN" aria-label="Checkbox for following text input">
-                                        </div>
+                                        <input 
+                                                type="checkbox" 
+                                                value="deutsch" 
+                                                id="deutschCheck" 
+                                                name="deutschCheckN" 
+                                                aria-label="Checkbox for following text input" 
+                                                @if ($allSubjects['deutsch'] == 'checked')
+                                                    checked
+                                                @endif
+                                            >                                          </div>
                                     </div>
                                     <p class="pl-3 pt-3">Deutsch</p>
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" value="biologie" id="biologieCheck" name="biologieCheckN" aria-label="Checkbox for following text input">
+                                            <input 
+                                                    type="checkbox" 
+                                                    value="biologie" 
+                                                    id="biologieCheck" 
+                                                    name="biologieCheckN" 
+                                                    aria-label="Checkbox for following text input" 
+                                                    @if ($allSubjects['biologie'] == 'checked')
+                                                        checked
+                                                    @endif
+                                                >                                          
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Biologie</p>
@@ -84,7 +111,16 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" value="chemie" id="ChemieCheck" name="ChemieCheckN" aria-label="Checkbox for following text input">
+                                            <input 
+                                                    type="checkbox" 
+                                                    value="chemie" 
+                                                    id="chemieCheck" 
+                                                    name="chemieCheckN" 
+                                                    aria-label="Checkbox for following text input" 
+                                                    @if ($allSubjects['chemie'] == 'checked')
+                                                        checked
+                                                    @endif
+                                                >                                          
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Chemie</p>
@@ -92,7 +128,16 @@
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
-                                            <input type="checkbox" value="physik" id="PhysikCheck" name="PhysikCheckN" aria-label="Checkbox for following text input">
+                                            <input 
+                                                    type="checkbox" 
+                                                    value="physik" 
+                                                    id="physikCheck" 
+                                                    name="physikCheckN" 
+                                                    aria-label="Checkbox for following text input" 
+                                                    @if ($allSubjects['physik'] == 'checked')
+                                                        checked
+                                                    @endif
+                                                >                                          
                                         </div>
                                     </div>
                                     <p class="pl-3 pt-3">Physik</p>
