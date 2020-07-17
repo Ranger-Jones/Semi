@@ -8,5 +8,6 @@ table {
   
   table.a {
     table-layout: auto;
-    width: 300px;  
+    width: max-content;  
   }
+  
