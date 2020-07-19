@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container offset-3">
-    <form action="/p" enctype="multipart/form-data" method="post">
+    <form action="/p" enctype="multipart/form-data" id="polls" method="post">
         @csrf
         <div class="row">
             <h1>Beitrag hinzufügen</h1>
@@ -74,39 +74,23 @@
                 </div>
             </div>
         </div>
-        <div class="form-group row pl-2">
-            <div class="col-8">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Umfrage erstellen
-                    </button>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Erstelle deine Umfrage</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="input_fields_container_part">
-                                    <div class="input-group">
-                                    <input id="pollitem" 
-                                        type="text" 
-                                        name="pollitem[0]"
-                                        class="form-control">
-                                    <div class="pl-3">
-
-                                    <button class="btn btn-sm btn-primary add_more_button">Add More Fields</button>
-
-                                    </div>
-                                    </div>
-                                </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-8">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <input 
+                                        type="checkbox" 
+                                        value="availabe" 
+                                        id="poll" 
+                                        name="poll" 
+                                        aria-label="Checkbox for following text input" 
+                                    >                            
+                                <p class="pl-3 pt-3">Umfrage hinzufügen</p>              
                             </div>
                         </div>
-                    </div>
+                    </div>              
                 </div>
             </div>
         </div>
@@ -123,25 +107,9 @@
 
         <div class="row pt-4">
             <div class="col-8">
-                <button class="btn btn-primary">Add new Post</button>
+                <input type="submit" name="save" value="Save" class="btn btn-success">
             </div>
         </div>
     </form>
 </div>
-<script>
-$(document).ready(function() {
-var max_fields_limit = 8; //set limit for maximum input fields
-var x = 1; //initialize counter for text box
-$('.add_more_button').click(function(e){ //click event on add more fields button having class add_more_button
-e.preventDefault();
-if(x < max_fields_limit){ //check conditions
-x++; //counter increment
-$('.input_fields_container_part').append('<div class="d-flex pt-3"><input id="pollitem" type="text" name="pollitem" class="form-control" ><a href="#" class="remove_field pl-5" style="margin-left:10px;">Remove</a></div>'); //add input field
-}
-}); 
-$('.input_fields_container_part').on("click",".remove_field", function(e){ //user click on remove text links
-e.preventDefault(); $(this).parent('div').remove(); x--;
-})
-});
-</script>
 @endsection

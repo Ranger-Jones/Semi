@@ -55,6 +55,36 @@
     z-index: -1;
     transition: all .4s;
 }
+a{
+    color:inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    color:inherit;
+    text-decoration: none;
+}
+
+a:active{
+    color:inherit;
+    text-decoration: none;
+}
+
+a:visited{
+    color:inherit;
+    text-decoration: none;
+}
+
+.background-change{
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.background-change:hover{
+    opacity: 1;
+    background-color: #f5f6fa;
+    border-radius: 10px;
+}
 
 .btn-sp-white::after {
     background-color: #fff;

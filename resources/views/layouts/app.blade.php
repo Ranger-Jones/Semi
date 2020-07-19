@@ -20,11 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/test.css') }}" rel="stylesheet">
     <link href="{{ asset('css/marks.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/navbar.scss') }}" rel="stylesheet">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
@@ -34,7 +31,7 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <div><img src="/svg/logo.svg" alt="" style="height: 22px; border-right: 1px solid #333" class="pr-3"></div>
+                    <div><img src="/img/logo.jpg" alt="" style="height: 22px; border-right: 1px solid #333" class="pr-3"></div>
                     <div class="pl-3 pt-1">von-Bülows Odysee</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -102,11 +99,14 @@
                             
                         @endguest
                     </ul>
-                            <!-- Right Side Of Navbar -->
+                    @auth    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                   
+                                {{ Auth::user()->username }}
+                                    
+                                   <span class="caret"></span>
                                     <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="rounded-circle w-100 pb-1" style="max-width: 20px;">                                </a>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -129,12 +129,15 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    
                                 </div>
                             </li>
                     </ul>
+                    @endauth
                 </div>
             </div>
         </nav>
+
 
         <main class="py-4">
             @yield('content')

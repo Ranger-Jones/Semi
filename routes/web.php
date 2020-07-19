@@ -23,7 +23,7 @@ Route::post('/follow/{user}', 'FollowsController@store');
 
 Route::get('/', 'PostsController@index');
 Route::get('/p/create', 'PostsController@create');
-Route::post('/p', 'PostsController@store');
+Route::post('/p', 'PostsController@store')->name('post.store');
 Route::get('/p/{post}', 'PostsController@show');
 
 Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
@@ -41,3 +41,11 @@ Route::get('/me/update', 'UserUpdateController@edit');
 Route::patch('/me/{user}', 'UserUpdateController@update');
 
 Route::get('/elonmusk', 'ElonMuskController@index');
+
+Route::get('/poll/{code}', 'PollController@index');
+Route::post('poll/insert/{code}', 'PollController@insert')->name("poll.insert");
+/*
+Route::get('dynamic-field', 'DynamicFieldController@index');
+Route::post('dynamic-field/insert', 'DynamicFieldController@insert')->name('dynamic-field.insert');
+*/
+
