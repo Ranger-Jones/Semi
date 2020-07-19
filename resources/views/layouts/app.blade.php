@@ -31,8 +31,11 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <div><img src="/img/logo.jpg" alt="" style="height: 22px; border-right: 1px solid #333" class="pr-3"></div>
-                    <div class="pl-3 pt-1">von-Bülows Odysee</div>
+                    <div class="margin-bottom: 5000px;">
+                        <img src="/img/logo.jpg" alt="" style="max-height: 22px; border-right: 1px solid #fff" class="pr-3"></div>
+                    <div class="pl-3 pt-1">
+                        von-Bülows Odysee
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

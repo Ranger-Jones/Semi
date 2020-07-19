@@ -27,7 +27,7 @@
     <hr>
 
     <div class="row">
-        <div class="col-8">
+        <div class="col-12">
             <p class="font-weigth-normal">{{$post->description}}</p>
         </div>
     </div>
@@ -46,7 +46,7 @@
         <div class="row">
             <div class="col-8">
                 <div class="d-block">
-                    Umfrage von {{$post->user->username}}
+                    <h2>Umfrage von {{$post->user->username}}</h2>
                 </div>
             </div>
         </div>
@@ -54,18 +54,11 @@
         <div class="row">
             <div class="col-8">
                 <form action="post">
-                    <div class="d-block">
+                <div class="btn-group" data-toggle="buttons">
                         @foreach ($polls as $poll)
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input type="radio" value="{{$poll->id}}" name="{{$poll->id}}" id="{{$poll->id}}" aria-label="Radio button for following text input">
-                                        </div>
-                                        <p class="font-weigth-normal">{{$poll->text}}</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <label class="btn btn-sm btn-success active">
+                                <input type="radio" name="{{$post['id']}}" id="{{$post['id']}}" value="{{$poll['id']}}">{{$poll['id']}}
+                            </label>
                         @endforeach
                     </div>
                 </form>

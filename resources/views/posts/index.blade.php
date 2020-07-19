@@ -16,6 +16,7 @@
     @foreach($posts as $post)
     <div class="row">
         <div class="background-change">
+
             <div class="col-6 offset-3 pt-3">
                 <a href="/p/{{$post->id}}">
                     <img src="storage/{{$post->image}}" alt="alex in unterhose" class="image-responsive w-100">
