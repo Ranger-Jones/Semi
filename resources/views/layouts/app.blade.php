@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/marks.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -32,7 +33,7 @@
             <div class="container">
                 <a class="navbar-brand d-flex" href="{{ url('/') }}">
                     <div class="margin-bottom: 5000px;">
-                        <img src="/img/logo.jpg" alt="" style="max-height: 22px; border-right: 1px solid #fff" class="pr-3"></div>
+                        <img src="/img/logo.jpg" alt="" style="max-height: 45px; border-right: 1px solid #fff" class="pr-3"></div>
                     <div class="pl-3 pt-1">
                         von-Bülows Odysee
                     </div>

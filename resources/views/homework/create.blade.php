@@ -5,10 +5,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="d-flex justify-content-center">
-                    <h2>Hausaufgaben erstellen</h2>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p class="font-weight-lighter font-italic">Hier können Sie für ihre kleinen Knechte Hausaufgaben erstellen.</p>
+                    <h2>Hausaufgabe erstellen</h2>
                 </div>
             </div>
         </div>
@@ -19,12 +16,12 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-8">
-                                    <label for="caption" class="col-md-8 -col-form-label ">Homework Überschrift</label>
+                                    <label for="caption" class="col-md-8 -col-form-label ">Überschrift der Hausaufgabe</label>
                                     <input id="caption" 
                                         type="text" 
                                         name="caption"
                                         class="form-control @error('caption') is-invalid @enderror" 
-                                        placeholder="ZeIcHnEn SiE eInE gAlVaNiScHe ZeLlE" 
+                                        placeholder="Beispiel: Schriftliche Hausaufgabe" 
                                         required autocomplete="caption" autofocus>
 
                                     @error('caption')
@@ -43,7 +40,7 @@
                                         type="text" 
                                         name="task"
                                         class="form-control @error('task') is-invalid @enderror" 
-                                        placeholder="yO" 
+                                        placeholder="Buch Seite 23/4 erledigen" 
                                         required autocomplete="task"></textarea>
 
                                     @error('task')
