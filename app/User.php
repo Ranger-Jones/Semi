@@ -70,4 +70,9 @@ class User extends Authenticatable
         return $this->hasMany(Homework::class);
     }
 
+    public function votes(){
+        return $this->belongsToMany(Poll::class);
+    }
+    
+
 }

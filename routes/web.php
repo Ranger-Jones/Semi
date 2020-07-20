@@ -44,8 +44,6 @@ Route::get('/elonmusk', 'ElonMuskController@index');
 
 Route::get('/poll/{code}', 'PollController@index');
 Route::post('poll/insert/{code}', 'PollController@insert')->name("poll.insert");
-/*
-Route::get('dynamic-field', 'DynamicFieldController@index');
-Route::post('dynamic-field/insert', 'DynamicFieldController@insert')->name('dynamic-field.insert');
-*/
+Route::post('/poll/vote/{postid}', 'VotePollController@store');
+
 

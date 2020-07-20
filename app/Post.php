@@ -18,4 +18,8 @@ class Post extends Model
     {
         return $this->hasMany(Poll::class);
     }
+
+    public function votedPeople(){
+        return $this->belongsToMany(User::class);
+    }
 }

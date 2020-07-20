@@ -53,15 +53,14 @@
 
         <div class="row">
             <div class="col-8">
-                <form action="post">
-                <div class="btn-group" data-toggle="buttons">
-                        @foreach ($polls as $poll)
-                            <label class="btn btn-sm btn-success active">
-                                <input type="radio" name="{{$post['id']}}" id="{{$post['id']}}" value="{{$poll['id']}}">{{$poll['id']}}
-                            </label>
-                        @endforeach
-                    </div>
-                </form>
+                <form action="/poll/vote/{{$post->id}}" method="post">
+                @csrf
+                    @foreach ($polls as $poll)
+                        <label class="btn btn-sm btn-success active">
+                            <input type="radio" name="voting" id="voting" value="{{$poll['id']}}">{{$poll['id']}}
+                        </label>
+                    @endforeach
+                    <input type="submit" name="save" value="Save" class="btn btn-success">                </form>
             </div>
         </div>
     @endif
