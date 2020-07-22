@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid background-test">
     <div class="row pt-2">  
-        <div class="col-3 d-flex justify-content-center align-items-center" style="margin-left: 38%;">
+        <div class="col-3 d-flex justify-content-center align-items-center pt-3" style="margin-left: 38%">
             <img src="{{ $user->profile->profileImage() }}" alt="" class="rounded-circle image-responsive w-100">
         </div>
     </div>
@@ -36,7 +36,7 @@
             </div>
         @endcan
         @cannot ('update', $user->profile)
-        <follow-button user-id="{{ $user->id }}" follows="{{ $follows}}"></follow-button>
+            <follow-button user-id="{{ $user->id }}" follows="{{ $follows}}"></follow-button>
         @endcannot
     </div>
 </div>

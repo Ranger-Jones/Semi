@@ -10,15 +10,20 @@ class VotePollController extends Controller
 {
 
 
-    public function store(Post $postid)
+    public function store(Post $postid, Poll $poll)
     {
         $data = request()->validate([
             'voting' => ['required']
         ]);
-        $votedpoll = Poll::where('id', $data['voting'])->first();
-        //dd($votedpoll);
+
+        $poll = Poll::where('id', $data['voting'])->first();
         
-        auth()->user()->votes()->toggle($votedpoll);
-        return redirect('/p/' . $postid);
+        
+        $votes = $poll->votes;
+        $votes++;
+        Poll::where('id', $data['voting'])->update(['votes' => $votes]);
+        $postid->votedPeople()->attach(auth()->user());
+        auth()->user()->votes()->attach($poll);
+        return redirect('/p/' . $postid->id);
     }
 }

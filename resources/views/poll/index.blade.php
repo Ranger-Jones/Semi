@@ -101,7 +101,7 @@ $(document).ready(function(){
                 else
                 {
                     poll_field(1);
-                    $('#result').html('<div class="alert alert-success">'+data.success+'<div><button class="btn btn-warning"><a href="/p/{{}}">'+data.test+'</a></button></div></div>');
+                    window.location.href = '/profile/' + {{auth()->user()->id}};
                 }
                 $('#save').attr('disabled', false);
             }

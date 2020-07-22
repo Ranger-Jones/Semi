@@ -19,7 +19,7 @@ class CreatePollsTable extends Migration
             $table->string('text');
             $table->string('image')->nullable();
             $table->string('description')->nullable();
-            $table->integer('votes')->nullable();
+            $table->integer('votes')->nullable()->default(0);;
             $table->string('enddate')->nullable();
             $table->timestamps();
         });

@@ -7,8 +7,11 @@
             <div class="d-flex justify-content-center">
                 <h1>Hausaufgaben</h1>
             </div>
-            <div class="d-block justify-content-center">
-                <p class="font-weight-lighter font-italic">Hier kannst du die Hausaufgaben eingetragen sehen, sowie die Übersicht über die 5 anstehenden Hausaufgaben oder Tests in den kommenden paar Tagen.</p>            
+            <div class="d-block">
+                <p class="font-weight-lighter font-italic">Hier kannst du die Hausaufgaben eingetragen sehen, sowie die Übersicht über die 5 anstehenden Hausaufgaben oder Tests in den kommenden paar Tagen.</p>   
+                <div class="d-flex justify-content-center">
+                    <a href="/h/create" class="btn btn-primary btn-lg">Hausaufgabe hinzufügen</a>
+                </div>         
             </div>
         </div>
     </div>
@@ -16,9 +19,7 @@
     <div class="row">
         <div class="col-8">
 
-        // kannst du den Button oben in die Mitte machen? ich bekomme es iwie nicht hin
-        <button class="btn btn-primary btn-lg justify-content-center"><a href="/h/create" class="white-link">Hausaufgabe hinzufügen</a></button>
-        </div>
+        // kannst du den Button oben in die Mitte machen? ich bekomme es iwie nicht hin        </div>
         <div class="col-4">
             <div class="jumbotron">
                 <div class="d-flex align-content-center">

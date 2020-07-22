@@ -1,15 +1,14 @@
 .background-test {
     height: 100%;
     background:  #157ca4;
-    margin-top: -19px;
+    margin-top: -3vh;
     padding-bottom: 10vh;
-    padding-top: 5vh;
 }
 
 
 .text-box-link {
     margin-left: 44vw;
-     margin-top: 42vh;
+    margin-top: 42vh;
 }
 
 .btn-sp:link,
@@ -55,6 +54,7 @@
     z-index: -1;
     transition: all .4s;
 }
+/*
 a{
     color:inherit;
     text-decoration: none;
@@ -73,7 +73,7 @@ a:active{
 a:visited{
     color:inherit;
     text-decoration: none;
-}
+}*/
 
 .background-change{
     opacity: 0.8;

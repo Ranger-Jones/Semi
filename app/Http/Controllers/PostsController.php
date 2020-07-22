@@ -95,7 +95,14 @@ class PostsController extends Controller
     {
         $postcode = $post['code'];
         $polls = Poll::where('code', $postcode)->get();
-        return view('posts.show', compact('post', 'polls'));
+        $voted = false;
+        foreach($post->votedPeople as $user){
+            if($user->id == auth()->user()->id){
+                $voted = true;
+            }
+        }
+
+        return view('posts.show', compact('post', 'polls', 'voted'));
     }
 
     

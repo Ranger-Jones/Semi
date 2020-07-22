@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatesPollPostPivotTable extends Migration
+class CreatesPostUserPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreatesPollPostPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('poll_post', function (Blueprint $table) {
+        Schema::create('post_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('poll_id');
             $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreatesPollPostPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('poll_post');
+        Schema::dropIfExists('post_user');
     }
 }
