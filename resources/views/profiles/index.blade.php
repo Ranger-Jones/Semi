@@ -7,6 +7,7 @@
             <img src="{{ $user->profile->profileImage() }}" alt="" class="rounded-circle image-responsive w-100">
         </div>
     </div>
+    {{ $user->profile->profileImage() }}
     <div class="row d-block align-items-baseline">
         <div class="d-flex justify-content-center">
             <h1 class="pt-3">{{ $user->username }}</h1>
