@@ -8,6 +8,10 @@ use App\Post;
 
 class VotePollController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
 
     public function store(Post $postid, Poll $poll)

@@ -1,0 +1,128 @@
+.show-button{
+    background-color: #FCFCFC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 50vw;
+    height: 25vh;
+    background: #FCFCFC;
+    transition: background 1s ease-in-out;
+    padding: 0px;
+    
+}
+
+.button-text-linker{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    text-align: center;
+    letter-spacing: 0.09em;
+    color: #FA8231;
+}
+
+.button-text-linker:hover{
+    text-decoration: none;
+    color: #FA8231;
+
+}
+
+.show-button:hover .paperplane{
+    animation-play-state: running;
+    filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
+}
+
+.show-button:hover #body{
+    animation-play-state: running;
+
+}
+
+.show-button:hover{
+    animation: bg-change 0.25s linear;
+    animation-fill-mode: forwards;
+
+}
+.show-button:hover #Schulnews{
+    animation-play-state: running;
+    filter: none;
+
+}
+.show-button:hover #Schulnews-1{
+    animation-play-state: running;
+    filter: none;
+}
+
+
+.paperplane{
+    animation: paperplane 2s infinite linear;
+    transform-origin: 50% 50%;
+   transform-box: fill-box;
+   animation-play-state: paused;
+}
+
+#body{
+    animation: body 2s infinite linear alternate;
+    transform-origin: bottom;
+    transform-box: fill-box;
+    animation-play-state: paused;
+}
+#ding{
+    animation: ding 2s infinite linear alternate;
+}
+
+#Schulnews{
+    animation: button-ani 0.42s infinite linear alternate-reverse;
+    animation-play-state: paused;
+}
+
+#Schulnews-1{
+    animation: button-ani 0.42s infinite linear alternate-reverse;
+    animation-play-state: paused;
+}
+
+
+@keyframes bg-change{
+    from{
+        background-color: #FCFCFC;
+    }
+    to{
+        background-color: #7ed6df;
+    }
+}
+
+@keyframes button-ani{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes ding{
+    from{
+        color: #880882;
+    }
+    to{
+        background-color: #000000
+    }
+}
+
+@keyframes body{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(15deg);
+    }
+}
+
+@keyframes paperplane{
+    100%, 50%, 0%{
+        transform: rotateZ(0deg);
+    }
+    25%{
+        transform: rotateZ(7.5deg);
+    }
+    75%{
+        transform: rotateZ(-7.5deg);
+    }
+}

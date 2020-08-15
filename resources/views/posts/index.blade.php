@@ -19,7 +19,7 @@
 
             <div class="col-6 offset-3 pt-3">
                 <a href="/p/{{$post->id}}">
-                    <img src="storage/{{$post->image}}" alt="alex in unterhose" class="image-responsive w-100">
+                    <img src="{{$post->image}}" alt="alex in unterhose" class="image-responsive w-100">
                     <h2 class="pt-3">{{ $post->caption}}</h2>
                     <div class="d-flex">
                         <p class="font-weight-light">

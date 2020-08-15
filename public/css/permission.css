@@ -1,0 +1,20 @@
+.permission-btn-text{
+    color: #000;
+    text-decoration: none;
+}
+
+.permission-btn-text:hover{
+    color: rgb(41, 41, 41);
+    text-decoration: none;
+}
+
+.remove{
+    color: #ff7979;
+    text-decoration: none;
+}
+
+.remove:hover{
+    color: #eb4d4b;
+    text-decoration: none;
+    font-weight: bold;
+}

@@ -14,6 +14,14 @@ class FollowsController extends Controller
 
     public function store(User $user)
     {
+        $notification_data = array(
+            'sender' => auth()->user()->username,
+            'receiver' => $user->username,
+            'content' => 'Du hast einen neuen Homie',
+            'type' => 'Follow',
+            'checked' => 'unchecked'
+        );
+        $user->notifications()->create($notification_data);
         return auth()->user()->following()->toggle($user->profile);
     }
     

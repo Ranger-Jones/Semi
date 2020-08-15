@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Mail\NewUserWelcomeMail;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +30,11 @@ Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edi
 Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
 
 Route::get('/m', 'MarkController@index');
+Route::get('/m/create', 'MarkController@create');
+Route::post('m/insert', 'MarkController@insert')->name("mark.insert");
+Route::patch('/m/update/{mark_id}', 'MarkController@edit');
+Route::post('/m/find/', 'MarkController@find');
+Route::get('/m/show/{search}', 'MarkController@show');
 
 Route::get('/h', 'HomeworkController@index');
 Route::get('/h/create', 'HomeworkController@create');
@@ -45,5 +49,24 @@ Route::get('/elonmusk', 'ElonMuskController@index');
 Route::get('/poll/{code}', 'PollController@index');
 Route::post('poll/insert/{code}', 'PollController@insert')->name("poll.insert");
 Route::post('/poll/vote/{postid}', 'VotePollController@store');
+
+Route::get('/schulleben', 'SchoollifeController@index');
+
+Route::get('/schulnews', 'SchoolnewsController@index');
+
+Route::get('/schulnews', 'SchoolnewsController@index');
+
+Route::get('/notification/uncheck/{notification_id}', 'NotififactionsController@update');
+Route::post('/notification/uncheck/all', 'NotififactionsController@updateAll');
+Route::get('/notification/log', 'NotififactionsController@index');
+
+//---Admin Sector---//
+Route::get('/a', 'AdminController@index');
+
+Route::get('/a/permissions', 'PermissionController@index');
+Route::get('/a/permissions/create', 'PermissionController@create');
+Route::post('/a/permissions/show', 'PermissionController@show');
+Route::post('/a/permissions/store', 'PermissionController@store');
+Route::post('/a/permissions/update/{userid}/{permissionid}', 'PermissionController@update');
 
 

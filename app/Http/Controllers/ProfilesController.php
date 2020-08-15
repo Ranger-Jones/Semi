@@ -10,6 +10,10 @@ use Intervention\Image\Facades\Image;
 
 class ProfilesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     
     public function index(User $user)
     {

@@ -8,17 +8,24 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'vB Odysee') }}</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <!-- Scripts -->
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
+    <link 
+  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
+  rel="stylesheet"  type='text/css'>    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/test.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/schoollife.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
@@ -27,12 +34,12 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
-            <div class="container">
-                <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                    <div class="margin-bottom: 5000px;">
-                        <img src="/img/logo.jpg" alt="" style="max-height: 45px; border-right: 1px solid #fff" class="pr-3"></div>
-                    <div class="pl-3 pt-1">
+        <nav class="navbar navbar-expand-md nav-sci">
+            <div class="container myDIV">
+                <a class="navbar-brand d-flex nav-link" href="{{ url('/') }}">
+                    <div class="">
+                        <img src="/img/logo.png" alt="" style="max-height: 45px; border-right: 1px solid #333" class="pr-3"></div>
+                    <div class="pl-3 pt-1 nav-textt-b">
                         von-Bülows Odysee
                     </div>
                 </a>
@@ -41,70 +48,41 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
 
                     <!-- Mid Of Navbar -->
                     <ul class="navbar-nav m-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    Schulleben
-                                </a>
+                            <li class="nav-item ">
+                                    <a class="nav-textt nav-link-text nav-link {{ (request()->segment(1) == 'schulleben') ? 'active' : '' }}" href="/schulleben">
+                                        Schulleben
+                                    </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Soziales <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/h">
-                                        Freunde
+                            <li class="nav-item pl-3">
+                                    <a class="nav-textt nav-link nav-link-text {{ (request()->segment(1) == 'soziales') ? 'active' : '' }}" href="/h">
+                                        Soziales
                                     </a>
-                                    <a class="dropdown-item" href="/m">
-                                        Chats
-                                    </a>
-                                    <a class="dropdown-item" href="/t">
-                                        Gruppen
-                                    </a>
-                                </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    Services <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/h">
-                                        Hausaufgaben
+                            <li class="nav-item pl-3">
+                                    <a class="nav-textt nav-link nav-link-text {{ (request()->segment(1) == 'services') ? 'active' : '' }}" href="/m">
+                                        Services
                                     </a>
-                                    <a class="dropdown-item" href="/m">
-                                        Noten
-                                    </a>
-                                    <a class="dropdown-item" href="/t">
-                                        Vertretungsplan
-                                    </a>
-                                </div>
                             </li>
-                            
                         @endguest
                     </ul>
                     @auth    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle nav-textt" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                    
                                 {{ Auth::user()->username }}
                                     
@@ -112,13 +90,13 @@
                                     <img src="{{ Auth::user()->profile->profileImage() }}" alt="" class="rounded-circle w-100 pb-1" style="max-width: 20px;">                                </a>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">
+                                    <a class="dropdown-item nav-textt" href="/profile/{{ Auth::user()->id }}">
                                         Profile
                                     </a>
-                                    <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}/edit">
+                                    <a class="dropdown-item nav-textt" href="/profile/{{ Auth::user()->id }}/edit">
                                         Edit Profile
                                     </a>
-                                    <a class="dropdown-item" href="/me/update">
+                                    <a class="dropdown-item nav-textt" href="/me/update">
                                         Bearbeite deine Daten
                                     </a>
                                     <div class="dropdown-divder"></div>
@@ -132,6 +110,34 @@
                                         @csrf
                                     </form>
                                     
+                                </div>
+                            </li>
+                    </ul>
+                    <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link nav-textt" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>             
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chat-left-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M14 1H2a1 1 0 0 0-1 1v11.586l2-2A2 2 0 0 1 4.414 11H14a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                        <path fill-rule="evenodd" d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                                    </svg>                                
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <span class="{{$nothing = false}}"></span>
+                                @foreach (Auth::user()->notifications()->get() as $notification)
+                                    
+                                    @if ($notification->checked == 'unchecked')
+                                        <a class="dropdown-item nav-textt {{$nothing = false}}" href="/notification/uncheck/{{$notification->id}}">
+                                            {{$notification->content}}
+                                        </a>
+                                    @else
+                                        <span class="{{$nothing = true}}"></span>
+                                    @endif
+                                @endforeach
+                                @if ($nothing == true)
+                                    <a class="dropdown-item nav-textt" href="/notification/log">
+                                        Keine neuen Nachrichten
+                                    </a>
+                                @endif
                                 </div>
                             </li>
                     </ul>

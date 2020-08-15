@@ -16,7 +16,8 @@ class ProfileSeeder extends Seeder
         Profile::where('url', null)->delete();
         foreach ($old_profiles as $profile) {
             $profile = factory(App\Profile::class)->create([
-                'user_id' => $profile['user_id']
+                'user_id' => $profile['user_id'],
+                'title' => $profile['title']
             ]);
             
         }

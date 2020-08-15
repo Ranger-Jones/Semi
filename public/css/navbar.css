@@ -1,44 +1,70 @@
-@media (min-width: 992px) {
-    .animate {
-      animation-duration: 0.3s;
-      -webkit-animation-duration: 0.3s;
-      animation-fill-mode: both;
-      -webkit-animation-fill-mode: both;
-    }
+.nav-sci{
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nav-textt{
+  color: #333333;
+    font-family: Roboto Mono;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.nav-textt-b{
+  color: #333333;
+  font-family: Roboto Mono;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 18px;
+display: flex;
+align-items: center;
+text-align: center;
+}
+
+
+.nav-textt:hover{
+  color: #000;
+}
+
+.nav-link-text:hover{
+  color: #000;
+  animation: linktext 0.25s linear;
+  animation-fill-mode: forwards;
+  -webkit-text-stroke-color: #333333;
+  border-bottom: 0.1px solid #9c9c9c;
+}
+
+.active{
+  -webkit-text-stroke-color: #333333;
+  -webkit-text-stroke-width: 1px;
+  border-bottom: 0.1px solid #9c9c9c;
+  background-color: #fdfdfd;
+}
+
+@keyframes linktext{
+  0%{
+    -webkit-text-stroke-width: 0px;
   }
-  
-  @keyframes slideIn {
-    0% {
-      transform: translateY(1rem);
-      opacity: 0;
-    }
-    100% {
-      transform:translateY(0rem);
-      opacity: 1;
-    }
-    0% {
-      transform: translateY(1rem);
-      opacity: 0;
-    }
+  15%{
+    -webkit-text-stroke-width: .2px;
   }
-  
-  @-webkit-keyframes slideIn {
-    0% {
-      -webkit-transform: transform;
-      -webkit-opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateY(0);
-      -webkit-opacity: 1;
-    }
-    0% {
-      -webkit-transform: translateY(1rem);
-      -webkit-opacity: 0;
-    }
+  25%{
+    -webkit-text-stroke-width: .4px;
   }
-  
-  .slideIn {
-    -webkit-animation-name: slideIn;
-    animation-name: slideIn;
+  50%{
+    -webkit-text-stroke-width: .6px;
   }
+  75%{
+    -webkit-text-stroke-width: .8px;
+  }
+  100%{
+    -webkit-text-stroke-width: 1px;
+  }
+}
   

@@ -124,3 +124,79 @@ a:visited{
     color: #e67e22;
 }
 
+.show-grid [class^=col-] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #ddd;
+    border: 1px solid rgba(86,61,124,.2);
+    list-style: none;
+    }
+    
+    .glyphicon {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 35px;
+    }
+
+    .donut-guy{
+        
+    }
+
+    #pizza{
+        animation: pizza 1s infinite linear alternate;
+
+    }
+
+    #Leftarm{
+        animation: leftarm-rotate 2s infinite linear;
+        transform-origin: center;
+    }
+
+    #EyeLeft{
+        animation: eye 2s infinite linear;
+    }
+
+    #EyeRight{
+        animation: eye 2s infinite linear;
+    }
+
+    #Mouth{
+        animation: eye 2s infinite linear;
+    }
+
+
+
+    @keyframes leftarm-rotate{
+        0%, 50%, 100%{
+            transform: rotateZ(0deg);
+        }
+        25%{
+            transform: rotateZ(-5deg);
+        }
+        75%{
+            transform: rotateZ(5deg);
+        }
+    }
+
+    @keyframes eye{
+        0%, 100%{
+            transform: translateY(0);
+        }
+        25%{
+            transform: translateY(0.5px);
+        }
+        75%{
+            transform: translateY(-0.5px);
+        }
+    }
+
+    @keyframes pizza{
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-3px); }
+    }
+    
+    .inactive { 
+        color: #ccc;
+        background-color: #fafafa;
+    } 
+

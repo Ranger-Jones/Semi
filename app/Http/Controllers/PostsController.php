@@ -78,7 +78,7 @@ class PostsController extends Controller
             'addressees' => $data['addresses'],
             'poll' => $data['poll'],
             'code' => $data['code'],
-            'image' => $imagePath
+            'image' => 'storage/' . $imagePath
         ]);
 
         if($data['poll'] == 'availabe'){

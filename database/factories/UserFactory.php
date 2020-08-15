@@ -19,13 +19,35 @@ use Illuminate\Support\Facades\Hash;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+    
+    // get a random subject
+    $subjects = [
+        'Deutsch',
+        'Mathematik',
+        'Physik',
+        'Informatik',
+        'Chemie',
+        'Bioloagie'
+    ];
+
+    // get a random class
+    $inclass = [
+        '6a',
+        '7a',
+        '8a',
+        '9a',
+        '10a',
+        '11a'
+    ];
+    
+    
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'username' => $faker->username,
-        'subject' => '11a',
-        'subject' => 'Physik;Deutsch;',
+        'inclass' => $inclass[mt_rand(0, count($inclass) - 1)],
+        'subject' => $subjects[mt_rand(0, count($subjects) - 1)],
         'password' => Hash::make('password'), // password
         'remember_token' => Str::random(10),
     ];

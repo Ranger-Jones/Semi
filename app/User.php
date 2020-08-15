@@ -73,6 +73,15 @@ class User extends Authenticatable
     public function votes(){
         return $this->belongsToMany(Poll::class);
     }
+
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class);
+    }
+
+    public function notifications(){
+        return $this->belongsToMany(Notifications::class);
+    }
     
 
 }
