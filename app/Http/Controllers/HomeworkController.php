@@ -84,6 +84,23 @@ class HomeworkController extends Controller
             'submissionDate'=>$submissionDate,
             'currentDate'=> $currentDate
         );
+
+        $users = User::whereColumn([
+                ['subject', '=', $data['subject']],
+                ['inclass', '=', $data['inclass']]
+            ])->get();
+
+        foreach ($users as $user) {
+            $notification_data = array(
+                'sender' => $data['teacher'],
+                'receiver' => $user->username,
+                'content' => 'Neue Hausaufgabe in ' . $data['subject'],
+                'type' => 'Hausaufgabe',
+                'checked' => 'unchecked'
+            );
+            $user->notifications()->create($notification_data);
+        }
+
         DB::table('homework')->insert($datadb);
 
         $h = DB::table('homework')->where('currentDate', $currentDate)->first();

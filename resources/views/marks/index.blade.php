@@ -15,6 +15,8 @@
             </div>
         </div>
     </div>
+    <hr class="pb-5">
+    @if(!$isTeacher)
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-center">
@@ -33,8 +35,54 @@
         
         </div>
     </div>   
+    @endif
 
-    
+    @if($isTeacher)
+    <div class="row">
+      <div class="col-12">
+            <div class="d-flex justify-content-center">
+              <h5>Wählen Sie die Eingabeform aus!</h5>
+              
+          </div>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <div class="d-block">
+            <p class="mb-0"><b>Generieren Sie hier eine Klasse mit vordefiniertem Fach, um die Schreibarbeit zu verkürzen!</b></p>
+            <form action="/m/create">
+                @csrf
+                <label for="class">Klasse</label>
+                <input type="name" class="form-control" id="class" name="class" aria-describedby="emailHelp">
+
+                <label for="subject">Fach</label>
+                <input type="name" class="form-control" id="subject" name="subject" aria-describedby="emailHelp">
+
+                <input type="submit" class="btn btn-success mt-3" value="Generate" />
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <div class="d-block">
+            <p class="mb-0"><b>Fügen Sie Noten für einzelne Schüler hinzu.</b></p>
+            <form action="/m/create">
+                @csrf
+                <input type="submit" class="btn btn-success mt-3" value="Note hinzufügen" />
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    @endif
+
+    @if (!$isTeacher)
     @if ($mathe != [])
     <hr>
     <div class="row">
@@ -832,6 +880,7 @@
         <p><strong>Durchschnitt:</strong>{{$ethikS}}</p>
       </div>
     </div>
+    @endif
     @endif
 </div>
 @endsection

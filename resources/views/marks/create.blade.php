@@ -9,23 +9,16 @@
     <div class="d-block">
       <h3 align="center">Neue Noten</h3>
     </div>
-
-    <div class="row">
-        <div class="col-12">
-            <div class="d-flex justify-content-center">
-                <button class="btn btn-success" name="allstudents">All Students</button>
-            </div>
-        </div>
-    </div>
      <hr>
+     <p class="mb-0"><b>{{$error}}</b></p>
    <div class="table-responsive">
+   
                 <form method="post" id="m_create">
                  <span id="result"></span>
                  <table class="table table-bordered table-striped" id="user_table">
                <thead>
                 <tr>
                     <th width="20%">Schüler</th>
-                    <th width="10%">Klasse</th>
                     <th width="20%">Fach</th>
                     <th width="5%">Note</th>
                     <th width="25%">Beschreibung</th>
@@ -35,13 +28,30 @@
                 </tr>
                </thead>
                <tbody>
+                    @if($subject != '')
+                        @php
+                            $count = 0;
+                        @endphp
+                        @foreach($s_users as $u)
+                            @php
+                                $count++;
+                            @endphp
+                                <td><input type="text" name="name[]" readonly class="form-control"/ value="{{$u->name}}"></td>
+                                <td><input type="text" name="subject[]" readonly class="form-control" value="{{$subject}}"/></td>
+                                <td><input type="text" name="mark[]" class="form-control"/></td>
+                                <td><input type="text" name="description[]" class="form-control"/></td>
+                                <td><input type="text" name="teacher[]" readonly class="form-control" value="{{auth()->user()->name}}"/></td>
+                                <td><button type="button" name="remove" id="" class="btn btn-danger remove">Entfernen</button></td></tr>  
 
+                        @endforeach
+                    @endif
                </tbody>
                <tfoot>
                 <tr>
-                    <td colspan="6">
-                        <input type="text" value="" name="postcaption" id="postcaption" readonly class="form-control">
-                    </td>                  <td>
+                    <td colspan="5">
+                        <button type="button" name="add" id="add" class="btn btn-success">Hinzufügen</button></td>
+                    </td>                  
+                <td>
                   @csrf
                   <input type="submit" name="save" id="save" class="btn btn-primary" value="Speichern" />
                  </td>
@@ -54,33 +64,30 @@
 
 
 
+
 <script>
 $(document).ready(function(){
 
  var count = 1;
+ var preGen = '';
 
+@if ($subject == '' || $class == '')
  poll_field(count);
-
+@endif
  function poll_field(number)
  {
-  html = '<tr>';
-        html += '<td><select class="form-control" name="name[]">@foreach($usernames as $user)<option>{{$user}}</option>@endforeach</select></td>';
-        html += '<td><select class="form-control" name="inclass[]">@foreach($classes as $class)<option>{{$class}}</option>@endforeach</select></td>';
-        html += '<td><select class="form-control" name="subject[]">@foreach($subjects as $subject)<option>{{$subject}}</option>@endforeach</select></td>';
+        html = '<tr>';
+        html += '<td><select class="form-control" name="name[]">@foreach($usernames as $user)<option>{{$user}}</option>@endforeach</select></td>';        
+        html += '<td><select class="form-control" name="subject[]">@foreach($subjects as $s)<option>{{$s}}</option>@endforeach</select></td>';
         html += '<td><input type="text" name="mark[]" class="form-control"/></td>';
         html += '<td><input type="text" id="description" name="description[]" value class="form-control"/></td>';
         html += '<td><input type="text" name="teacher[]" class="form-control" value="{{auth()->user()->name}}"/></td>';
-        if(number > 1)
-        {
-            html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Entfernen</button></td></tr>';
+        html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Entfernen</button></td></tr>';
             $('tbody').append(html);
-        }
-        else
-        {   
-            html += '<td><button type="button" name="add" id="add" class="btn btn-success">Hinzufügen</button></td></tr>';
-            $('tbody').html(html);
-        }
+
+
  }
+
 
  $(document).on('click', '#add', function(){
   count++;
@@ -91,7 +98,6 @@ $(document).ready(function(){
   count--;
   $(this).closest("tr").remove();
  });
-
 
  $('#m_create').on('submit', function(event){
         event.preventDefault();
@@ -117,7 +123,7 @@ $(document).ready(function(){
                 else
                 {
                     poll_field(1);
-                    window.location.href = '/profile/' + {{auth()->user()->id}};
+                    window.location.href = '/m';
                 }
                 $('#save').attr('disabled', false);
             }
@@ -127,4 +133,5 @@ $(document).ready(function(){
 });
 
 </script>
+
 @endsection

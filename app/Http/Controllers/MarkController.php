@@ -19,6 +19,22 @@ class MarkController extends Controller
     {
         $marks = Mark::where('user', auth()->user()->name)->get();
 
+        $u_subjects = auth()->user()->subject;
+
+        try {
+            $u_subjects = preg_split('~:~', $u_subjects);
+            
+            //removes unimportant records
+            $last = array_key_last($u_subjects);
+            unset($u_subjects[$last]);
+            
+            
+            
+            
+        } catch (Exception $e) {
+            dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
+        }
+
         
         //---Liste aller Unterrichtsfächer als je einzelnes array---//
         $deutsch = 
@@ -65,75 +81,75 @@ class MarkController extends Controller
         $ethikS = 0;
         
         foreach ($marks as $mark) {
-            if ($mark->subject == 'Deutsch') {
+            if ($mark->subject == 'Deutsch' && in_array('deutsch', $u_subjects)) {
                 $deutsch[] = $mark;
                 $deutschS += $mark->mark;
             }
-            else if($mark->subject == 'Mathematik'){
+            else if($mark->subject == 'Mathematik' && in_array('mathematik', $u_subjects)){
                 $mathe[] = $mark;
                 $matheS += $mark->mark;
             }
-            else if($mark->subject == 'Physik'){
+            else if($mark->subject == 'Physik' && in_array('physik', $u_subjects)){
                 $physik[] = $mark;
                 $physikS += $mark->mark;
             }
-            else if($mark->subject == 'Informatik'){
+            else if($mark->subject == 'Informatik' && in_array('informatik', $u_subjects)){
                 $info[] = $mark;
                 $infoS += $mark->mark;
             }
-            else if($mark->subject == 'Ethik'){
+            else if($mark->subject == 'Ethik' && in_array('ethik', $u_subjects)){
                 $ethik[] = $mark;
                 $ethikS += $mark->mark;
             }
-            else if($mark->subject == 'Religion'){
+            else if($mark->subject == 'Religion' && in_array('religion', $u_subjects)){
                 $religion[] = $mark;
                 $religionS += $mark->mark;
             }
-            else if($mark->subject == 'Biologie'){
+            else if($mark->subject == 'Biologie' && in_array('biologie', $u_subjects)){
                 $biologie[] = $mark;
                 $biologieS += $mark->mark;
             }
-            else if($mark->subject == 'Naturwissenschaften & Technik'){
+            else if($mark->subject == 'Naturwissenschaften & Technik' && in_array('naturwissenschaften & technik', $u_subjects)){
                 $nwut[] = $mark;
                 $nwutS += $mark->mark;
             }
-            else if($mark->subject == 'Mensch, Natur, Technik'){
+            else if($mark->subject == 'Mensch, Natur, Technik' && in_array('mensch, natur, technik', $u_subjects)){
                 $mnt[] = $mark;
                 $mntS += $mark->mark;
             }
-            else if($mark->subject == 'Französisch'){
+            else if($mark->subject == 'Französisch' && in_array('französisch', $u_subjects)){
                 $franz[] = $mark;
                 $franzS += $mark->mark;
             }
-            else if($mark->subject == 'Latein'){
+            else if($mark->subject == 'Latein' && in_array('latein', $u_subjects)){
                 $latein[] = $mark;
                 $lateinS += $mark->mark;
             }
-            else if($mark->subject == 'Sport'){
+            else if($mark->subject == 'Sport' && in_array('sport', $u_subjects)){
                 $sport[] = $mark;
                 $sportS += $mark->mark;
             }
-            else if($mark->subject == 'Kunst'){
+            else if($mark->subject == 'Kunst' && in_array('kunst', $u_subjects)){
                 $kunst[] = $mark;
                 $kunstS += $mark->mark;
             }
-            else if($mark->subject == 'Musik'){
+            else if($mark->subject == 'Musik' && in_array('musik', $u_subjects)){
                 $musik[] = $mark;
                 $musikS += $mark->mark;
             }
-            else if($mark->subject == 'Astronomie'){
+            else if($mark->subject == 'Astronomie' && in_array('astronomie', $u_subjects)){
                 $astronomie[] = $mark;
                 $astronomieS += $mark->mark;
             }
-            else if($mark->subject == 'Geschichte'){
+            else if($mark->subject == 'Geschichte' && in_array('geschichte', $u_subjects)){
                 $geschichte[] = $mark;
                 $geschichteS += $mark->mark;
             }
-            else if($mark->subject == 'Darstellen & Gestalten'){
+            else if($mark->subject == 'Darstellen & Gestalten' && in_array('darstellen & gestalten', $u_subjects)){
                 $dg[] = $mark;
                 $dgS += $mark->mark;
             }
-            else if($mark->subject == 'Sozialkunde'){
+            else if($mark->subject == 'Sozialkunde' && in_array('sozialkunde', $u_subjects)){
                 $sozi[] = $mark;
                 $soziS += $mark->mark;
             }
@@ -147,6 +163,7 @@ class MarkController extends Controller
         ];
 
 
+        //Berechnung des Notendurchschnittess
         if(!$sozi == []){
             $soziS /= count($sozi);
         }
@@ -227,30 +244,85 @@ class MarkController extends Controller
             $geschichteS /= count($geschichte);
         }
 
+        
+
+        //Check if user is a teacher
+
+        $isTeacher = false;
+
+        foreach (auth()->user()->permissions as $p) {
+            if($p->permission == "Lehrer"){
+                $isTeacher = true;
+            }
+        }
+
         return view("marks.index", compact('deutsch', 'mathe', 'physik', 'info',
          'ethik', 'religion', 'geschichte', 'sozi', 'latein', 'dg', 'nwut', 'mnt', 
          'musik', 'kunst', 'sport', 'astronomie', 'englisch', 'franz', 'biologie', 'chemie', 
          'deutschS', 'matheS', 'physikS', 'infoS',
          'ethikS', 'religionS', 'geschichteS', 'soziS', 'lateinS', 'dgS', 'nwutS', 'mntS', 
-         'musikS', 'kunstS', 'sportS', 'astronomieS', 'englischS', 'franzS', 'biologieS', 'chemieS',));
+         'musikS', 'kunstS', 'sportS', 'astronomieS', 'englischS', 'franzS', 'biologieS', 'chemieS', 'isTeacher'));
+    }
+
+    //redirect with pregeneradet form for teacher to beeing faster in their working flow
+    public function manage(){
+        $data = request()->validate([
+            'class' => ['required', 'max:55'],
+            'subject' => ['required', 'max:55']
+        ]);
+
+        $class = $data['class'];
+        $subject = $data['subject'];
+
+
+        return redirect('/m/create/'.$class.'/'.$subject);
     }
 
     public function create()
-    {
+    {   
+
+        //get data for pregenerate form for teacher
+        $class = "";
+        $subject = "";
+        $error = "";
+
+        //get the data from the form, if neccessary;
+        try {
+            $data = request()->validate([
+                'class' => ['required', 'max:55'],
+                'subject' => ['required', 'max:55']
+            ]);
+    
+            $class = $data['class'];
+            $subject = $data['subject'];
+        } catch (\Throwable $th) {
+            $error = "Can't generate data from user input, no input available";
+        }
+        
+
+
+        //Check if user is a teacher
         $permissions = auth()->user()->permissions()->get();
         $authorized = false;
+        //catch users permission
         foreach ($permissions as $permission) {
             if($permission->permission == "Lehrer"){
                 $authorized = true;
             }
         }
+        
+        $usernames = [];
+        $subjects = [];
 
+        //proof that user is a teacher
         if($authorized == false){
             return redirect('/m');
         }
 
+        //get all users
         $users = User::all();
 
+        //allsubjects for select
         $subjects = [
             'Deutsch',
             'Mathematik',
@@ -273,24 +345,56 @@ class MarkController extends Controller
             'Informatik'
         ];
 
-        $classes = [
-            '5a',
-            '6a',
-            '7a',
-            '8a',
-            '9a',
-            '10a',
-            '11a',
-            '12a',
-        ];
-
-        $usernames = [];
-
         foreach ($users as $user) {
             $usernames[] = $user->name;
         }
 
-        return view("marks.create", compact('usernames', 'classes', 'subjects'));
+        //filter selected users by teachers choice
+        $s_users = [];
+
+        
+
+        if($subject != '' || $class != ''){
+            //List neccessary usernames, by teachers choice
+
+            foreach ($users as $u) {
+                //Get users subjects
+                $u_subjects = $u->subject;
+                $inclass = $u->inclass;
+                
+
+                if($inclass == $class){
+                    
+                    try {
+                        $u_subjects = preg_split('~:~', $u_subjects);
+                        
+                        //removes unimportant records
+                        $last = array_key_last($u_subjects);
+                        unset($u_subjects[$last]);
+                        
+                        
+                        
+                        
+                    } catch (Exception $e) {
+                        dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
+                    }
+
+                    
+                    
+                    //select the users with the right class and the right subject
+                    foreach ($u_subjects as $s) {
+                        if($s == strtolower($subject)){
+                            $s_users[] = $u;
+                            
+                        }
+                    }
+                }
+
+                
+            }
+        }
+
+        return view("marks.create", compact('usernames', 'subjects', 'class', 'subject', 'error', 's_users'));
     }
 
     public function insert(Request $request)
@@ -300,7 +404,6 @@ class MarkController extends Controller
      {
       $rules = array(
        'name.*'  => 'required',
-       'inclass.*'  => 'required',
        'subject.*'  => 'required',
        'mark.*'  => 'required',
        'description.*'  => 'required',
@@ -315,7 +418,6 @@ class MarkController extends Controller
       }
 
       $names = $request->name;
-      $inclass = $request->inclass;
       $subject = $request->subject;
       $mark = $request->mark;
       $description = $request->description;
@@ -323,9 +425,16 @@ class MarkController extends Controller
 
       for($count = 0; $count < count($names); $count++)
       {
+        $user = User::where("name", $names[$count])->first();
+        $class = $user->inclass;
+
+        //standard class == A21/1 for preventing errors
+        if($class == null)
+            $class = "A21/1";
+
        $data = array(
         'user'  => $names[$count],
-        'inclass' => $inclass[$count],
+        'inclass' => $class,
         'subject' => $subject[$count],
         'mark' => $mark[$count],
         'description' => $description[$count],
@@ -333,21 +442,23 @@ class MarkController extends Controller
         'currentDate' => date("Y-m-d h:i:sa")
        );
 
-       $notifaction_data = array(
+       $notificaction_data = array(
            'sender' => $teacher[$count],
            'receiver' => $names[$count],
            'content' => 'Neue Note: ' . $mark[$count] . ' in ' . $subject[$count] . '; Bemerkung: '. $description[$count],
            'type' => 'Note',
            'checked' => 'unchecked'
        );
+       //$insert_data[] = $data;
 
-       $user = User::where("username", $names[$count])->first();
-       $user->notifications()->create($notifaction_data);
+       //Inser Data into user accounts
+       $user->notifications()->create($notificaction_data);
+       $user->marks()->create($data);
 
-       $insert_data[] = $data; 
+        
       }
       
-      Mark::insert($insert_data);
+      //Mark::insert($insert_data);
       return response()->json([
        'success'  => 'Umfrage wurde zu ihrem Post erfolgreich hinzugefügt'
       ]);
