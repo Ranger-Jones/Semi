@@ -17,7 +17,7 @@ class FollowsController extends Controller
         $notification_data = array(
             'sender' => auth()->user()->username,
             'receiver' => $user->username,
-            'content' => 'Du hast einen neuen Homie',
+            'content' => 'Du hast einen neuen Follower!',
             'type' => 'Follow',
             'checked' => 'unchecked'
         );

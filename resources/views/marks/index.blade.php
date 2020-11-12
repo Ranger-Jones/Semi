@@ -100,6 +100,7 @@
               <th scope="col">Halbjahr</th>
               <th scope="col">Note</th>
               <th scope="col">Beschreibung</th>
+              <th scope="col">Gewichtung</th>
               <th scope="col">Datum</th>
               <th scope="col">Lehrer</th>
             </tr>
@@ -140,6 +141,7 @@
               <th scope="col">Halbjahr</th>
               <th scope="col">Note</th>
               <th scope="col">Beschreibung</th>
+              <th scope="col">Gewichtung</th>
               <th scope="col">Datum</th>
               <th scope="col">Lehrer</th>
             </tr>

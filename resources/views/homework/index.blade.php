@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-8">
 
-        // kannst du den Button oben in die Mitte machen? ich bekomme es iwie nicht hin        </div>
+        </div>
         <div class="col-4">
             <div class="jumbotron">
                 <div class="d-flex align-content-center">
