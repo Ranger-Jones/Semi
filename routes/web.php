@@ -55,10 +55,14 @@ Route::get('/schulleben', 'SchoollifeController@index');
 Route::get('/schulnews', 'SchoolnewsController@index');
 
 Route::get('/schulnews', 'SchoolnewsController@index');
+Route::get('/schulnews/create', 'SchoolnewsController@create');
+Route::get('/schulnews/{newsid}', 'SchoolnewsController@show');
 
 Route::get('/notification/uncheck/{notification_id}', 'NotififactionsController@update');
 Route::post('/notification/uncheck/all', 'NotififactionsController@updateAll');
 Route::get('/notification/log', 'NotififactionsController@index');
+
+Route::get('/startpage', 'StartpageController@index');
 
 //---Admin Sector---//
 Route::get('/a', 'AdminController@index');

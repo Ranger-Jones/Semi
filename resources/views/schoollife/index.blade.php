@@ -521,7 +521,7 @@
                                         fill="#FA8231"
                                         class="button-text-linker"
                                             
-                                        >Schulnews
+                                        >Lehrer
                                             
                                         </text>
                                         <defs>
