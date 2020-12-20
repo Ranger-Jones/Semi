@@ -51,14 +51,357 @@
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Unterrichtsfächer</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Unterrichtsfächer</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Unterrichtsfach</th>
+                                                <th scope="col">Lehrer</th>
+                                                <th scope="col">[ ]</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Mark</td>
+                                                <td>Otto</td>
+                                                <td>@mdo</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Jacob</td>
+                                                <td>Thornton</td>
+                                                <td>@fat</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>
+                                                    gA Deutsch
+                                                </td>
+                                                <td>
+                                                    Frau Edelmann
+                                                </td>
+                                                <td>
+                                                    <input 
+                                                        type="checkbox" 
+                                                        value="deutsch" 
+                                                        id="deutschCheck" 
+                                                        name="deutschCheckN" 
+                                                        aria-label="Checkbox for following text input" 
+                                                        @if ($allSubjects['deutsch'] == 'checked')
+                                                            checked
+                                                        @endif
+                                                    >
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                            <div class="input-group mb-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="row pl-2">
+                    <button class="btn btn-success" type="submit">Speichern</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<input 
+                                                type="checkbox" 
+                                                value="deutsch" 
+                                                id="deutschCheck" 
+                                                name="deutschCheckN" 
+                                                aria-label="Checkbox for following text input" 
+                                                @if ($allSubjects['deutsch'] == 'checked')
+                                                    checked
+                                                @endif
+                                            >
+
+
+                                            <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <input 
@@ -75,85 +418,5 @@
                                     </div>
                                     <p class="pl-3 pt-3">Mathematik</p>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                        <input 
-                                                type="checkbox" 
-                                                value="deutsch" 
-                                                id="deutschCheck" 
-                                                name="deutschCheckN" 
-                                                aria-label="Checkbox for following text input" 
-                                                @if ($allSubjects['deutsch'] == 'checked')
-                                                    checked
-                                                @endif
-                                            >                                          </div>
-                                    </div>
-                                    <p class="pl-3 pt-3">Deutsch</p>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input 
-                                                    type="checkbox" 
-                                                    value="biologie" 
-                                                    id="biologieCheck" 
-                                                    name="biologieCheckN" 
-                                                    aria-label="Checkbox for following text input" 
-                                                    @if ($allSubjects['biologie'] == 'checked')
-                                                        checked
-                                                    @endif
-                                                >                                          
-                                        </div>
-                                    </div>
-                                    <p class="pl-3 pt-3">Biologie</p>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input 
-                                                    type="checkbox" 
-                                                    value="chemie" 
-                                                    id="chemieCheck" 
-                                                    name="chemieCheckN" 
-                                                    aria-label="Checkbox for following text input" 
-                                                    @if ($allSubjects['chemie'] == 'checked')
-                                                        checked
-                                                    @endif
-                                                >                                          
-                                        </div>
-                                    </div>
-                                    <p class="pl-3 pt-3">Chemie</p>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <input 
-                                                    type="checkbox" 
-                                                    value="physik" 
-                                                    id="physikCheck" 
-                                                    name="physikCheckN" 
-                                                    aria-label="Checkbox for following text input" 
-                                                    @if ($allSubjects['physik'] == 'checked')
-                                                        checked
-                                                    @endif
-                                                >                                          
-                                        </div>
-                                    </div>
-                                    <p class="pl-3 pt-3">Physik</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-
-                </div>
-                <div class="row pl-2">
-                    <button class="btn btn-success" type="submit">Speichern</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
 
 @endsection

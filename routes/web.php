@@ -69,4 +69,14 @@ Route::post('/a/permissions/show', 'PermissionController@show');
 Route::post('/a/permissions/store', 'PermissionController@store');
 Route::post('/a/permissions/update/{userid}/{permissionid}', 'PermissionController@update');
 
+Route::get('/a/subjects', 'SubjectsController@index');
+Route::get('/a/subjects/create', 'SubjectsController@create');
+Route::get('/a/subjects/show', 'SubjectsController@show');
+Route::post('/a/subjects/store', 'SubjectsController@store');
+
+Route::get('/a/grades', 'GradeController@index');
+Route::get('/a/grades/create', 'GradeController@create');
+Route::get('/a/grades/show', 'GradeController@show');
+Route::post('/a/grades/store', 'GradeController@store');
+
 
