@@ -8,15 +8,19 @@
         </div>
     </div>
     
-    <form>
+    <form action="/a/subjects/store" enctype="multipart/form-data" method="post">
         @csrf
         <div class="form-group col-md-6">
             <label for="exampleInputEmail1">Name des Schulfachs</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Geben Sie das Fach ein">
+            <select id="subject" name="subject" class="form-control">
+                @foreach($subjects as $s)
+                    <option>{{$s}}</option>
+                @endforeach
+            </select>
         </div>
         <div class="form-group col-md-6">
-            <label for="teacher">Lehrer</label>
-            <select id="teacher" class="form-control">
+            <label for="teacher">Fachlehrer</label>
+            <select id="teacher" name="teacher" class="form-control">
                 @foreach($teacher as $t)
                     <option>{{$t}}</option>
                 @endforeach
@@ -24,20 +28,10 @@
         </div>
         <div class="form-group col-md-6 "> 
             <label for="teacher">Klassen</label>
-            <select id="choices-multiple-remove-button" placeholder="Select upto 5 tags" multiple>
-                <option value="HTML">HTML</option>
-                <option value="Jquery">Jquery</option>
-                <option value="CSS">CSS</option>
-                <option value="Bootstrap 3">Bootstrap 3</option>
-                <option value="Bootstrap 4">Bootstrap 4</option>
-                <option value="Java">Java</option>
-                <option value="Javascript">Javascript</option>
-                <option value="Angular">Angular</option>
-                <option value="Python">Python</option>
-                <option value="Hybris">Hybris</option>
-                <option value="SQL">SQL</option>
-                <option value="NOSQL">NOSQL</option>
-                <option value="NodeJS">NodeJS</option>
+            <select id="choices-multiple-remove-button" name='grades[]' placeholder="Klassen auswählen" multiple>
+            @foreach($grades as $g)
+                    <option>{{$g->name}}</option>
+                @endforeach
             </select> 
         </div>
         <button type="submit" class="btn btn-primary col-md-6">Sfgubmit</button>

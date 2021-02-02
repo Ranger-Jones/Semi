@@ -17,6 +17,7 @@ class CreateSubjectsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('teacher');
+            $table->string('classe');
             $table->timestamps();
         });
     }

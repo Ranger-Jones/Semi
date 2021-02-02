@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mark;
 use App\User;
+use App\Subject;
 use App\Notification;
 use Validator;
+use Illuminate\Support\Facades\Auth;
 
 class MarkController extends Controller
 {
@@ -21,8 +23,10 @@ class MarkController extends Controller
 
         $u_subjects = auth()->user()->subject;
 
+        $subjects = [];
+
         try {
-            $u_subjects = preg_split('~:~', $u_subjects);
+            $u_subjects = preg_split('~;~', $u_subjects);
             
             //removes unimportant records
             $last = array_key_last($u_subjects);
@@ -34,216 +38,15 @@ class MarkController extends Controller
         } catch (Exception $e) {
             dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
         }
-
         
-        //---Liste aller Unterrichtsfächer als je einzelnes array---//
-        $deutsch = 
-        $mathe = 
-        $info = 
-        $physik = 
-        $chemie = 
-        $biologie = 
-        $franz = 
-        $englisch = 
-        $astronomie = 
-        $sport = 
-        $kunst = 
-        $musik = 
-        $mnt = 
-        $nwut = 
-        $dg = 
-        $latein = 
-        $sozi =
-        $geschichte = 
-        $religion = 
-        $ethik = [];
+        $subjects = Subject::where('classe', Auth::user()->inclass)->get();
 
-        //---Liste aller Notendurschschnitte als je einzelne Variable---//
-        $deutschS = 
-        $matheS = 
-        $infoS = 
-        $physikS = 
-        $chemieS = 
-        $biologieS = 
-        $franzS = 
-        $englischS = 
-        $astronomieS = 
-        $sportS = 
-        $kunstS = 
-        $musikS = 
-        $mntS = 
-        $nwutS = 
-        $dgS = 
-        $lateinS = 
-        $soziS =
-        $geschichteS = 
-        $religionS = 
-        $ethikS = 0;
+
+        $marks = Auth::user()->marks()->get();
+
+        //dd($subjects);
         
-        foreach ($marks as $mark) {
-            if ($mark->subject == 'Deutsch' && in_array('deutsch', $u_subjects)) {
-                $deutsch[] = $mark;
-                $deutschS += $mark->mark;
-            }
-            else if($mark->subject == 'Mathematik' && in_array('mathematik', $u_subjects)){
-                $mathe[] = $mark;
-                $matheS += $mark->mark;
-            }
-            else if($mark->subject == 'Physik' && in_array('physik', $u_subjects)){
-                $physik[] = $mark;
-                $physikS += $mark->mark;
-            }
-            else if($mark->subject == 'Informatik' && in_array('informatik', $u_subjects)){
-                $info[] = $mark;
-                $infoS += $mark->mark;
-            }
-            else if($mark->subject == 'Ethik' && in_array('ethik', $u_subjects)){
-                $ethik[] = $mark;
-                $ethikS += $mark->mark;
-            }
-            else if($mark->subject == 'Religion' && in_array('religion', $u_subjects)){
-                $religion[] = $mark;
-                $religionS += $mark->mark;
-            }
-            else if($mark->subject == 'Biologie' && in_array('biologie', $u_subjects)){
-                $biologie[] = $mark;
-                $biologieS += $mark->mark;
-            }
-            else if($mark->subject == 'Naturwissenschaften & Technik' && in_array('naturwissenschaften & technik', $u_subjects)){
-                $nwut[] = $mark;
-                $nwutS += $mark->mark;
-            }
-            else if($mark->subject == 'Mensch, Natur, Technik' && in_array('mensch, natur, technik', $u_subjects)){
-                $mnt[] = $mark;
-                $mntS += $mark->mark;
-            }
-            else if($mark->subject == 'Französisch' && in_array('französisch', $u_subjects)){
-                $franz[] = $mark;
-                $franzS += $mark->mark;
-            }
-            else if($mark->subject == 'Latein' && in_array('latein', $u_subjects)){
-                $latein[] = $mark;
-                $lateinS += $mark->mark;
-            }
-            else if($mark->subject == 'Sport' && in_array('sport', $u_subjects)){
-                $sport[] = $mark;
-                $sportS += $mark->mark;
-            }
-            else if($mark->subject == 'Kunst' && in_array('kunst', $u_subjects)){
-                $kunst[] = $mark;
-                $kunstS += $mark->mark;
-            }
-            else if($mark->subject == 'Musik' && in_array('musik', $u_subjects)){
-                $musik[] = $mark;
-                $musikS += $mark->mark;
-            }
-            else if($mark->subject == 'Astronomie' && in_array('astronomie', $u_subjects)){
-                $astronomie[] = $mark;
-                $astronomieS += $mark->mark;
-            }
-            else if($mark->subject == 'Geschichte' && in_array('geschichte', $u_subjects)){
-                $geschichte[] = $mark;
-                $geschichteS += $mark->mark;
-            }
-            else if($mark->subject == 'Darstellen & Gestalten' && in_array('darstellen & gestalten', $u_subjects)){
-                $dg[] = $mark;
-                $dgS += $mark->mark;
-            }
-            else if($mark->subject == 'Sozialkunde' && in_array('sozialkunde', $u_subjects)){
-                $sozi[] = $mark;
-                $soziS += $mark->mark;
-            }
-        }
-
-        $zero = (object) [
-            'mark' => 0,
-            'description' => '',
-            'currentDate' => '',
-            'teacher' => ''
-        ];
-
-
-        //Berechnung des Notendurchschnittess
-        if(!$sozi == []){
-            $soziS /= count($sozi);
-        }
-
-        if(!$deutsch == []){
-            $deutschS /= count($deutsch);
-        }
-
-        if(!$mathe == []){
-            $matheS /= count($mathe);
-        }
-
-        if(!$religion == []){
-            $religionS /= count($religion);
-        }
-
-        if(!$ethik == []){
-            $ethikS /= count($ethik);
-        }
-
-        if(!$kunst == []){
-            $kunstS /= count($kunst);
-        }
-
-        if(!$chemie == []){
-            $chemieS /= count($chemie);
-        }
-
-        if(!$biologie == []){
-            $biologieS /= count($biologie);
-        }
-
-        if(!$physik == []){
-            $physikS /= count($physik);
-        }
-
-        if(!$info == []){
-            $infoS /= count($info);
-        }
-
-        if(!$franz == []){
-            $franzS /= count($franz);
-        }
-
-        if(!$englisch == []){
-            $englischS /= count($englisch);
-        }
-
-        if(!$dg == []){
-            $dgS /= count($dg);
-        }
-
-        if(!$astronomie == []){
-            $astronomieS /= count($astronomie);
-        }
-
-        if(!$mnt == []){
-            $mntS /= count($mnt);
-        }
-
-        if(!$musik == []){
-            $musikS /= count($musik);
-        }
-
-        if(!$nwut == []){
-            $nwutS /= count($nwut);
-        }
-
-        if(!$latein == []){
-            $lateinS /= count($latein);
-        }
-
-        if(!$sport == []){
-            $sportS /= count($sport);
-        }
-
-        if(!$geschichte == []){
-            $geschichteS /= count($geschichte);
-        }
-
+        
         
 
         //Check if user is a teacher
@@ -256,12 +59,7 @@ class MarkController extends Controller
             }
         }
 
-        return view("marks.index", compact('deutsch', 'mathe', 'physik', 'info',
-         'ethik', 'religion', 'geschichte', 'sozi', 'latein', 'dg', 'nwut', 'mnt', 
-         'musik', 'kunst', 'sport', 'astronomie', 'englisch', 'franz', 'biologie', 'chemie', 
-         'deutschS', 'matheS', 'physikS', 'infoS',
-         'ethikS', 'religionS', 'geschichteS', 'soziS', 'lateinS', 'dgS', 'nwutS', 'mntS', 
-         'musikS', 'kunstS', 'sportS', 'astronomieS', 'englischS', 'franzS', 'biologieS', 'chemieS', 'isTeacher'));
+        return view("marks.index", compact('isTeacher', 'subjects', 'marks'));
     }
 
     //redirect with pregeneradet form for teacher to beeing faster in their working flow

@@ -7,7 +7,7 @@
             <h1>Klassen hinzufügen</h1>
         </div>
     </div>
-    <form action="/p" enctype="multipart/form-data" id="polls" method="post">
+    <form action="/a/grades/store" enctype="multipart/form-data" id="polls" method="post">
         @csrf
         <div class="form-group col-md-6">
             <label for="teacher">Lehrer</label>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group col-md-6 "> 
             <label for="choices-multiple-remove-button">Schüler</label>
-            <select id="choices-multiple-remove-button" name="students" placeholder="Wählen Sie die Schüler der Klasse aus!" multiple>
+            <select id="choices-multiple-remove-button" name="students[]" placeholder="Wählen Sie die Schüler der Klasse aus!" multiple>
                 @foreach ($students as $s)
                     <option value="{{$s}}">{{$s}}</option>
                 @endforeach

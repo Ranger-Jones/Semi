@@ -104,4 +104,16 @@ body {
     border-radius: 50%;
   }
 
+  .clickable-row{
+    cursor: pointer;
+}
+
+.hovertable{
+  transition: 1s;
+}
+
+.hovertable:hover{
+  background-color: rgb(241, 241, 241);
+}
+
   

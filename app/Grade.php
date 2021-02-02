@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Grade extends Model
 {
+    protected $fillable = [
+        'name', 'teacher'
+    ];
+
     public function user()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class);
     }
 }

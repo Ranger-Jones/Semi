@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Mark;
+use App\Subject;
 use Illuminate\Support\Facades\Cache;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Auth;
 
 class ProfilesController extends Controller
 {
@@ -36,8 +39,28 @@ class ProfilesController extends Controller
              function () use ($user) {
                 return $user->following->count();
             });
+        $notifications = Auth::user()->notifications()->orderBy('created_at', 'desc')->get();
+        $marks = Auth::user()->marks()->latest()->take(5)->get();
 
-        return view('profiles.index', compact('user', 'follows', 'postsCount', 'followersCount', 'followingsCount'));
+        $u_subjects = Auth::user()->subject;
+        
+        try {
+            $u_subjects = preg_split('~;~', $u_subjects);
+            
+            //removes unimportant records
+            $last = array_key_last($u_subjects);
+            unset($u_subjects[$last]);
+        } catch (Exception $e) {
+            dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
+        }
+
+        $subjects = Subject::select('name')
+            ->whereIn('id', $u_subjects)
+            ->get();
+
+        //dd($subjects);
+
+        return view('profiles.index', compact('marks', 'notifications', 'subjects', 'user', 'follows', 'postsCount', 'followersCount', 'followingsCount'));
     }
 
     public function edit(User $user)

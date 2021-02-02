@@ -41,6 +41,8 @@ Route::get('/h/create', 'HomeworkController@create');
 Route::get('/h/{homework}', 'HomeworkController@show');
 Route::post('/h/store', 'HomeworkController@store');
 
+Route::post('/h/check', 'HomeworkCheckController@store');
+
 Route::get('/me/update', 'UserUpdateController@edit');
 Route::patch('/me/{user}', 'UserUpdateController@update');
 
@@ -77,10 +79,14 @@ Route::get('/a/subjects', 'SubjectsController@index');
 Route::get('/a/subjects/create', 'SubjectsController@create');
 Route::get('/a/subjects/show', 'SubjectsController@show');
 Route::post('/a/subjects/store', 'SubjectsController@store');
+Route::get('/a/subjects/{subject_id}/destroy', 'SubjectsController@destroy');
 
 Route::get('/a/grades', 'GradeController@index');
 Route::get('/a/grades/create', 'GradeController@create');
-Route::get('/a/grades/show', 'GradeController@show');
+Route::get('/a/grades/{grade_id}', 'GradeController@show');
+Route::get('/a/grades/{grade_id}/edit', 'GradeController@edit');
 Route::post('/a/grades/store', 'GradeController@store');
+Route::get('/a/grades/{grade_id}/delete', 'GradeController@delete');
+Route::post('/a/grades/{grade_id}/update', 'GradeController@update');
 
 

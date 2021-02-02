@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Auth;
 use DB;
 use App\User;
 use App\Homework;
+use App\Subject;
+use App\Grade;
 use Illuminate\Http\Request;
 
 class HomeworkController extends Controller
@@ -14,38 +16,71 @@ class HomeworkController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(User $user, Homework $homework)
+    public function index(Homework $homework)
     {
         $user = auth()->user();
-
+        $u_subjects = $user->subject;
         $homeworks = Homework::all();
-        $subjects = User::select('subject')->where('id', $user->id)->get();
+        $subjects = [];
+        $grades = [];
 
-        try {
-            $subjects = preg_split('~:~', $subjects);
+        $permissions = $user->permissions()->get();
+        $isTeacher = false;
 
-            //removes unimportant records
-            unset($subjects[0]);
-            $last = array_key_last($subjects);
-            unset($subjects[$last]);
-
-            if( isset($subjects[1])){
-                $subjects[1] = str_replace('"', '', $subjects[1]);
+        foreach($permissions as $p){
+            if($p->permission == "Lehrer"){
+                $isTeacher = true;
             }
-            else{
-                return redirect('/me/update/');
-            }
-            
-        } catch (Exception $e) {
-            dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
         }
 
-        return view('homework.index', compact('user', 'homeworks', 'subjects'));
+        if(!$isTeacher){
+            try {
+                $u_subjects = preg_split('~;~', $u_subjects);
+                
+                //removes unimportant records
+                $last = array_key_last($u_subjects);
+                unset($u_subjects[$last]);
+                
+                
+                
+                
+            } catch (Exception $e) {
+                dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
+            }
+
+            $subjects = Subject::select('name')
+                ->whereIn('id', $u_subjects)
+                ->get();
+
+            $homeworks = Homework::where('inclass', $user->inclass)->get();
+
+        }
+        else{
+            $subjects = Subject::where('teacher', $user->name)->get();
+            $homeworks = Homework::where('teacher', $user->name)->get();
+            $grades = Grade::where('teacher', $user->name)->get();
+        }
+
+
+        return view('homework.index', compact('user', 'homeworks', 'subjects', 'isTeacher', 'grades'));
     }
 
     public function create()
     {
-        return view('homework.create');
+        $permissions = Auth::user()->permissions()->get();
+        $isTeacher = false;
+
+        foreach($permissions as $p){
+            if($p->permission == "Lehrer"){
+                $isTeacher = true;
+            }
+        }
+
+        $subjects = Subject::where('teacher', $user->name)->get();
+        $homeworks = Homework::where('teacher', $user->name)->get();
+        $grades = Grade::where('teacher', $user->name)->get();
+        
+        return view('homework.create', compact('isTeacher'));
     }
 
     public function store(Homework $homework)

@@ -13,9 +13,10 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Name des Fachs</th>
+                        <th scope="col">Fachlehrer</th>
+                        <th scope="col">Klasse</th>
+                        <th scope="col">Anzahl der Schüler</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -23,8 +24,12 @@
                     <tr>
                         <th scope="row">{{$s->id}}</th>
                         <td>{{$s->name}}</td>
-                        <td>{{$s->teachers}}</td>
-                        <td>{{$s->classes}}</td>
+                        <td>{{$s->teacher}}</td>
+                        <td>{{$s->classe}}</td>
+                        <td>
+                            <a href="/a/subjects/{{$s->id}}/destroy" class="btn btn-danger" role="button"><i class="fa fa-trash"></i></a>
+                            <a href="/a/subjects/{{$s->id}}/edit" class="btn btn-success" role="button"><i class="fa fa-edit"></i></a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

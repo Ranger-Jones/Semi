@@ -94,4 +94,8 @@ class User extends Authenticatable
     public function grade(){
         return $this->belongsTo(Grade::class);
     }
+
+    public function checkedHomework(){
+        return $this->hasMany('App\HomeworkCheck');
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Subject;
 use App\User;
+use App\Grade;
 use Illuminate\Http\Request;
 
 class SubjectsController extends Controller
@@ -51,6 +52,7 @@ class SubjectsController extends Controller
 
         $users = User::all();
         $teacher = [];
+        $grades = Grade::all();
         $userpermissions = [];
 
        
@@ -63,11 +65,10 @@ class SubjectsController extends Controller
             }
         }
      
-
         
         
         
-        return view("admin.subject.create", compact("subjects", "teacher"));
+        return view("admin.subject.create", compact("subjects", "teacher", 'grades'));
     }
 
     /**
@@ -78,7 +79,30 @@ class SubjectsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'subject' => 'required',
+            'teacher' => 'required',
+            'grades.*' => 'required'
+        ]);
+
+        $grades = $request->grades;
+
+
+        if($grades != []){
+            foreach($grades as $g){
+                $datadb = array(
+                    'name' => $data['subject'],
+                    'teacher' => $data['teacher'],
+                    'classe' => $g
+                );
+
+                Subject::create($datadb);
+            }
+        }
+
+        
+
+        return redirect('/a/subjects');
     }
 
     /**
@@ -121,8 +145,9 @@ class SubjectsController extends Controller
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Subject $subject)
+    public function destroy(Subject $subject_id)
     {
-        //
+        Subject::destroy($subject_id->id);
+        return redirect('/a/subjects');
     }
 }
