@@ -58,7 +58,7 @@ class HomeworkController extends Controller
         else{
             $subjects = Subject::where('teacher', $user->name)->get();
             $homeworks = Homework::where('teacher', $user->name)->get();
-            $grades = Grade::where('teacher', $user->name)->get();
+            $grades = Grade::where('teacher', $user->name)->first()->get();
         }
 
 
@@ -69,6 +69,7 @@ class HomeworkController extends Controller
     {
         $permissions = Auth::user()->permissions()->get();
         $isTeacher = false;
+        $user = Auth::user();
 
         foreach($permissions as $p){
             if($p->permission == "Lehrer"){
@@ -76,11 +77,15 @@ class HomeworkController extends Controller
             }
         }
 
+        if(!$isTeacher){
+            return redirect('/h');
+        }
+
         $subjects = Subject::where('teacher', $user->name)->get();
         $homeworks = Homework::where('teacher', $user->name)->get();
         $grades = Grade::where('teacher', $user->name)->get();
         
-        return view('homework.create', compact('isTeacher'));
+        return view('homework.create', compact('isTeacher', 'subjects', 'homeworks', 'grades', 'user'));
     }
 
     public function store(Homework $homework)
@@ -88,7 +93,6 @@ class HomeworkController extends Controller
         $data = request()->validate([
             'caption' => ['required', 'max:55'],
             'task' => ['required', 'max:55000'],
-            'inclass' => ['required'],
             'subject' => ['required'],
             'image' => ['image','mimes:jpeg,png,jpg,gif,svg','max:16000'],
             'date' => ['max:55']
@@ -107,29 +111,35 @@ class HomeworkController extends Controller
             $submissionDate = $data['date'];
         }
 
+        $raw_data_subject = preg_split('~ - ~', $data['subject']);
+
+        $inclass = $raw_data_subject[1];
+        $subject = $raw_data_subject[0];;
+
         $currentDate = date('m/d/Y h:i:s a', time());
+        
 
         $datadb=array(
             'caption'=>$data['caption'],
             'task'=>$data['task'],
-            'inclass'=>$data['inclass'],
-            'subject'=>$data['subject'],
+            'inclass'=> $inclass,
+            'subject'=> $subject,
             'images'=>$imagePath,
-            'teacher'=>auth()->user()->username,
+            'teacher'=>auth()->user()->name,
             'submissionDate'=>$submissionDate,
             'currentDate'=> $currentDate
         );
 
         $users = User::whereColumn([
-                ['subject', '=', $data['subject']],
-                ['inclass', '=', $data['inclass']]
+                ['subject', '=', $inclass],
+                ['inclass', '=', $subject]
             ])->get();
 
         foreach ($users as $user) {
             $notification_data = array(
                 'sender' => $data['teacher'],
                 'receiver' => $user->username,
-                'content' => 'Neue Hausaufgabe in ' . $data['subject'],
+                'content' => 'Neue Hausaufgabe in ' . $subject,
                 'type' => 'Hausaufgabe',
                 'checked' => 'unchecked'
             );
