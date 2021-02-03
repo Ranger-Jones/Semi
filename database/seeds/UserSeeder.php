@@ -118,7 +118,9 @@ class UserSeeder extends Seeder
         ];
         User::insert($cooluserdataset);*/
         $users = factory(App\User::class, 25)
-           ->create();
+           ->create()->each(function($u){
+               $u->permissions()->save(factory(App\Permission::class)->make());
+           });
 
         
         /*

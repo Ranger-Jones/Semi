@@ -17,7 +17,7 @@
                                 <p class="mb-1"><i>Schüler</i></p>
                                 <p class="mb-1">{{auth()->user()->inclass}}</p>
                                 <p>{{auth()->user()->email}}</p>
-                                <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3"href="/profile/{{auth()->user()->id}}/edit"><i class="icofont-ui-edit"></i> EDIT</a></p>
+                                <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3"href="/me/update"><i class="icofont-ui-edit"></i> EDIT</a></p>
                             </div>
                         </div>
                         @else
@@ -30,7 +30,7 @@
                                 <p class="mb-1">Klassenlehrer/in der {{$g->name}}</p>
                                 @endforeach
                                 <p>{{auth()->user()->email}}</p>
-                                <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3"href="/profile/{{auth()->user()->id}}/edit"><i class="icofont-ui-edit"></i> EDIT</a></p>
+                                <p class="mb-0 text-black font-weight-bold"><a class="text-primary mr-3"href="/me/update"><i class="icofont-ui-edit"></i> EDIT</a></p>
                             </div>
                         </div>
                         @endif
@@ -42,7 +42,7 @@
                         <a class="nav-link" id="offers-tab" data-toggle="tab" href="#offers" role="tab" aria-controls="offers" aria-selected="false"><i class="icofont-sale-discount"></i>Alle Hausaufgaben</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="unchecked-tab" data-toggle="tab" href="#unchecked" role="tab" aria-controls="unchecked" aria-selected="false"><i class="icofont-sale-discount"></i>Ungelesen</a>
+                        <a class="nav-link" id="unchecked-tab" data-toggle="tab" href="#unchecked" role="tab" aria-controls="unchecked" aria-selected="false"><i class="icofont-sale-discount"></i>Unfertige Aufgaben</a>
                     </li>
                     @foreach($subjects as $s)
                     <li class="nav-item">
@@ -75,7 +75,20 @@
                                 @foreach($homeworks as $h)
                                     @if($s->name == $h->subject)
                                         <div class="col-md-6 mb-3">
-                                            <div class="card offer-card shadow-sm">
+                                            <div class="card offer-card shadow-sm 
+                                                        @php
+                                                            $unchecked = false;
+                                                            
+                                                        @endphp
+                                                @foreach($uncheckedHomeworkId as $chID)
+                                                    @if($chID['id'] == $h->id)
+                                                        bg-success
+                                                        @php
+                                                            $unchecked = true;
+                                                        @endphp
+                                                    @endif
+                                                    
+                                                @endforeach">
                                                 <div class="card-body">
                                                     @php
                                                         $teacher = App\User::where('name', $h->teacher)->first();
@@ -83,9 +96,15 @@
                                                         if(strlen($shortInfo) == 200){
                                                             $shortInfo = $shortInfo."...";
                                                         }
-                                                        
                                                     @endphp
-                                                    <h5 class="card-title"><a href="/profile/{{$teacher->id}}"><img src="{{$teacher->profile->profileimage()}}"></a>{{$h->teacher}}</h5>
+                                                    <div class="d-flex justify-content-between">
+                                                        <h5 class="card-title"><a href="/profile/{{$teacher->id}}"><img src="{{$teacher->profile->profileimage()}}"></a>{{$h->teacher}}</h5>
+                                                        
+                                                        <form class="form-inline" action="/hcheck/store/{{$h->id}}" method="post">
+                                                        @csrf
+                                                            <i class="fa fa-check"></i><input class="btn btn-link" type="submit" value="Fertig">
+                                                        </form>
+                                                    </div>
                                                     <h6 class="card-subtitle mb-2 text-block"><strong>{{$h->caption}}</strong></h6>
                                                     <p class="card-text">{{$shortInfo}}</p>
                                                     <a id="{{$h->subject}}-tab" data-toggle="tab" href="#{{$h->subject}}" role="tab" aria-controls="{{$h->subject}}" aria-selected="false">{{$h->subject}}</a>
@@ -103,7 +122,7 @@
                         <h4 class="font-weight-bold mt-0 mb-4">Ungelesene Hausaufgaben</h4>
                         <div class="row mb-4 pb-2">
                             @foreach($subjects as $s)
-                                @foreach($homeworks as $h)
+                                @foreach($uncheckedHomework as $h)
                                     @if($s->name == $h->subject)
                                         <div class="col-md-6 mb-3">
                                             <div class="card offer-card shadow-sm">
@@ -116,8 +135,10 @@
                                                         }
                                                         
                                                     @endphp
-                                                    <h5 class="card-title"><a href="/profile/{{$teacher->id}}"><img src="{{$teacher->profile->profileimage()}}"></a>{{$h->teacher}}</h5>
-                                                    <h6 class="card-subtitle mb-2 text-block"><strong>{{$h->caption}}</strong></h6>
+                                                    <div class="d-flex justify-content-between">
+                                                        <h5 class="card-title"><a href="/profile/{{$teacher->id}}"><img src="{{$teacher->profile->profileimage()}}"></a>{{$h->teacher}}</h5>
+                                                        <a href="/h/{{$h->id}}" class="card-link text-dark" title="Klicke hier, um die Aufgabe abzuhacken"><i class="fa fa-check"></i>Fertig</a>
+                                                    </div>                                                    <h6 class="card-subtitle mb-2 text-block"><strong>{{$h->caption}}</strong></h6>
                                                     <p class="card-text">{{$shortInfo}}</p>
                                                     <a id="{{$h->subject}}-tab" data-toggle="tab" href="#{{$h->subject}}" role="tab" aria-controls="{{$h->subject}}" aria-selected="false">{{$h->subject}}</a>
                                                     <a href="/h/{{$h->id}}" class="card-link">Mehr Informationen</a>
@@ -148,7 +169,10 @@
                                                         }
                                                         
                                                     @endphp
-                                                    <h5 class="card-title"><a href="/profile/{{$teacher->id}}"><img src="{{$teacher->profile->profileImage()}}"></a>{{$h->teacher}}</h5>
+                                                    <div class="d-flex justify-content-between">
+                                                        <h5 class="card-title"><a href="/profile/{{$teacher->id}}"><img src="{{$teacher->profile->profileimage()}}"></a>{{$h->teacher}}</h5>
+                                                        <a href="/hcheck/store/{{$h->id}}" class="card-link text-dark" title="Klicke hier, um die Aufgabe abzuhacken"><i class="fa fa-check"></i>Fertig</a>
+                                                    </div>          
                                                     <h6 class="card-subtitle mb-2 text-block"><strong>{{$h->caption}}</strong></h6>
                                                     <p class="card-text">{{$shortInfo}}</p>
                                                     <a id="{{$h->subject}}-tab" data-toggle="tab" href="#{{$h->subject}}" role="tab" aria-controls="{{$h->subject}}" aria-selected="false">{{$h->subject}}</a>

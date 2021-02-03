@@ -20,7 +20,7 @@ Auth::routes();
 
 Route::post('/follow/{user}', 'FollowsController@store');
 
-Route::get('/', 'PostsController@index');
+Route::get('/posts', 'PostsController@index');
 Route::get('/p/create', 'PostsController@create');
 Route::post('/p', 'PostsController@store')->name('post.store');
 Route::get('/p/{post}', 'PostsController@show');
@@ -41,6 +41,8 @@ Route::get('/h/create', 'HomeworkController@create');
 Route::get('/h/{homework}', 'HomeworkController@show');
 Route::post('/h/store', 'HomeworkController@store');
 
+Route::post('/hcheck/store/{homework}', 'HomeworkCheckController@store');
+
 Route::post('/h/check', 'HomeworkCheckController@store');
 
 Route::get('/me/update', 'UserUpdateController@edit');
@@ -52,10 +54,10 @@ Route::get('/poll/{code}', 'PollController@index');
 Route::post('poll/insert/{code}', 'PollController@insert')->name("poll.insert");
 Route::post('/poll/vote/{postid}', 'VotePollController@store');
 
-Route::get('/schulleben', 'SchoollifeController@index');
+Route::get('/', 'SchoollifeController@index');
 
 Route::get('/schulnews', 'SchoolnewsController@index');
-
+ 
 Route::get('/schulnews', 'SchoolnewsController@index');
 Route::get('/schulnews/create', 'SchoolnewsController@create');
 Route::get('/schulnews/{newsid}', 'SchoolnewsController@show');

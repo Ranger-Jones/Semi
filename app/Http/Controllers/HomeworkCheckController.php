@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\HomeworkCheck;
+use App\Homework;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,18 +35,15 @@ class HomeworkCheckController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Homework $homework)
     {
-        $data = request()->validate([
-            'homework' => 'required'
-        ]);
 
         $datadb = array(
-            'homework_id' => $data['homework']
+            'homework_id' => $homework->id
         );
         Auth::user()->checkedHomework()->create($datadb);
 
-        return redirect('/h');
+        return redirect('/h/'.$homework->id);
     }
 
     /**

@@ -26,6 +26,9 @@ class HomeworkController extends Controller
 
         $permissions = $user->permissions()->get();
         $isTeacher = false;
+        $checkedHomework = Auth::user()->checkedHomework()->select('homework_id')->get()->toArray();
+        $uncheckedHomework = [];
+        $uncheckedHomeworkId = [];
 
         foreach($permissions as $p){
             if($p->permission == "Lehrer"){
@@ -54,15 +57,37 @@ class HomeworkController extends Controller
 
             $homeworks = Homework::where('inclass', $user->inclass)->get();
 
+            $uncheckedHomework = Homework::where('inclass', $user->inclass)
+                ->whereNotIn('id', $checkedHomework)
+                ->get();
+            
+            $uncheckedHomeworkId = Homework::select('id')
+            ->where('inclass', $user->inclass)
+            ->whereNotIn('id', $checkedHomework)
+            ->get()
+            ->toArray();
+            /*
+            foreach($homeworks as $h){
+                foreach($checkedHomework as $ch){
+                    foreach($subjects as $s){
+                        if($h->id != $ch->homework_id && $s->name == $h->subject){
+                            $uncheckedHomework[] = $h;
+                        }
+                    }
+                }
+            }
+
+            */
+
         }
         else{
             $subjects = Subject::where('teacher', $user->name)->get();
             $homeworks = Homework::where('teacher', $user->name)->get();
-            $grades = Grade::where('teacher', $user->name)->first()->get();
+            $grades = Grade::where('teacher', $user->name)->get();
         }
 
 
-        return view('homework.index', compact('user', 'homeworks', 'subjects', 'isTeacher', 'grades'));
+        return view('homework.index', compact('user', 'uncheckedHomeworkId', 'homeworks', 'subjects', 'isTeacher', 'grades', 'uncheckedHomework'));
     }
 
     public function create()

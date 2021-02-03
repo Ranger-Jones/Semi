@@ -10,6 +10,6 @@ $factory->define(Profile::class, function (Faker $faker) {
     return [
         'description' => $faker->paragraph,
         'url' => $faker->url,
-        'image' => $faker->imageUrl($width = 1000, $height = 1000)
+        'image' => $faker->image(public_path("storage/uploads",1000,1000, null, false))
     ];
 });
