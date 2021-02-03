@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -10,8 +11,8 @@
     <title>{{ config('app.name', 'vB Odysee') }}</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <!-- Scripts -->
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link 
   href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
@@ -19,6 +20,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,6 +28,9 @@
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/schoollife.css') }}" rel="stylesheet">
     <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/homework.css') }}" rel="stylesheet">
+
     <link href="{{ asset('css/schoolnews.css') }}" rel="stylesheet">
     <link href="{{ asset('css/startpage.css') }}" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -58,6 +63,9 @@
                             <li class="nav-item">
                                 <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">Schulpage</a>
+                            </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -65,18 +73,18 @@
                             @endif
                         @else
                             <li class="nav-item ">
-                                    <a class="nav-textt nav-link-text nav-link {{ (request()->segment(1) == 'schulleben') ? 'active' : '' }}" href="/schulleben">
-                                        Schulleben
+                                    <a class="nav-textt nav-link-text nav-link {{ (request()->segment(1) == 'h') ? 'active' : '' }}" href="/h">
+                                        Hausaufgaben
                                     </a>
                             </li>
                             <li class="nav-item pl-3">
-                                    <a class="nav-textt nav-link nav-link-text {{ (request()->segment(1) == 'soziales') ? 'active' : '' }}" href="/h">
-                                        Soziales
+                                    <a class="nav-textt nav-link nav-link-text {{ (request()->segment(1) == 'm') ? 'active' : '' }}" href="/m">
+                                        Noten
                                     </a>
                             </li>
                             <li class="nav-item pl-3">
-                                    <a class="nav-textt nav-link nav-link-text {{ (request()->segment(1) == 'services') ? 'active' : '' }}" href="/m">
-                                        Services
+                                    <a class="nav-textt nav-link nav-link-text {{ (request()->segment(1) == 't') ? 'active' : '' }}" href="/t">
+                                        Stundenplan
                                     </a>
                             </li>
                         @endguest
@@ -143,6 +151,32 @@
                                 </div>
                             </li>
                     </ul>
+                    
+                    <?php
+                
+                    $uPermissions = Auth::user()->permissions()->get();
+                    $isTeacher = false;
+                    
+
+
+                    if(!Auth::user()->permissions()->exists()){
+                
+                        Auth::user()->permissions()->create([
+                            'permission' => 'Schüler'
+                        ]);
+                    }
+                    
+                    foreach ($uPermissions as $p) {
+                        if($p->permission == "Lehrer"){
+                            $isTeacher = true;
+                        }
+                    }
+                    
+                    ?>
+                    @if(Auth::user()->subject == null && Auth::user()->subject == 'unset' && $isTeacher != true)
+                        <p>Software lädt</p>
+                        <script>window.location = "/me/update";</script>
+                    @endif
                     @endauth
                 </div>
             </div>
@@ -150,6 +184,8 @@
 
 
         <main class="py-4">
+
+            
             @yield('content')
         </main>
     </div>

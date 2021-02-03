@@ -86,4 +86,16 @@ class User extends Authenticatable
     public function marks(){
         return $this->belongsToMany(Mark::class);
     }
+
+    public function subjects(){
+        return $this->belongsToMany(Subject::class);
+    }
+
+    public function grade(){
+        return $this->belongsTo(Grade::class);
+    }
+
+    public function checkedHomework(){
+        return $this->hasMany('App\HomeworkCheck');
+    }
 }
