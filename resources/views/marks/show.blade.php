@@ -30,7 +30,7 @@
                     </form>
                 </div>
             </div>
-            // lieber Joshua, recherchieren und studieren geht über rangers und bruders css künste, haben sie vielen Dank
+            
             
         
         </div>
