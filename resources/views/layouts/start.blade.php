@@ -31,6 +31,7 @@
     <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/buttons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/tables.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/example-table.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/schoolnews.css') }}" rel="stylesheet">
     <link href="{{ asset('css/startpage.css') }}" rel="stylesheet">

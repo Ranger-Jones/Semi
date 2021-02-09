@@ -16,10 +16,7 @@
     transform: scale(1.1);
 }
 
-body{ 
-    margin-top:20px;
-    background-color: #eee;
-}
+
 
 a:hover{
  text-decoration:none;    

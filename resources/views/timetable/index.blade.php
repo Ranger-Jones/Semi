@@ -15,15 +15,18 @@
             </tr>
           </thead>
           <tbody>
-            @foreach ($result as $r)
+
             <tr>
                 <!-- Das ist dein Ding- keine Ahnung wie das funktioniert, sry xD -->
-              <td>1.</td>
-              <td>{{$r->subject}}</td>
-              <td>{{$r->room}}</td>
-              <td>{{$r->teacher}}</td>
+                <!-- Du Kek ~Jones -->
+                @foreach($result as $key => $value)
+                  <td>{{$value}}</td>
+                  @if($key == 3 || $key == 7 || $key == 12)
+                  </tr><tr>
+                  @endif
+                @endforeach
             </tr>
-            @endforeach
+           
             
           </tbody>
         </table>

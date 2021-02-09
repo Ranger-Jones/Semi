@@ -79,6 +79,8 @@ class HomeworkController extends Controller
 
             */
 
+            $checkedHomework = Auth::user()->checkedHomework()->get()->toArray();
+
         }
         else{
             $subjects = Subject::where('teacher', $user->name)->get();
@@ -87,7 +89,7 @@ class HomeworkController extends Controller
         }
 
 
-        return view('homework.index', compact('user', 'uncheckedHomeworkId', 'homeworks', 'subjects', 'isTeacher', 'grades', 'uncheckedHomework'));
+        return view('homework.index', compact('user','checkedHomework', 'uncheckedHomeworkId', 'homeworks', 'subjects', 'isTeacher', 'grades', 'uncheckedHomework'));
     }
 
     public function create()

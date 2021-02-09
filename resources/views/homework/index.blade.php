@@ -44,6 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link" id="unchecked-tab" data-toggle="tab" href="#unchecked" role="tab" aria-controls="unchecked" aria-selected="false"><i class="icofont-sale-discount"></i>Unfertige Aufgaben</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="chronic-tab" data-toggle="tab" href="#chronic" role="tab" aria-controls="chronic" aria-selected="false"><i class="icofont-sale-discount"></i>Hausaufgabenchronik</a>
+                    </li>
                     @foreach($subjects as $s)
                     <li class="nav-item">
                         <a class="nav-link" id="{{$s->name}}-tab" data-toggle="tab" href="#{{$s->name}}" role="tab" aria-controls="{{$s->name}}" aria-selected="false"><i class="icofont-sale-discount"></i> {{$s->name}}</a>
@@ -144,6 +147,48 @@
                                                     <a href="/h/{{$h->id}}" class="card-link">Mehr Informationen</a>
                                                     
                                                 </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                @endforeach
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="tab-pane  fade show" id="chronic" role="tabpanel" aria-labelledby="chronic-tab">
+                        <h4 class="font-weight-bold mt-0 mb-4">Hausaufgaben chronik</h4>
+                            <div class="row mb-4 pb-2">
+                                @foreach($homeworks as $h)
+                                    @foreach($checkedHomework as $ch)
+                                        @if($h->id == $ch['homework_id'])                 
+                                        <div class="col-md-6 mb-3">
+                                            <div class="card offer-card shadow-sm">
+                                                <div class="card-body">
+                                                    @php
+                                                        $teacher = App\User::where('name', $h->teacher)->first();
+                                                        $shortInfo = substr($h->task, 0, 200);
+                                                        if(strlen($shortInfo) == 200){
+                                                            $shortInfo = $shortInfo."...";
+                                                        }
+                                                    @endphp
+                                                    <div class="d-flex justify-content-between">
+                                                        <h5 class="card-title"><a href="/profile/{{$teacher->id}}"><img src="{{$teacher->profile->profileimage()}}"></a>{{$h->teacher}}</h5>
+                                                        
+                                                        <form class="form-inline" action="/hcheck/store/{{$h->id}}" method="post">
+                                                        @csrf
+                                                            <i class="fa fa-check"></i><input class="btn btn-link" type="submit" value="Fertig">
+                                                        </form>
+                                                    </div>
+                                                    <h6 class="card-subtitle mb-2 text-block"><strong>{{$h->caption}}</strong></h6>
+                                                    <p class="card-text">{{$shortInfo}}</p>
+                                                    <a id="{{$h->subject}}-tab" data-toggle="tab" href="#{{$h->subject}}" role="tab" aria-controls="{{$h->subject}}" aria-selected="false">{{$h->subject}}</a>
+                                                    <a href="/h/{{$h->id}}" class="card-link">Mehr Informationen</a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="d-flex justify-content-center mt-5">
+                                                    <p>Die Aufgabe wurde am: <strong>{{$ch['created_at']}}</strong> von dir abgehackt.</p>
                                             </div>
                                         </div>
                                     @endif

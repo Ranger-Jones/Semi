@@ -53,25 +53,17 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Username</th>
-                        <th scope="col">Klasse</th>
+                        <th scope="col">Rolle</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($unset_user as $uu)
                         <tr class='hovertable'>
-                            <th scope="row">{{$uu->id}}</th>
-                            <td>{{$uu->name}}</td>
-                            <td>{{$uu->username}}</td>
-                            <td>{{$uu->inclass}}</td>
+                            <th scope="row">{{$uu['id']}}</th>
+                            <td>{{$uu['name']}}</td>
+                            <td>{{$uu['username']}}</td>
+                            <td>{{$uu['role']}}</td>
 </tr>
-                    @endforeach
-                    @foreach($unset_user2 as $uu)
-                        <tr class='hovertable'>
-                            <th scope="row">{{$uu->id}}</th>
-                            <td>{{$uu->name}}</td>
-                            <td>{{$uu->username}}</td>
-                            <td>{{$uu->inclass}}</td>
-                        </tr>
                     @endforeach
                 </tbody>
             </table>

@@ -41,6 +41,14 @@ Route::get('/h/create', 'HomeworkController@create');
 Route::get('/h/{homework}', 'HomeworkController@show');
 Route::post('/h/store', 'HomeworkController@store');
 
+Route::get('/t', 'TimetableController@index');
+Route::get('/t/create', 'TimetableController@create');
+Route::get('/t/create/{grade}', 'TimetableController@create');
+Route::get('/t/test/example', 'TimetableController@example');
+Route::get('/t/{time}', 'TimetableController@show');
+Route::post('/t/store', 'TimetableController@store');
+Route::post('/t/fetchclass', 'TimetableController@fetch');
+
 Route::post('/hcheck/store/{homework}', 'HomeworkCheckController@store');
 
 Route::post('/h/check', 'HomeworkCheckController@store');
@@ -76,6 +84,7 @@ Route::get('/a/permissions/create', 'PermissionController@create');
 Route::post('/a/permissions/show', 'PermissionController@show');
 Route::post('/a/permissions/store', 'PermissionController@store');
 Route::post('/a/permissions/update/{userid}/{permissionid}', 'PermissionController@update');
+Route::post('/a/teacher', 'PermissionController@teacher');
 
 Route::get('/a/subjects', 'SubjectsController@index');
 Route::get('/a/subjects/create', 'SubjectsController@create');
