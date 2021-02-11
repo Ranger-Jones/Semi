@@ -25,15 +25,14 @@ class HomeworkController extends Controller
         $grades = [];
 
         $permissions = $user->permissions()->get();
-        $isTeacher = false;
+        $role = auth()->user()->role;
         $checkedHomework = Auth::user()->checkedHomework()->select('homework_id')->get()->toArray();
         $uncheckedHomework = [];
         $uncheckedHomeworkId = [];
 
-        foreach($permissions as $p){
-            if($p->permission == "Lehrer"){
-                $isTeacher = true;
-            }
+        $isTeacher = false;
+        if($role == 'Lehrer'){
+            $isTeacher = true;
         }
 
         if(!$isTeacher){
@@ -95,13 +94,12 @@ class HomeworkController extends Controller
     public function create()
     {
         $permissions = Auth::user()->permissions()->get();
+        $role = auth()->user()->role;
         $isTeacher = false;
         $user = Auth::user();
 
-        foreach($permissions as $p){
-            if($p->permission == "Lehrer"){
-                $isTeacher = true;
-            }
+        if($role == 'Lehrer'){
+            $isTeacher = true;
         }
 
         if(!$isTeacher){

@@ -16,9 +16,8 @@
             </div>
         </div>
     </div>
-</div> 
-
-<div class="col-sm-4">
+    <div class="row">
+    <div class="col-sm-4">
     <div class="widget single-news">
         <div class="image">
             <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
@@ -46,20 +45,24 @@
       </div>
     </div>
     
-    <div class="col-sm-4">
-      <div class="widget single-news">
-        <div class="image">
-          <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
-          <span class="gradient"></span>
+      <div class="col-sm-4">
+        <div class="widget single-news">
+          <div class="image">
+            <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
+            <span class="gradient"></span>
+          </div>
+          <div class="details">
+            <div class="category"><a href="">News</a></div>
+            <h3><a href="">Wird alles auf Weihnachten verschoben?!</a></h3>
+            <time>Yesterday, 04 February</time>
+          </div>
         </div>
-        <div class="details">
-          <div class="category"><a href="">News</a></div>
-          <h3><a href="">Wird alles auf Weihnachten verschoben?!</a></h3>
-          <time>Yesterday, 04 February</time>
-        </div>
+      </div>
       </div>
     </div>
 </div> 
+
+ 
 
 
     @if($isTeacher)
@@ -79,10 +82,10 @@
 @endif
     <hr class="pb-5">
 
-    <div class="row article p-4">
-        <div class="col-4">
-            <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
-        </div>
+    <div class="row article p-4 offset-1">
+          <div class="col-4">
+              <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
+          </div>
         <div class="col-8">
             <div class="d-flex">
                 <div>
@@ -100,11 +103,10 @@
                 </div>
             </div>
         </div>
+        
     </div>
     <hr class="pb-5">
-
- 
-
+</div> 
 
 <nav aria-label="Page navigation example">
   <ul class="pagination justify-content-center">

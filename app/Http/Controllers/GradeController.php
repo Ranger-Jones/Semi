@@ -55,9 +55,11 @@ class GradeController extends Controller
         $students = $request->students;
         $users = [];
 
+        dd($students);
+
         if($students != []){
-            foreach ($students as $key=>$value) {
-                $users[$key] = User::where("name", $students[$key])->first();
+            foreach ($students as $s) {
+                $users[] = User::where("username", $s)->first();
             }
         }
 
@@ -65,6 +67,8 @@ class GradeController extends Controller
             'teacher' => $data['teacher'],
             'name' => $data['classe']
         );
+
+        
 
         Grade::create($datadb);
 
@@ -74,8 +78,6 @@ class GradeController extends Controller
                 $user->save();
             }
         }
-
-        
 
         return redirect('/a/grades');
     }

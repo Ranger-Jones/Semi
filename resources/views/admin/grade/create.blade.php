@@ -25,7 +25,7 @@
             <label for="choices-multiple-remove-button">Schüler</label>
             <select id="choices-multiple-remove-button" name="students[]" placeholder="Wählen Sie die Schüler der Klasse aus!" multiple>
                 @foreach ($students as $s)
-                    <option value="{{$s}}">{{$s->name}}</option>
+                    <option value="{{$s}}">{{$s->username}}</option>
                 @endforeach
                 
             </select> 

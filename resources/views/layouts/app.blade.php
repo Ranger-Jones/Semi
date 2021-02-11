@@ -33,6 +33,7 @@
     <link href="{{ asset('css/schoolnews.css') }}" rel="stylesheet">
     <link href="{{ asset('css/startpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/timetable.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/example-table.css') }}" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>  
@@ -64,7 +65,7 @@
                                 <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">Schulpage</a>
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == '') ? 'active' : '' }}" href="/">Schulpage</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">

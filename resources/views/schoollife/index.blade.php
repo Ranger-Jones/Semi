@@ -1,15 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.newapp')
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-12 d-block">
             <div class="d-flex justify-content-center">
                 <div class="d-block">
                     <div class="show-button">
-                        <a href="" class="">
-
-                        
+                        <a href="/h" class="">
                             <svg width="100%" height="100%" viewBox="0 0 397 220" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="undraw_news_go0e 1">
                                     <g id="man" opacity="0.5">
@@ -202,7 +200,7 @@
                                     fill="#FA8231"
                                     class="button-text-linker"
                                         
-                                    >Schulnews
+                                    >Hausaufgaben
                                         
                                     </text>
                                     <defs>
@@ -326,7 +324,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="d-block">
                         <div class="show-button">
-                            <a href="" class="">
+                            <a href="/m" class="">
 
                             
                                 <svg width="100%" height="100%" viewBox="0 0 397 220" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -521,7 +519,7 @@
                                         fill="#FA8231"
                                         class="button-text-linker"
                                             
-                                        >Lehrer
+                                        >Noten
                                             
                                         </text>
                                         <defs>
@@ -646,7 +644,7 @@
                 <div class="d-flex justify-content-center">
                     <div class="d-block">
                         <div class="show-button">
-                            <a href="" class="">
+                            <a href="/t" class="">
 
                             
                             <svg width="100%" height="100%" viewBox="0 0 405 220" fill="none" xmlns="http://www.w3.org/2000/svg">
