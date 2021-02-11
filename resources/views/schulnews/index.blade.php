@@ -15,8 +15,8 @@
                 </div>
             </div>
         </div>
-    </div>
-</div> 
+    
+ 
 
 <div class="col-sm-4">
     <div class="widget single-news">
@@ -60,7 +60,7 @@
       </div>
     </div>
 </div> 
-
+</div>
 
     @if($isTeacher)
     <div class="row">
@@ -84,7 +84,7 @@
             <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
         </div>
         <div class="col-8">
-            <div class="d-flex">
+            <div class="d-flex off">
                 <div>
                     <h3><strong>Die Kolloquien werden bis auf weiteres verschoben!</strong></h3>
                 </div>
@@ -101,26 +101,22 @@
             </div>
         </div>
     </div>
-    <hr class="pb-5">
-
- 
-
-
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+</div>
 @endsection
