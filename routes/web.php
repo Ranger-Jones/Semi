@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
+
 Route::post('/follow/{user}', 'FollowsController@store');
 
 Route::get('/posts', 'PostsController@index');
@@ -62,7 +63,8 @@ Route::get('/poll/{code}', 'PollController@index');
 Route::post('poll/insert/{code}', 'PollController@insert')->name("poll.insert");
 Route::post('/poll/vote/{postid}', 'VotePollController@store');
 
-Route::get('/', 'SchoollifeController@index');
+Route::get('/vbg', 'SchoollifeController@index');
+Route::get('/', 'SchoollifeController@intro');
 
 Route::get('/schulnews', 'SchoolnewsController@index');
  

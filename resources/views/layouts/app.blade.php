@@ -63,16 +63,8 @@
                         @guest
                            
                             <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">Schulpage</a>
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
                         @else
                             <li class="nav-item ">
                                     <a class="nav-textt nav-link-text nav-link {{ (request()->segment(1) == 'h') ? 'active' : '' }}" href="/h">
@@ -191,5 +183,17 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        window.transitionToPage = function(href) {
+        document.querySelector('body').style.opacity = 0
+        setTimeout(function() { 
+            window.location.href = href
+        }, 500)
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        document.querySelector('body').style.opacity = 1
+    })
+    </script>
 </body>
 </html>

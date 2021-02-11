@@ -42,34 +42,7 @@
 </head>
 <body>
     <div id="app">
-    @guest
-        <nav class="navbar navbar-expand-md nav-sci">
-            <div class="container myDIV">
-                <a class="navbar-brand d-flex nav-link" href="{{ url('/') }}">
-                    <div class="">
-                        <img src="/img/logo.png" alt="" style="max-height: 45px; border-right: 1px solid #333" class="pr-3"></div>
-                    <div class="pl-3 pt-1 nav-textt-b">
-                        von-Bülows Odysee
-                    </div>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                    <!-- Mid Of Navbar -->
-                    <ul class="navbar-nav m-auto">
-                        <!-- Authentication Links -->
-                        
-                        <li class="nav-item">
-                            <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        @endguest
+        
 
 
         <main class="py-4">
@@ -78,5 +51,17 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        window.transitionToPage = function(href) {
+        document.querySelector('body').style.opacity = 0
+        setTimeout(function() { 
+            window.location.href = href
+        }, 500)
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        document.querySelector('body').style.opacity = 1
+    })
+    </script>
 </body>
 </html>

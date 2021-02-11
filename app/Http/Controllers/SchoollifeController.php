@@ -10,4 +10,9 @@ class SchoollifeController extends Controller
     {
         return view('schoollife.index');
     }
+
+    public function intro(){
+        
+        return view('schoollife.intro');
+    }
 }

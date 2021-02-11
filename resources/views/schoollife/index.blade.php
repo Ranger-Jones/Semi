@@ -1,4 +1,4 @@
-@extends('layouts.newapp')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -16,7 +16,7 @@
             <div class="col-sm-4">
                 <div class="widget single-news">
                     <li class="nav-item">
-                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">Schulnews</a>
+                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#news">Schulnews</a>
                     </li>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                         <span class="gradient"></span>
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">Lehrer</a>
+                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#teacher">Lehrer</a>
                     </li>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                         <span class="gradient"></span>
                     </div>
                     <li class="nav-item">
-                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">Historie der Schule</a>
+                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#history">Historie der Schule</a>
                     </li>
                 </div>
             </div>
@@ -47,8 +47,8 @@
                    
     <hr class="pb-5">
     
-<div class="container">
-    <div class="row">
+
+    <div class="row" id="news">
         <div class="col-12">
             <div class="d-flex justify-content-center">
                 <div>
@@ -61,54 +61,52 @@
                 </div>
             </div>
         </div>
-    
+    </div>
  
-
-<div class="col-sm-4">
-    <div class="widget single-news">
-        <div class="image">
-            <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
-            <span class="gradient"></span>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="widget single-news">
+                <div class="image">
+                    <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
+                    <span class="gradient"></span>
+                </div>
+                <div class="details">
+                    <div class="category"><a href="">News</a></div>
+                    <h3><a href="">"Es bleibt alles so wie es ist" - Chefin</a></h3>
+                    <time>Today, 05 February</time>
+                </div>
+            </div>
         </div>
-        <div class="details">
-            <div class="category"><a href="">News</a></div>
-            <h3><a href="">"Es bleibt alles so wie es ist" - Chefin</a></h3>
-            <time>Today, 05 February</time>
-        </div>
-    </div>
-</div>
     
-    <div class="col-sm-4">
-      <div class="widget single-news">
-        <div class="image">
-          <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
-          <span class="gradient"></span>
+        <div class="col-sm-4">
+            <div class="widget single-news">
+                <div class="image">
+                    <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
+                    <span class="gradient"></span>
+                </div>
+                <div class="details">
+                    <div class="category"><a href="">News</a></div>
+                    <h3><a href="">Die 12er freuen sich auf die Prüfungen</a></h3>
+                    <time>Today, 05 February</time>
+                </div>
+            </div>
         </div>
-        <div class="details">
-          <div class="category"><a href="">News</a></div>
-          <h3><a href="">Die 12er freuen sich auf die Prüfungen</a></h3>
-          <time>Today, 05 February</time>
-        </div>
-      </div>
-    </div>
     
-    <div class="col-sm-4">
-      <div class="widget single-news">
-        <div class="image">
-          <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
-          <span class="gradient"></span>
+        <div class="col-sm-4">
+            <div class="widget single-news">
+                <div class="image">
+                    <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
+                    <span class="gradient"></span>
+                </div>
+                <div class="details">
+                    <div class="category"><a href="">News</a></div>
+                    <h3><a href="">Wird alles auf Weihnachten verschoben?!</a></h3>
+                    <time>Yesterday, 04 February</time>
+                </div>
+            </div>
         </div>
-        <div class="details">
-          <div class="category"><a href="">News</a></div>
-          <h3><a href="">Wird alles auf Weihnachten verschoben?!</a></h3>
-          <time>Yesterday, 04 February</time>
-        </div>
-      </div>
-    </div>
-</div> 
-</div>
+    </div> 
 
-   
     <hr class="pb-5">
 
     <div class="row article p-4">
@@ -134,27 +132,27 @@
         </div>
     </div>
 
-<nav aria-label="Page navigation example">
-  <ul class="pagination justify-content-center">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-</div>
-<hr class="pb-5">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-    <div class="row">
+    <hr class="pb-5">
+
+    <div class="row" id="teacher">
       <div class="col-12">
          <div class="d-flex justify-content-center">
              <div>
@@ -194,121 +192,121 @@
 
     <hr class="pb-5">
 
-  <div class="row">
-    <div class="col-12">
-       <div class="d-flex justify-content-center">
-           <div>
-               <h2>Historie der Schule</h2>
-           </div>
-       </div>
-    </div>
-    <section id="news" class="white-bg padding-top-bottom">
-        <div class="container bootstrap snippets bootdey">
-            <div class="timeline">
-                <div class="date-title">
-                    <span>March 2014</span>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 news-item">
-                        <div class="news-content">
-                            <div class="date">
-                                <p>28</p>
-                                <small>Fri</small>
-                            </div>
-                            <h2 class="news-title">Title 1</h2>
-                            <div class="news-media">
-                            
-                            </div>
-                            <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure…</p>
-                            <a class="read-more" href="#">Read More</a>
-                        </div>
+    <div class="row" id="history">
+        <div class="col-12">
+        <div class="d-flex justify-content-center">
+            <div>
+                <h2>Historie der Schule</h2>
+            </div>
+        </div>
+        </div>
+        <section id="news" class="white-bg padding-top-bottom">
+            <div class="container bootstrap snippets bootdey">
+                <div class="timeline">
+                    <div class="date-title">
+                        <span>March 2014</span>
                     </div>
-
-                    <div class="col-sm-6 news-item right">
-                        <div class="news-content">
-                            <div class="date">
-                                <p>27</p>
-                                <small>Thu</small>
-                            </div>
-                            <h2 class="news-title">Title 2</h2>
-                            <div class="news-media gallery">
+                    <div class="row">
+                        <div class="col-sm-6 news-item">
+                            <div class="news-content">
+                                <div class="date">
+                                    <p>28</p>
+                                    <small>Fri</small>
+                                </div>
+                                <h2 class="news-title">Title 1</h2>
+                                <div class="news-media">
                                 
-                                <a class="colorbox cboxElement" href="#"></a>
+                                </div>
+                                <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure…</p>
+                                <a class="read-more" href="#">Read More</a>
                             </div>
-                            <p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure…</p>
-                            <a class="read-more" href="#">Read More</a>
+                        </div>
+
+                        <div class="col-sm-6 news-item right">
+                            <div class="news-content">
+                                <div class="date">
+                                    <p>27</p>
+                                    <small>Thu</small>
+                                </div>
+                                <h2 class="news-title">Title 2</h2>
+                                <div class="news-media gallery">
+                                    
+                                    <a class="colorbox cboxElement" href="#"></a>
+                                </div>
+                                <p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure…</p>
+                                <a class="read-more" href="#">Read More</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-sm-6 news-item">
-                        <div class="news-content">
-                            <div class="date">
-                                <p>26</p>
-                                <small>Wen</small>
-                            </div>
-                            <h2 class="news-title">Title 3</h2>
-                            <div class="news-media video">
-                               
-                            </div>
-                            <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized…</p>
-                            <a class="read-more" href="#">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 news-item right">
-                        <div class="news-content">
-                            <div class="date">
-                                <p>25</p>
-                                <small>Tue</small>
-                            </div>
-                            <h2 class="news-title">Title 4</h2>
-                            <div class="news-media gallery">
+                    <div class="row">
+                        <div class="col-sm-6 news-item">
+                            <div class="news-content">
+                                <div class="date">
+                                    <p>26</p>
+                                    <small>Wen</small>
+                                </div>
+                                <h2 class="news-title">Title 3</h2>
+                                <div class="news-media video">
                                 
-                                <a class="colorbox cboxElement" href="#"></a>
+                                </div>
+                                <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized…</p>
+                                <a class="read-more" href="#">Read More</a>
                             </div>
-                            <p>The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains…</p>
-                            <a class="read-more" href="#">Read More</a>
                         </div>
-                    </div>
-                </div>
 
-                <div class="date-title">
-                    <span>February 2014</span>
-                </div>
-                <div class="row">
-                    <div class="col-sm-6 news-item">
-                        <div class="news-content">
-                            <div class="date">
-                                <p>27</p>
-                                <small>Thu</small>
+                        <div class="col-sm-6 news-item right">
+                            <div class="news-content">
+                                <div class="date">
+                                    <p>25</p>
+                                    <small>Tue</small>
+                                </div>
+                                <h2 class="news-title">Title 4</h2>
+                                <div class="news-media gallery">
+                                    
+                                    <a class="colorbox cboxElement" href="#"></a>
+                                </div>
+                                <p>The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains…</p>
+                                <a class="read-more" href="#">Read More</a>
                             </div>
-                            <h2 class="news-title">Title 5</h2>
-                            <div class="news-media video">
-                                
-                            </div>
-                            <p>But who has any right to find fault with a man who chooses to enjoy a pleasure…</p>
-                            <a class="read-more" href="#">Read More</a>
                         </div>
                     </div>
 
-                    <div class="col-sm-6 news-item right">
-                        <div class="news-content">
-                            <div class="date">
-                                <p>24</p>
-                                <small>Mon</small>
+                    <div class="date-title">
+                        <span>February 2014</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 news-item">
+                            <div class="news-content">
+                                <div class="date">
+                                    <p>27</p>
+                                    <small>Thu</small>
+                                </div>
+                                <h2 class="news-title">Title 5</h2>
+                                <div class="news-media video">
+                                    
+                                </div>
+                                <p>But who has any right to find fault with a man who chooses to enjoy a pleasure…</p>
+                                <a class="read-more" href="#">Read More</a>
                             </div>
-                            <h2 class="news-title">Title 6</h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <a class="read-more" href="#">Read More</a>
+                        </div>
+
+                        <div class="col-sm-6 news-item right">
+                            <div class="news-content">
+                                <div class="date">
+                                    <p>24</p>
+                                    <small>Mon</small>
+                                </div>
+                                <h2 class="news-title">Title 6</h2>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <a class="read-more" href="#">Read More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-  </div>
+        </section>
+    </div>
 
 
 
