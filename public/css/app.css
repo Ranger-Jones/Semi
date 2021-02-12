@@ -1,5 +1,25 @@
 @import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);
+body{
+  opacity: 0;
+  transition: opacity .5s;
+}
 
+.sticky {
+  z-index: 4;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: 2s;
+}
+
+#navbar {
+  overflow: hidden;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .stickyDiv {
+  padding-top: 60px;
+}
 
 :root {
   --blue: #3490dc;
@@ -4564,6 +4584,7 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  
 }
 
 .navbar-nav .nav-link {
@@ -10922,7 +10943,4 @@ a.text-dark:focus {
   }
 }
 
-body{
-  opacity: 0;
-  transition: opacity 1s;
-}
+

@@ -78,6 +78,8 @@ Route::get('/notification/log', 'NotififactionsController@index');
 
 Route::get('/startpage', 'StartpageController@index');
 
+Route::get('/kolloquium', 'PresentationController@index');
+
 //---Admin Sector---//
 Route::get('/a', 'AdminController@index');
 
