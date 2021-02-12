@@ -168,7 +168,7 @@
          </div>
          <div class="d-flex justify-content-center">
              <div>
-                 <p>Hier finden Sie alle Email-Adressen der Lehrer</p>
+                 <p>Hier finden Sie alle Email-Adressen der Lehrer:</p>
              </div>
          </div>
       </div>
@@ -188,7 +188,25 @@
                             <th scope="row">1</th>
                             <td>Mustermann, Max</td>
                             <td>max.mustermann@schule.de</td>
-                            <td>Mathe, Deutsch</td>
+                            <td>Deutsch, Mathe</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Smith, John</td>
+                            <td>john.smith@schule.de</td>
+                            <td>Englisch, Ethik</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Rossi, Mario</td>
+                            <td>mario.rossi@schule.de</td>
+                            <td>Italienisch, Kunst</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Dupont, Jean</td>
+                            <td>jean.dupont@schule.de</td>
+                            <td>Französisch, Musik</td>
                         </tr>
                 </tbody>
             </table>

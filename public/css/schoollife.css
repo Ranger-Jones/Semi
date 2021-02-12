@@ -146,7 +146,14 @@
     text-decoration: none;
   }
   
- 
+ #navbar {
+    background-color: #47cfeb;
+ }
+  /* Page content */
+  .content {
+    padding: 16px;
+
+  }
   
   /* The sticky class is added to the navbar with JS when it reaches its scroll position */
   .sticky {
@@ -366,7 +373,7 @@
     font-family:'FontAwesome';
     font-size:21px;
     line-height:21px;
-    color:#5CC9DF;
+    color:#64dbf3;
     vertical-align:middle;
     -webkit-transition:padding .3s ease-out;
     transition:padding .3s ease-out;
