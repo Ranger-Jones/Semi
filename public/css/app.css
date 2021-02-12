@@ -1,5 +1,6 @@
-@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;
 
+700&display=swap);@charset "UTF-8";
 
 :root {
   --blue: #3490dc;
@@ -10922,7 +10923,3 @@ a.text-dark:focus {
   }
 }
 
-body{
-  opacity: 0;
-  transition: opacity 1s;
-}
