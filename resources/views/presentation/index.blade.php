@@ -41,6 +41,19 @@
                     </div>
                 </div>
             </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="display-1">Bauprozess</h1>
+                            <hr>
+                        </div>
+                        <div class="col-12 mt-5">
+                            <a href=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
