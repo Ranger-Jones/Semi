@@ -45,7 +45,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md nav-sci">
             <div class="container myDIV">
-                <a class="navbar-brand d-flex nav-link" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex nav-link" href="{{ url('/vbg') }}">
                     <div class="">
                         <img src="/img/logo.png" alt="" style="max-height: 45px; border-right: 1px solid #333" class="pr-3"></div>
                     <div class="pl-3 pt-1 nav-textt-b">
