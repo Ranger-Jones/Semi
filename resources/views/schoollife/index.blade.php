@@ -67,7 +67,7 @@
     <div class="row">
         <div class="col-sm-4">
             
-            <a href="">
+            <a href="/kolloquium">
                 <div class="widget single-news">
                     <div class="image">
                         <span class="newsimage">
