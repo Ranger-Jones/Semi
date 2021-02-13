@@ -240,8 +240,8 @@
                                 <p>1764</p>
                             </div>
                             <h2 class="news-title">Gründung der Brüdergemeine Neudietendorf</h2>
-                            <p>Obwohl die Neudietendorfer Brüdergemeine in sich schon länger bestand, wird 1764 als das offizielle Gründungsjahr<span id="dots">...</span><span id="more">der Neudietendorfer Brüdergemeine bezeichnet. Mit steigender Einwohnerzahl musste neben einer Kirche und einigen Manufakturen auch eine Schule gebaut werden. Dort sollten Anfangs vor allem die Kinder der Missionare unterrichtet werden, um durch die ständige Abwesenheit der Eltern einen Familienersatz dargestellt zu bekommen. Ab dem 19. Jahrhundert, sollte das Schulsystem erheblich erweitert werden und auch für Kinder, die nicht Teil der Gemeine waren, zugänglich sein. Auch der Adel setzte auf die Ausbildung der Herrnhuter, da sie stets auf christlicher Grundlage stattfand.</span></p>
-                            <a class="read-more" onclick="Readmore()" id="myBtn" style="cursor:pointer">Mehr anzeigen</a>
+                            <p>Obwohl die Neudietendorfer Brüdergemeine in sich schon länger bestand, wird 1764 als das offizielle Gründungsjahr<span id="dots1">...</span><span id="more1">der Neudietendorfer Brüdergemeine bezeichnet. Mit steigender Einwohnerzahl musste neben einer Kirche und einigen Manufakturen auch eine Schule gebaut werden. Dort sollten Anfangs vor allem die Kinder der Missionare unterrichtet werden, um durch die ständige Abwesenheit der Eltern einen Familienersatz dargestellt zu bekommen. Ab dem 19. Jahrhundert, sollte das Schulsystem erheblich erweitert werden und auch für Kinder, die nicht Teil der Gemeine waren, zugänglich sein. Auch der Adel setzte auf die Ausbildung der Herrnhuter, da sie stets auf christlicher Grundlage stattfand.</span></p>
+                            <a class="read-more" onclick="readmore('dots1', 'more1', 'myBtn1')" id="myBtn1" style="cursor:pointer">Mehr anzeigen</a>
                         </div>
                     </div>
                     <div class="col-sm-6 news-item right">
@@ -250,8 +250,8 @@
                                 <p>1760 & 1765</p>
                             </div>
                             <h2 class="news-title">Gründung der ersten Mädchen- und Knabenschule</h2>
-                            <p>Obwohl die Neudietendorfer Brüdergemeine in sich schon länger bestand, wird 1764 als das offizielle Gründungsjahr<span id="dots">...</span><span id="more">der Neudietendorfer Brüdergemeine bezeichnet. Mit steigender Einwohnerzahl musste neben einer Kirche und einigen Manufakturen auch eine Schule gebaut werden. Dort sollten Anfangs vor allem die Kinder der Missionare unterrichtet werden, um durch die ständige Abwesenheit der Eltern einen Familienersatz dargestellt zu bekommen. Ab dem 19. Jahrhundert, sollte das Schulsystem erheblich erweitert werden und auch für Kinder, die nicht Teil der Gemeine waren, zugänglich sein. Auch der Adel setzte auf die Ausbildung der Herrnhuter, da sie stets auf christlicher Grundlage stattfand.</span></p>
-                            <a class="read-more" onclick="Readmore()" id="myBtn" style="cursor:pointer">Mehr anzeigen</a>
+                            <p>Obwohl die Neudietendorfer Brüdergemeine in sich schon länger bestand, wird 1764 als das offizielle Gründungsjahr<span id="dots2">...</span><span id="more2">der Neudietendorfer Brüdergemeine bezeichnet. Mit steigender Einwohnerzahl musste neben einer Kirche und einigen Manufakturen auch eine Schule gebaut werden. Dort sollten Anfangs vor allem die Kinder der Missionare unterrichtet werden, um durch die ständige Abwesenheit der Eltern einen Familienersatz dargestellt zu bekommen. Ab dem 19. Jahrhundert, sollte das Schulsystem erheblich erweitert werden und auch für Kinder, die nicht Teil der Gemeine waren, zugänglich sein. Auch der Adel setzte auf die Ausbildung der Herrnhuter, da sie stets auf christlicher Grundlage stattfand.</span></p>
+                            <a class="read-more" onclick="readmore('dots2', 'more2', 'myBtn2')" id="myBtn2" style="cursor:pointer">Mehr anzeigen</a>
                         </div>
                     </div>
                 </div>
@@ -409,19 +409,19 @@
 <script>
 
 
-function Readmore() {
-  var dots = document.getElementById("dots");
-  var moreText = document.getElementById("more");
-  var btnText = document.getElementById("myBtn");
+function readmore(dots, moreText, btnText) {
+  var dotsT = document.getElementById(dots);
+  var moreTextT = document.getElementById(moreText);
+  var btnTextT = document.getElementById(btnText);
 
-  if (dots.style.display === "none") {
-    dots.style.display = "inline";
-    btnText.innerHTML = "Read more";
-    moreText.style.display = "none";
+  if (dotsT.style.display === "none") {
+    dotsT.style.display = "inline";
+    btnTextT.innerHTML = "Read more";
+    moreTextT.style.display = "none";
   } else {
-    dots.style.display = "none";
-    btnText.innerHTML = "Read less";
-    moreText.style.display = "inline";
+    dotsT.style.display = "none";
+    btnTextT.innerHTML = "Read less";
+    moreTextT.style.display = "inline";
   }
 }
 </script>
