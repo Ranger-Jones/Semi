@@ -14,6 +14,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/slide.js') }}" defer></script>
     <link 
   href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
   rel="stylesheet"  type='text/css'>    <!-- Fonts -->
@@ -34,6 +35,7 @@
     <link href="{{ asset('css/startpage.css') }}" rel="stylesheet">
     <link href="{{ asset('css/timetable.css') }}" rel="stylesheet">
     <link href="{{ asset('css/example-table.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/article.css') }}" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>  
@@ -42,8 +44,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md nav-sci">
-            <div class="container myDIV">
+        <nav class="navbar navbar-expand-md nav-sci" id="navabar">
+            <div class="container stickyDiv">
                 <a class="navbar-brand d-flex nav-link" href="{{ url('/') }}">
                     <div class="">
                         <img src="/img/logo.png" alt="" style="max-height: 45px; border-right: 1px solid #333" class="pr-3"></div>

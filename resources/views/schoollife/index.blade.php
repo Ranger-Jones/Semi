@@ -10,37 +10,43 @@
             </div>
         </div>  
     </div>
+    <div style="background-color: black;">
+        <ul class="navbar-nav m-auto">
+            <div id="navbar">
+                <div class="row stickyDiv">
+                    <div class="col-sm-4">
+                        <div class="widget single-news">
+                            <li class="nav-item">
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#news">Schulnews</a>
+                            </li>
+                        </div>
+                    </div>
 
-    <ul class="navbar-nav m-auto">
-    <div id="navbar">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="widget single-news">
-                    <li class="nav-item">
-                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#news">Schulnews</a>
-                    </li>
+                    <div class="col-sm-4">
+                        <div class="widget single-news">
+                            <div class="image"> 
+                                <span class="gradient"></span>
+                            </div>
+                            <li class="nav-item">
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#teacher">Lehrer</a>
+                            </li>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="widget single-news">
+                            <div class="image"> 
+                                <span class="gradient"></span>
+                            </div>
+                            <li class="nav-item">
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#history">Historie der Schule</a>
+                            </li>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="col-sm-4">
-                <div class="widget single-news">
-                    <li class="nav-item">
-                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#teacher">Lehrer</a>
-                    </li>
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                <div class="widget single-news">
-                    <li class="nav-item">
-                        <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#history">Historie der Schule</a>
-                    </li>
-                </div>
-            </div>
-        </div>
-    </div>
-    </ul> 
-                   
+        </ul> 
+    </div>                
     <hr class="pb-5">
     
 
@@ -61,17 +67,23 @@
  
     <div class="row">
         <div class="col-sm-4">
-            <div class="widget single-news">
-                <div class="image">
-                    <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
-                    <span class="gradient"></span>
+            
+            <a href="">
+                <div class="widget single-news">
+                    <div class="image">
+                        <span class="newsimage">
+                            <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive newsarticle">
+                        </span>
+                        <span class="gradient"></span>
+                    </div>
+                    <div class="details">
+                        <div class="category"><a href="">News</a></div>
+                        <h3><a href="">"Es bleibt alles so wie es ist" - Chefin</a></h3>
+                        <time>Today, 05 February</time>
+                    </div>
                 </div>
-                <div class="details">
-                    <div class="category"><a href="">News</a></div>
-                    <h3><a href="">"Es bleibt alles so wie es ist" - Chefin</a></h3>
-                    <time>Today, 05 February</time>
-                </div>
-            </div>
+            </a>
+            
         </div>
     
         <div class="col-sm-4">
