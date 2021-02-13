@@ -13,7 +13,7 @@
                     <div class="d-flex justify-content-center">
                         <form action="/notification/uncheck/all" method='post'>
                             @csrf
-                            <button class="notification-btn btn-primary">All Nachrichten als gelesen markieren</button>
+                            <button class="notification-btn btn-primary">Alle Nachrichten als gelesen markieren</button>
                         </form>
                     </div>
                 </div>
