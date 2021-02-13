@@ -2,7 +2,7 @@
 
 .show-button{
     background-color: #FCFCFC;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
     width: 50vw;
     height: 25vh;
     background: #FCFCFC;
@@ -53,12 +53,6 @@
 }
 
 
-.paperplane{
-    animation: paperplane 2s infinite linear;
-    transform-origin: 50% 50%;
-   transform-box: fill-box;
-   animation-play-state: paused;
-}
 
 #body{
     animation: body 2s infinite linear alternate;
@@ -80,54 +74,13 @@
     animation-play-state: paused;
 }
 
-
-@keyframes bg-change{
-    from{
-        background-color: #FCFCFC;
-    }
-    to{
-        background-color: #7ed6df;
-    }
+#badge {
+    background-color: #74b9ff;
 }
 
-@keyframes button-ani{
-    from{
-        transform: translateY(0px);
-    }
-    to{
-        transform: translateY(-4px);
-    }
-}
 
-@keyframes ding{
-    from{
-        color: #880882;
-    }
-    to{
-        background-color: #000000
-    }
-}
+#more {display: none;}
 
-@keyframes body{
-    from{
-        transform: rotateZ(0deg);
-    }
-    to{
-        transform: rotateZ(15deg);
-    }
-}
-
-@keyframes paperplane{
-    100%, 50%, 0%{
-        transform: rotateZ(0deg);
-    }
-    25%{
-        transform: rotateZ(7.5deg);
-    }
-    75%{
-        transform: rotateZ(-7.5deg);
-    }
-}
 
 /* Style the navbar */
 #navbar {
@@ -146,24 +99,12 @@
   }
   
  #navbar {
-    background-color: #47cfeb;
+    background-color: #74b9ff;
  }
   /* Page content */
   .content {
     padding: 16px;
 
-  }
-  
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-    padding-top: 60px;
   }
 
   /* History */
@@ -181,7 +122,7 @@
     height:100%;
     left:1px;
     top:0;
-    border-right:1px solid #5CC9DF;
+    border-right:1px solid #0984e3;
     z-index:-1;
 } 
 
@@ -193,7 +134,7 @@
     height:100px;
     left:1px;
     bottom:-105px;
-    border-right:1px dashed #5CC9DF;
+    border-right:1px dashed #0984e3;
     z-index:-1;
 } 
 
@@ -207,7 +148,7 @@
     font-size:21px;
     font-weight:400;
     color:#fff;
-    background:#5CC9DF;
+    background:#0984e3;
     border-radius:5px;
 }
 
@@ -218,6 +159,23 @@
 .news-item.right {
     float:right;
     margin-top:40px;
+}
+
+.news-content .date {
+    position:absolute;
+    width:80px;
+    height:80px;
+    left:10px;
+    text-align:center;
+    color:#5CC9DF;
+    -webkit-transition:color .3s ease-out;
+    transition:color .3s ease-out;
+}
+.news-content .date p{
+    margin:0;
+    font-size:48px;
+    font-weight:600;
+    line-height:48px;
 }
 
 .news-item .news-content {
@@ -233,7 +191,7 @@
 }
 
 .news-item:hover .news-content {
-    background:#5CC9DF;
+    background:#0984e3;
     color:#fff;
 }
 
@@ -268,12 +226,12 @@
 }
 
 .news-item:hover .news-content:after {
-    border-left-color:#5CC9DF;
+    border-left-color:#0984e3;
 }
 
 .news-item.right:hover .news-content:after {
     border-left-color:transparent;
-    border-right-color:#5CC9DF;
+    border-right-color:#0984e3;
 }
 
 .news-item .news-content:before {
@@ -284,7 +242,7 @@
     height:20px;
     right:-55px;
     top:60px;
-    background:#5CC9DF;
+    background:#0984e3;
     border:3px solid #fff;
     border-radius:50%;
     -webkit-transition:background .3s ease-out;
@@ -302,7 +260,7 @@
     height:80px;
     left:10px;
     text-align:center;
-    color:#5CC9DF;
+    color:#0984e3;
     -webkit-transition:color .3s ease-out;
     transition:color .3s ease-out;
 }
@@ -313,7 +271,7 @@
 
 .news-content .date p{
     margin:0;
-    font-size:48px;
+    font-size: 30px;    
     font-weight:600;
     line-height:48px;
 }
@@ -326,7 +284,7 @@
 }
 
 .news-content .news-title{
-    font-size:24px;
+    font-size:20px;
     font-weight:300;
 }
 
@@ -371,7 +329,7 @@
     font-family:'FontAwesome';
     font-size:21px;
     line-height:21px;
-    color:#64dbf3;
+    color:#0984e3;
     vertical-align:middle;
     -webkit-transition:padding .3s ease-out;
     transition:padding .3s ease-out;
@@ -383,50 +341,4 @@
 
 .news-item:hover .news-content .read-more:after{
     color:#fff;
-}
-
-.news-content .news-media{
-    position:absolute;
-    width:80px;
-    bottom:-45px;
-    right:40px;
-    border-radius:8px;
-}
-
-
-.news-content .news-media a:hover img{
-    -webkit-transform:scale(1.3);
-    transform:scale(1.3);
-}
-
-.news-content .news-media a:after{
-    content:'\f065';
-    position:absolute;
-    width:100%;
-    top:0;
-    left:0;
-    font-family:FontAwesome;
-    font-size:32px;
-    line-height:80px;
-    text-align:center;
-    color:#5CC9DF;
-    -webkit-transform:scale(0);
-    transform:scale(0);
-    opacity:0;
-    -webkit-transition:all .2s ease-out .1s;
-    transition:all .2s ease-out .1s;
-}
-
-.news-content .news-media.video a:after{
-    content:'\f04b';
-}
-
-.news-content .news-media a:hover:after{
-    -webkit-transform:scale(1);
-    transform:scale(1);
-    opacity:1;
-}
-
-.news-content .news-media.gallery{
-    box-shadow:4px 4px 0 #bbb,8px 8px 0 #ddd;
 }

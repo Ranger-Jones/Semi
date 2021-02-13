@@ -6,6 +6,7 @@
         <div class="d-flex justify-content-center">
             <div>
                 <h1>Das Schulleben im von-Bülow-Gymnasium</h1>
+                <p></p>
             </div>
         </div>  
     </div>
@@ -23,9 +24,6 @@
 
             <div class="col-sm-4">
                 <div class="widget single-news">
-                    <div class="image"> 
-                        <span class="gradient"></span>
-                    </div>
                     <li class="nav-item">
                         <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#teacher">Lehrer</a>
                     </li>
@@ -34,14 +32,12 @@
 
             <div class="col-sm-4">
                 <div class="widget single-news">
-                    <div class="image"> 
-                        <span class="gradient"></span>
-                    </div>
                     <li class="nav-item">
                         <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#history">Historie der Schule</a>
                     </li>
                 </div>
             </div>
+        </div>
     </div>
     </ul> 
                    
@@ -121,17 +117,19 @@
             </div>
             <div class="d-flex">
                 <div>
-                    <span class="badge rounded-pill bg-primary">Oberstufe</span> 
+                    <span class="badge" id="badge">Oberstufe</span> 
                     <i class="pl-2 icon-ellipsis-vertical"></i>
                     <span class="pl-2"><strong>Name</strong></span>
                     <i class="pl-2 icon-ellipsis-vertical"></i>
                     <span class="pl-2"><strong>Datum</strong></span>
+                    <p></p>
                     <p>Die Autisten der 12. Klasse sind in völliger Aufruhr.</p>  
                 </div>
             </div>
         </div>
     </div>
 
+    <!--
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             <li class="page-item">
@@ -149,7 +147,7 @@
             </li>
         </ul>
     </nav>
-
+-->
     <hr class="pb-5">
 
     <div class="row" id="teacher">
@@ -166,7 +164,7 @@
          </div>
       </div>
       <div class="row">
-        <div class="col-12 offset-1">
+        <div class="col-12 offset-7">
             <table class="table">
                 <thead>
                     <tr>
@@ -219,111 +217,176 @@
         </div>
         </div>
         <section id="news" class="white-bg padding-top-bottom">
-            <div class="container bootstrap snippets bootdey">
-                <div class="timeline">
-                    <div class="date-title">
-                        <span>March 2014</span>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 news-item">
-                            <div class="news-content">
-                                <div class="date">
-                                    <p>28</p>
-                                    <small>Fri</small>
-                                </div>
-                                <h2 class="news-title">Title 1</h2>
-                                <div class="news-media">
-                                
-                                </div>
-                                <p>No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure…</p>
-                                <a class="read-more" href="#">Read More</a>
+            <div class="timeline">
+                <div class="date-title">
+                    <span>18. Jahrhundert</span>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1764</p>
                             </div>
-                        </div>
-
-                        <div class="col-sm-6 news-item right">
-                            <div class="news-content">
-                                <div class="date">
-                                    <p>27</p>
-                                    <small>Thu</small>
-                                </div>
-                                <h2 class="news-title">Title 2</h2>
-                                <div class="news-media gallery">
-                                    
-                                    <a class="colorbox cboxElement" href="#"></a>
-                                </div>
-                                <p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure…</p>
-                                <a class="read-more" href="#">Read More</a>
-                            </div>
+                            <h2 class="news-title">Gründung der Brüdergemeine Neudietendorf</h2>
+                            <p>Obwohl die Neudietendorfer Brüdergemeine in sich schon länger bestand, wird 1764 als das offizielle Gründungsjahr<span id="dots">...</span><span id="more">der Neudietendorfer Brüdergemeine bezeichnet. Mit steigender Einwohnerzahl musste neben einer Kirche und einigen Manufakturen auch eine Schule gebaut werden. Dort sollten Anfangs vor allem die Kinder der Missionare unterrichtet werden, um durch die ständige Abwesenheit der Eltern einen Familienersatz dargestellt zu bekommen. Ab dem 19. Jahrhundert, sollte das Schulsystem erheblich erweitert werden und auch für Kinder, die nicht Teil der Gemeine waren, zugänglich sein. Auch der Adel setzte auf die Ausbildung der Herrnhuter, da sie stets auf christlicher Grundlage stattfand.</span></p>
+                            <a class="read-more" onclick="Readmore()" id="myBtn" style="cursor:pointer">Mehr anzeigen</a>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-6 news-item">
-                            <div class="news-content">
-                                <div class="date">
-                                    <p>26</p>
-                                    <small>Wen</small>
-                                </div>
-                                <h2 class="news-title">Title 3</h2>
-                                <div class="news-media video">
-                                
-                                </div>
-                                <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized…</p>
-                                <a class="read-more" href="#">Read More</a>
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1760 & 1765</p>
                             </div>
-                        </div>
-
-                        <div class="col-sm-6 news-item right">
-                            <div class="news-content">
-                                <div class="date">
-                                    <p>25</p>
-                                    <small>Tue</small>
-                                </div>
-                                <h2 class="news-title">Title 4</h2>
-                                <div class="news-media gallery">
-                                    
-                                    <a class="colorbox cboxElement" href="#"></a>
-                                </div>
-                                <p>The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains…</p>
-                                <a class="read-more" href="#">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="date-title">
-                        <span>February 2014</span>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 news-item">
-                            <div class="news-content">
-                                <div class="date">
-                                    <p>27</p>
-                                    <small>Thu</small>
-                                </div>
-                                <h2 class="news-title">Title 5</h2>
-                                <div class="news-media video">
-                                    
-                                </div>
-                                <p>But who has any right to find fault with a man who chooses to enjoy a pleasure…</p>
-                                <a class="read-more" href="#">Read More</a>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6 news-item right">
-                            <div class="news-content">
-                                <div class="date">
-                                    <p>24</p>
-                                    <small>Mon</small>
-                                </div>
-                                <h2 class="news-title">Title 6</h2>
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <a class="read-more" href="#">Read More</a>
-                            </div>
+                            <h2 class="news-title">Gründung der ersten Mädchen- und Knabenschule</h2>
+                            <p>Obwohl die Neudietendorfer Brüdergemeine in sich schon länger bestand, wird 1764 als das offizielle Gründungsjahr<span id="dots">...</span><span id="more">der Neudietendorfer Brüdergemeine bezeichnet. Mit steigender Einwohnerzahl musste neben einer Kirche und einigen Manufakturen auch eine Schule gebaut werden. Dort sollten Anfangs vor allem die Kinder der Missionare unterrichtet werden, um durch die ständige Abwesenheit der Eltern einen Familienersatz dargestellt zu bekommen. Ab dem 19. Jahrhundert, sollte das Schulsystem erheblich erweitert werden und auch für Kinder, die nicht Teil der Gemeine waren, zugänglich sein. Auch der Adel setzte auf die Ausbildung der Herrnhuter, da sie stets auf christlicher Grundlage stattfand.</span></p>
+                            <a class="read-more" onclick="Readmore()" id="myBtn" style="cursor:pointer">Mehr anzeigen</a>
                         </div>
                     </div>
                 </div>
+                <div class="date-title">
+                    <span>19. Jahrhundert</span>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1845</p>
+                            </div>
+                            <h2 class="news-title">Gründung der Pensions - Knabensanstalt</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                        <div class="date">
+                                <p>1850</p>
+                            </div>
+                            <h2 class="news-title">Gründung der Mädchenanstalt</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1861</p>
+                            </div>
+                            <h2 class="news-title">Der Neubau</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="date-title">
+                    <span>20. Jahrhundert</span>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1920</p>
+                            </div>
+                            <h2 class="news-title">Gründung des Erdmuth-Dorotheen-Haus</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1923</p>
+                            </div>
+                            <h2 class="news-title">Erlangen der Prüfungsreife</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1933/1934</p>
+                            </div>
+                            <h2 class="news-title">Der Umbau</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1944</p>
+                            </div>
+                            <h2 class="news-title">Die Verstaatlichung</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1945</p>
+                            </div>
+                            <h2 class="news-title">Erlangen der Prüfungsreife</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1949</p>
+                            </div>
+                            <h2 class="news-title">Gründung der DDR</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1970er</p>
+                            </div>
+                            <h2 class="news-title">Modernisierung</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1989 - 1994</p>
+                            </div>
+                            <h2 class="news-title">Die Wende und ihre Folgen</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1991</p>
+                            </div>
+                            <h2 class="news-title">Der Umbruch vom EOS auf das Gymnasium</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 news-item right">
+                        <div class="news-content">
+                            <div class="date">
+                                <p>1997</p>
+                            </div>
+                            <h2 class="news-title">Umbenennung zum von-Bülow-Gymnasium</h2>
+                            <p></p>
+                            <a class="read-more" href="#">Mehr anzeigen</a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </section>
+        <small>Quelle: http://wordpress.von-buelow-gymnasium.de/schulgeschichte/</small>
     </div>
 
 
@@ -332,16 +395,22 @@
 
 
 <script>
-$(document).ready(function() {
-    var colorOrig=$(".show-button").css('background-color');
-    $(".show-button").hover(
-    function() {
-        //mouse over
-        $(this).css('background', '#ff')
-    }, function() {
-        //mouse out
-        $(this).css('background', colorOrig)
-    });
-});​
+
+
+function Readmore() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
 </script>
 @endsection
