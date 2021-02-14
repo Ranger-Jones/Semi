@@ -12,7 +12,11 @@ class SchoollifeController extends Controller
     }
 
     public function intro(){
-        
-        return view('schoollife.intro');
+        if(auth()->user() == null){
+            return view('schoollife.intro');
+        }
+        else{
+            return redirect('/vbg');
+        }
     }
 }
