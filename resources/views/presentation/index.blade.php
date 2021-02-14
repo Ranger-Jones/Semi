@@ -368,7 +368,26 @@
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
-                                    <img src="/img/controller-code.png" style="max-height: 500px; " class="img-responsive" alt="">
+                                    <img src="/img/controller-index.png" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Der Controller</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/controller-code.png" style="max-height: 700px; " class="img-responsive" alt="">
                                 </div>
                             </div>
                         </div>
@@ -426,7 +445,7 @@
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
-                                    <img src="/img/umodel-code.png" style="max-height: 450px; " class="img-responsive pl-5" alt="">
+                                    <img src="/img/migration.png" style="max-height: 450px; " class="img-responsive pl-5" alt="">
                                 </div>
                             </div>
                         </div>
@@ -465,7 +484,7 @@
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
                                     <div class="nav-textt-b">
-                                        <h3>Code hier einfügen</h3>
+                                        <h2>Auf zum Code!</h2>
                                     </div>
                                 </div>
                             </div>
@@ -525,7 +544,7 @@
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
                                     <div class="nav-textt-b">
-                                        <h3>Code hier einfügen --> Interaktion mit der Datenbank</h3>
+                                        <h3>Kommunikation, Zeitmanagement, Übersichtlichkeit</h3>
                                     </div>
                                 </div>
                             </div>
