@@ -552,6 +552,262 @@
                     </div>
                 </div>
             </div>
+            <!-- Alex Part kommt ab hier -->
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-1">Der Bauprozess des Terminals</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <div class="nav-textt-b">
+                                        <h3></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Die Form</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/geruest.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Der Standfuß</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/Standfuss.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Die Säule</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/sauele.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Das Touchscreengehäuse</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/touchscrreng.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Die Funktionsweise</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/fertig.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Das Material</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/alublech.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Die Werkzeuge</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/fertig.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Die Tafelschere</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/tafelschere.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h1>Die Kantbank - klein & groß</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between">
+                                    <img src="/img/kantbank.JPG" class="mr-5 img-responsive" style="max-height: 500px; " alt="">
+                                    <img src="/img/kantbankg.JPG" class="ml-5 img-responsive" style="max-height: 500px; " alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Die Nieten</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <div class="view">
+                                        <video class="video-fluid" autoplay loop muted style="max-height: 700px; ">
+                                            <source src="/img/nieten.mp4" type="video/mp4" />
+                                        </video>
+                                        <div class="mask rgba-indigo-light"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Die Farben</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/fertig.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1>Preis des Terminals</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/fertig.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Joans Part kommt ab hier -->
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100">
@@ -611,6 +867,71 @@
                     </div>
                 </div>
             </div>
+            <!-- **Umweltpart von Josh** -->
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-1">Umweltaspekt</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <div class="nav-textt-b">
+                                        <h3>Ein Beitrag von Joshua Nerling</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <h1>Paierherstellung & Server</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-between">
+                                    <img src="/img/papier.png" class="img-responsive mr-5" style="max-height: 450px;" alt="">
+                                    <img src="/img/server.png" class="img-responsive ml-5" style="max-height: 450px;" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ** Datenschutz & -sicherheit von Joan-->
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-1">Datenschutz</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <div class="nav-textt-b">
+                                        <h3>Ein Beitrag von Joan William Lange</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Quellen -->
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100">
                     <div class="d-block">
