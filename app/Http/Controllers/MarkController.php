@@ -51,15 +51,11 @@ class MarkController extends Controller
 
         //Check if user is a teacher
 
-        $isTeacher = false;
+        $role = auth()->user()->role;
 
-        foreach (auth()->user()->permissions as $p) {
-            if($p->permission == "Lehrer"){
-                $isTeacher = true;
-            }
-        }
+        
 
-        return view("marks.index", compact('isTeacher', 'subjects', 'marks'));
+        return view("marks.index", compact('role', 'subjects', 'marks'));
     }
 
     //redirect with pregeneradet form for teacher to beeing faster in their working flow
@@ -100,20 +96,14 @@ class MarkController extends Controller
 
 
         //Check if user is a teacher
-        $permissions = auth()->user()->permissions()->get();
-        $authorized = false;
-        //catch users permission
-        foreach ($permissions as $permission) {
-            if($permission->permission == "Lehrer"){
-                $authorized = true;
-            }
-        }
+        $role = auth()->user()->role;
+        
         
         $usernames = [];
         $subjects = [];
 
         //proof that user is a teacher
-        if($authorized == false){
+        if($role != "Lehrer"){
             return redirect('/m');
         }
 

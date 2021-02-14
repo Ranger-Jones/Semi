@@ -17,10 +17,11 @@ class GradeController extends Controller
     public function index()
     {
         $grades = Grade::all();
-        $unset_user = User::where('inclass', 'unset')->get();
-        $unset_user2 = User::where('inclass', null)->get();
+        $unset_user = User::where('inclass', 'unset')->get()->toArray();
+        $unset_user2 = User::where('inclass', null)->get()->toArray();
+        $unset_user = array_merge($unset_user, $unset_user2);
         //dd($grades);
-        return view("admin.grade.index", compact("grades", 'unset_user', 'unset_user2'));
+        return view("admin.grade.index", compact("grades", 'unset_user'));
     }
 
     /**
@@ -31,23 +32,10 @@ class GradeController extends Controller
     public function create()
     {
         $users = User::all();
-        $students = [];
-        $teacher = [];
-        foreach ($users as $u) {
-            $permissions = $u->permissions()->get();
-            foreach ($permissions as $p) {
-                if($p->permission == "Schüler"){
-                    if($u->inclass == null || $u->inclass == 'unset'){
-                        $students[] = $u->name;
-                    }
-                }
-                
-                if($p->permission == "Lehrer"){
-                    $teacher[] = $u->name;
-                }
-            }
-        }
-        return view("admin.grade.create", compact("students", "teacher"));
+        $teacher = User::where('role', 'Lehrer')->get();
+        $students = User::where('role', 'Schüler')->get();
+        
+        return view("admin.grade.create", compact('users', 'teacher', 'students'));
     }
 
     /**
@@ -67,9 +55,11 @@ class GradeController extends Controller
         $students = $request->students;
         $users = [];
 
+        dd($students);
+
         if($students != []){
-            foreach ($students as $key=>$value) {
-                $users[$key] = User::where("name", $students[$key])->first();
+            foreach ($students as $s) {
+                $users[] = User::where("username", $s)->first();
             }
         }
 
@@ -77,6 +67,8 @@ class GradeController extends Controller
             'teacher' => $data['teacher'],
             'name' => $data['classe']
         );
+
+        
 
         Grade::create($datadb);
 
@@ -86,8 +78,6 @@ class GradeController extends Controller
                 $user->save();
             }
         }
-
-        
 
         return redirect('/a/grades');
     }
@@ -107,7 +97,11 @@ class GradeController extends Controller
 
     public function delete(Grade $grade_id)
     {
-
+        $user = User::where('inclass', $grade_id->name)->get();
+        foreach ($user as $u) {
+            $u->inclass = "unset";
+            $u->save();
+        }
         Grade::destroy($grade_id->id);
         return redirect('/a/grades');
     }

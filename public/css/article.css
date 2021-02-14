@@ -1,0 +1,39 @@
+
+
+.newsimage{
+    cursor:pointer;
+    position:relative;
+    transition:all 1s;
+}
+.newsimage:after,.newsimage:before{
+            content:" ";
+            width:10px;
+            height:10px;
+            position:absolute;
+            border :0px solid #fff;
+            transition:all 1s;
+}
+.newsimage:after{
+            top:-1px;
+            left:-1px;
+            border-top:5px solid black;
+            border-left:5px solid black;
+}
+.newsimage:before{
+            bottom:-1px;
+            right:-1px;
+            border-bottom:5px solid black;
+            border-right:5px solid black;
+}
+.newsimage:hover{
+    border-top-right-radius:0px;
+    border-bottom-left-radius:0px;
+    background:rgba(0,0,0,.5);
+    color:white;
+}
+.newsimage:before,.newsimage:after{
+    
+    width:100%;
+    height:100%;
+    border-color:white;
+}

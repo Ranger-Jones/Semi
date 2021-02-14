@@ -32,5 +32,18 @@
             </div>
         </div>
     </form>
+
+    <form action="/a/teacher" enctype="multipart/form-data" method="post">
+        @csrf
+        <div class="row">
+            <h1>Be a Teacher</h1>
+        </div>
+        
+        <div class="row pt-4">
+            <div class="col-8">
+                <input type="submit" name="save" value="Save" class="btn btn-success">
+            </div>
+        </div>
+    </form>
 </div>
 @endsection

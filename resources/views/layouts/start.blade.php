@@ -31,6 +31,7 @@
     <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/buttons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/tables.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/example-table.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/schoolnews.css') }}" rel="stylesheet">
     <link href="{{ asset('css/startpage.css') }}" rel="stylesheet">
@@ -44,16 +45,17 @@
     <div id="app">
         <nav class="navbar navbar-expand-md nav-sci">
             <div class="container myDIV">
-                <a class="navbar-brand d-flex nav-link" href="{{ url('/') }}">
+                <a class="navbar-brand d-flex nav-link" href="{{ url('/vbg') }}">
                     <div class="">
                         <img src="/img/logo.png" alt="" style="max-height: 45px; border-right: 1px solid #333" class="pr-3"></div>
-                    <div class="pl-3 pt-1 nav-textt-b">
-                        von-Bülows Odysee
+                        <div class="pl-3 pt-1 nav-textt-b">
+                            von-Bülows Odysee
+                        </div>
                     </div>
-</a>
+                </a>
 
     
-                </div>
+                
             </div>
         </nav>
         @auth 
@@ -89,5 +91,17 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        window.transitionToPage = function(href) {
+        document.querySelector('body').style.opacity = 0
+        setTimeout(function() { 
+            window.location.href = href
+        }, 500)
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        document.querySelector('body').style.opacity = 1
+    })
+    </script>
 </body>
 </html>

@@ -14,6 +14,7 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/slide.js') }}" defer></script>
     <link 
   href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
   rel="stylesheet"  type='text/css'>    <!-- Fonts -->
@@ -30,9 +31,11 @@
     <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
     <link href="{{ asset('css/simple-sidebar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/homework.css') }}" rel="stylesheet">
-
     <link href="{{ asset('css/schoolnews.css') }}" rel="stylesheet">
     <link href="{{ asset('css/startpage.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/timetable.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/example-table.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/article.css') }}" rel="stylesheet">
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>  
@@ -41,9 +44,9 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md nav-sci">
-            <div class="container myDIV">
-                <a class="navbar-brand d-flex nav-link" href="{{ url('/') }}">
+        <nav class="navbar navbar-expand-md nav-sci" id="navabar">
+            <div class="container stickyDiv">
+                <a class="navbar-brand d-flex nav-link" href="{{ url('/vbg') }}">
                     <div class="">
                         <img src="/img/logo.png" alt="" style="max-height: 45px; border-right: 1px solid #333" class="pr-3"></div>
                     <div class="pl-3 pt-1 nav-textt-b">
@@ -60,17 +63,10 @@
                     <ul class="navbar-nav m-auto">
                         <!-- Authentication Links -->
                         @guest
+                           
                             <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'login') ? 'active' : '' }}" href="{{ route('login') }}">Schulpage</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
                         @else
                             <li class="nav-item ">
                                     <a class="nav-textt nav-link-text nav-link {{ (request()->segment(1) == 'h') ? 'active' : '' }}" href="/h">
@@ -107,7 +103,7 @@
                                         Edit Profile
                                     </a>
                                     <a class="dropdown-item nav-textt" href="/me/update">
-                                        Bearbeite deine Daten
+                                        Benachrichtigungen
                                     </a>
                                     <div class="dropdown-divder"></div>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -189,5 +185,17 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        window.transitionToPage = function(href) {
+        document.querySelector('body').style.opacity = 0
+        setTimeout(function() { 
+            window.location.href = href
+        }, 500)
+    }
+
+    document.addEventListener('DOMContentLoaded', function(event) {
+        document.querySelector('body').style.opacity = 1
+    })
+    </script>
 </body>
 </html>

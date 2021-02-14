@@ -15,8 +15,8 @@
             </div>
         </div>
     </div>
-    <hr class="pb-5">
-    @if(!$isTeacher)
+    <hr class="pb-3">
+    @if($role == "Schüler")
     <div class="row">
         <div class="col-12">
             <div class="d-flex justify-content-center">
@@ -25,19 +25,18 @@
                     @csrf
                         <div class="searchbar">
                         <input class="search_input" type="text" name="subject" placeholder="Search...">
-                        <a href="#" type="submit" class="search_icon"><i class="fa-search"></i></a>
+                        <a href="#" type="submit" class="search_icon"><i class="fa fa-search"></i></a>
                         </div>
                     </form>
                 </div>
             </div>
-            // lieber Joshua, recherchieren und studieren geht über rangers und bruders css künste, haben sie vielen Dank
             
         
         </div>
     </div>   
     @endif
 
-    @if($isTeacher)
+    @if($role == "Lehrer")
     <div class="row">
       <div class="col-12">
             <div class="d-flex justify-content-center">
@@ -66,7 +65,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
       <div class="col-12">
         <div class="d-flex justify-content-center">
           <div class="d-block">
@@ -82,7 +81,7 @@
     </div>
     @endif
 
-    @if (!$isTeacher)
+    @if ($role == "Schüler")
     @foreach($subjects as $s)
     <div class="row">
       <div class="col-12">
@@ -91,36 +90,46 @@
         </div>
       </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Fach</th>
-                        <th scope="col">Note</th>
-                        <th scope="col">Bemerkung</th>
-                        <th scope="col">Fachlehrer</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($marks as $m)
-                      @if($s->name == $m->subject)
-                        <tr>
-                            <th scope="row">{{$m->id}}</th>
-                            <td>{{$m->subject}}</td>
-                            <td>{{$m->mark}}</td>
-                            <td>{{$m->description}}</td>
-                            <td>{{$m->teacher}}</td>
-                        </tr>
-                      @endif
-                    @endforeach
-                </tbody>
-            </table>
+    <div class="container-table100">
+        <div class="wrap-table100">
+            <div class="table100 ver1 m-b-110">
+                <div class="table100-head">
+                    <table>
+                        <thead>
+                            <tr class="row100 head">
+                                <th class="cell100 column1">#</th>
+                                <th class="cell100 column2">Fach</th>
+                                <th class="cell100 column3">Note</th>
+                                <th class="cell100 column4">Bemerkung</th>
+                                <th class="cell100 column5">Fachlehrer</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="table100-body js-pscroll">
+                    <table>
+                        <tbody>
+                        @foreach($marks as $m)
+                          @if($s->name == $m->subject)
+                            <tr class="row100 body">
+                                <td class="cell100 column1" scope="row">{{$m->id}}</td>
+                                <td class="cell100 column2">{{$m->subject}}</td>
+                                <td class="cell100 column3">{{$m->mark}}</td>
+                                <td class="cell100 column4">{{$m->description}}</td>
+                                <td class="cell100 column5">{{$m->teacher}}</td>
+                            </tr>
+                        </tbody>
+                          @endif
+                      @endforeach
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     @endforeach
     @endif
+    
 </div>
 @endsection
 

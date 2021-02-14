@@ -39,7 +39,14 @@ $factory->define(User::class, function (Faker $faker) {
         '10a',
         '11a'
     ];
+
+    $role = [
+        'Schüler',
+        'Lehrer',
+        'Moderator'
+    ];
     
+
     
     return [
         'name' => $faker->name,
@@ -48,7 +55,8 @@ $factory->define(User::class, function (Faker $faker) {
         'username' => $faker->username,
         'inclass' => $inclass[mt_rand(0, count($inclass) - 1)],
         'subject' => $subjects[mt_rand(0, count($subjects) - 1)],
-        'password' => Hash::make('password'), // password
+        'role' => $role[mt_rand(0, count($role) - 1)],
+        'password' => '12341234', // password
         'remember_token' => Str::random(10),
     ];
 });

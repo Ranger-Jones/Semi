@@ -51,19 +51,9 @@ class SubjectsController extends Controller
         ];
 
         $users = User::all();
-        $teacher = [];
+        $teacher = User::where('role', 'Lehrer')->get();
         $grades = Grade::all();
         $userpermissions = [];
-
-       
-        foreach ($users as $u) {
-            $userpermissions = $u->permissions()->get();
-            foreach ($userpermissions as $p) {
-                if($p->permission == "Lehrer"){
-                    $teacher[] = $u->name;
-                }
-            }
-        }
      
         
         

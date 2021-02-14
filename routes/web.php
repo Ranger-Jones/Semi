@@ -3,24 +3,25 @@
 use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
+    |--------------------------------------------------------------------------
+    | Web Routes
+    |--------------------------------------------------------------------------
+    |
 
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
+    | Here is where you can register web routes for your application. These
+    | routes are loaded by the RouteServiceProvider within a group which
+    | contains the "web" middleware group. Now create something great!
+    |
 */
  
 
 Auth::routes();
 
 
+
 Route::post('/follow/{user}', 'FollowsController@store');
 
-Route::get('/', 'PostsController@index');
+Route::get('/posts', 'PostsController@index');
 Route::get('/p/create', 'PostsController@create');
 Route::post('/p', 'PostsController@store')->name('post.store');
 Route::get('/p/{post}', 'PostsController@show');
@@ -41,6 +42,16 @@ Route::get('/h/create', 'HomeworkController@create');
 Route::get('/h/{homework}', 'HomeworkController@show');
 Route::post('/h/store', 'HomeworkController@store');
 
+Route::get('/t', 'TimetableController@index');
+Route::get('/t/create', 'TimetableController@create');
+Route::get('/t/create/{grade}', 'TimetableController@create');
+Route::get('/t/test/example', 'TimetableController@example');
+Route::get('/t/{time}', 'TimetableController@show');
+Route::post('/t/store', 'TimetableController@store');
+Route::post('/t/fetchclass', 'TimetableController@fetch');
+
+Route::post('/hcheck/store/{homework}', 'HomeworkCheckController@store');
+
 Route::post('/h/check', 'HomeworkCheckController@store');
 
 Route::get('/me/update', 'UserUpdateController@edit');
@@ -52,10 +63,11 @@ Route::get('/poll/{code}', 'PollController@index');
 Route::post('poll/insert/{code}', 'PollController@insert')->name("poll.insert");
 Route::post('/poll/vote/{postid}', 'VotePollController@store');
 
-Route::get('/schulleben', 'SchoollifeController@index');
+Route::get('/vbg', 'SchoollifeController@index');
+Route::get('/', 'SchoollifeController@intro');
 
 Route::get('/schulnews', 'SchoolnewsController@index');
-
+ 
 Route::get('/schulnews', 'SchoolnewsController@index');
 Route::get('/schulnews/create', 'SchoolnewsController@create');
 Route::get('/schulnews/{newsid}', 'SchoolnewsController@show');
@@ -66,6 +78,9 @@ Route::get('/notification/log', 'NotififactionsController@index');
 
 Route::get('/startpage', 'StartpageController@index');
 
+Route::get('/kolloquium', 'PresentationController@index');
+Route::get('/kolloquium/quellen', 'PresentationController@quellen');
+
 //---Admin Sector---//
 Route::get('/a', 'AdminController@index');
 
@@ -74,6 +89,7 @@ Route::get('/a/permissions/create', 'PermissionController@create');
 Route::post('/a/permissions/show', 'PermissionController@show');
 Route::post('/a/permissions/store', 'PermissionController@store');
 Route::post('/a/permissions/update/{userid}/{permissionid}', 'PermissionController@update');
+Route::post('/a/teacher', 'PermissionController@teacher');
 
 Route::get('/a/subjects', 'SubjectsController@index');
 Route::get('/a/subjects/create', 'SubjectsController@create');

@@ -44,7 +44,7 @@
                                     <td>{{$s->name}}</td>
                                     <td>{{$s->teacher}}</td>
                                     <td class="td-actions">
-                                        <input type="checkbox" name="subject[{{$s->id}}]" id="checkbox3" checked/>
+                                        <input type="checkbox" name="subject[{{$s->id}}]" id="checkbox3"/>
                                     </td>
                                 </tr>
                             @endforeach

@@ -22,7 +22,7 @@
             <label for="teacher">Fachlehrer</label>
             <select id="teacher" name="teacher" class="form-control">
                 @foreach($teacher as $t)
-                    <option>{{$t}}</option>
+                    <option>{{$t->name}}</option>
                 @endforeach
             </select>
         </div>

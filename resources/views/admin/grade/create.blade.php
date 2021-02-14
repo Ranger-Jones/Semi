@@ -13,7 +13,7 @@
             <label for="teacher">Lehrer</label>
             <select id="teacher" name="teacher" class="form-control">
                 @foreach($teacher as $t)
-                    <option>{{$t}}</option>
+                    <option>{{$t->name}}</option>
                 @endforeach
             </select>
         </div>
@@ -25,7 +25,7 @@
             <label for="choices-multiple-remove-button">Schüler</label>
             <select id="choices-multiple-remove-button" name="students[]" placeholder="Wählen Sie die Schüler der Klasse aus!" multiple>
                 @foreach ($students as $s)
-                    <option value="{{$s}}">{{$s}}</option>
+                    <option value="{{$s}}">{{$s->username}}</option>
                 @endforeach
                 
             </select> 

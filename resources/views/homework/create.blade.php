@@ -55,47 +55,15 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-8">
-                                    <label for="inclass" class="col-md-8 col-form-label">Betreffende Schulklasse</label>
-                                    <select class="form-control @error('inclass') is-invalid @enderror" 
-                                            id="inclass" 
-                                            type="text" 
-                                            name="inclass">
-                                        <option>5a</option>
-                                        <option>5b</option>
-                                        <option>6a</option>
-                                        <option>6b</option>
-                                        <option>7a</option>
-                                        <option>7b</option>
-                                        <option>8a</option>
-                                        <option>8b</option>
-                                        <option>9a</option>
-                                        <option>9b</option>
-                                        <option>9c</option>
-                                        <option>10a</option>
-                                        <option>10b</option>
-                                        <option>10c</option>
-                                        <option>11a</option>
-                                        <option>11b</option>
-                                        <option>11c</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-8">
                                     <label for="subject" class="col-md-8 col-form-label">Wählen Sie ein Fach aus</label>
                                     <select class="form-control @error('subject') is-invalid @enderror" 
                                             id="subject" 
                                             type="text" 
                                             name="subject" 
                                             value="Wählen Sie die Klasse aus">
-                                        <option>Mathematik</option>
-                                        <option>Deutsch</option>
-                                        <option>Physik</option>
-                                        <option>Chemie</option>
-                                        <option>Biologie</option>
-                                        <option>Informatik</option>
+                                        @foreach($subjects as $s)
+                                            <option>{{$s->name}} - {{$s->classe}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

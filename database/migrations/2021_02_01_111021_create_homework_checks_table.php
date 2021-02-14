@@ -15,13 +15,13 @@ class CreateHomeworkChecksTable extends Migration
     {
         Schema::create('homework_checks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('users_id');
+            $table->unsignedInteger('user_id');
             $table->unsignedInteger('homework_id');
             $table->timestamps();
         });
 
         Schema::table('homework_checks', function (Blueprint $table) {
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('user');
         });
     }
 
