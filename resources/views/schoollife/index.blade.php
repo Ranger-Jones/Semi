@@ -78,8 +78,9 @@
                     </div>
                     <div class="details">
                         <div class="category"><a href="">News</a></div>
-                        <h3><a href="">"Es bleibt alles so wie es ist" - Chefin</a></h3>
-                        <time>Today, 05 February</time>
+                        <!-- Der erste Link geht zu der Schulnews Seite, kannst du dan noch 3 andere mit einbauen? so haben wir schonmal den ersten; ich trag erstmal überall von 0 bis 3 die Anzahl ein ~ Josh -->
+                        <h3><a href="schulnews0">Das umwerfende Terminal von SCI!</a></h3>
+                        <time>Heute, 17. Februar</time>
                     </div>
                 </div>
             </a>
@@ -94,8 +95,8 @@
                 </div>
                 <div class="details">
                     <div class="category"><a href="">News</a></div>
-                    <h3><a href="">Die 12er freuen sich auf die Prüfungen</a></h3>
-                    <time>Today, 05 February</time>
+                    <h3><a href="schulnews1">Das Innenleben des Prototypen</a></h3>
+                    <time>Heute, 17. Februar</time>
                 </div>
             </div>
         </div>
@@ -108,8 +109,8 @@
                 </div>
                 <div class="details">
                     <div class="category"><a href="">News</a></div>
-                    <h3><a href="">Wird alles auf Weihnachten verschoben?!</a></h3>
-                    <time>Yesterday, 04 February</time>
+                    <h3><a href="schulnews2">Ist das überhaupt gut für die Umwelt?</a></h3>
+                    <time>Gestern, 16. Februar</time>
                 </div>
             </div>
         </div>
@@ -124,18 +125,81 @@
         <div class="col-8">
             <div class="d-flex">
                 <div>
-                    <h3><strong>Die Kolloquien werden bis auf weiteres verschoben!</strong></h3>
+                    <h3><strong><a href="schulnews0">Das umwerfende Terminal von SCI!</a></strong></h3>
                 </div>
             </div>
             <div class="d-flex">
                 <div>
                     <span class="badge" id="badge">Oberstufe</span> 
                     <i class="pl-2 icon-ellipsis-vertical"></i>
-                    <span class="pl-2"><strong>Name</strong></span>
+                    <span class="pl-2"><strong>Herr Kaiser</strong></span>
                     <i class="pl-2 icon-ellipsis-vertical"></i>
-                    <span class="pl-2"><strong>Datum</strong></span>
+                    <span class="pl-2"><strong>17. Februar</strong></span>
                     <p></p>
-                    <p>Die Autisten der 12. Klasse sind in völliger Aufruhr.</p>  
+                    <p>Werfen Sie einen ersten Blick in das spannende Konzept des Terminals von SCI!</p>  
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
+        </div>
+        <div class="col-8">
+            <div class="d-flex">
+                <div>
+                    <h3><strong><a href="schulnews0">Das Innenleben des Prototypen</a></strong></h3>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div>
+                    <span class="badge" id="badge">Oberstufe</span> 
+                    <i class="pl-2 icon-ellipsis-vertical"></i>
+                    <span class="pl-2"><strong>Herr Lange</strong></span>
+                    <i class="pl-2 icon-ellipsis-vertical"></i>
+                    <span class="pl-2"><strong>17. Februar</strong></span>
+                    <p></p>
+                    <p>Diese Komponenten erwecken das Terminal zum Leben!</p>  
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
+        </div>
+        <div class="col-8">
+            <div class="d-flex">
+                <div>
+                    <h3><strong><a href="schulnews0">Ist das überhaupt gut für die Umwelt?</a></strong></h3>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div>
+                    <span class="badge" id="badge">Oberstufe</span> 
+                    <i class="pl-2 icon-ellipsis-vertical"></i>
+                    <span class="pl-2"><strong>Herr Nerling</strong></span>
+                    <i class="pl-2 icon-ellipsis-vertical"></i>
+                    <span class="pl-2"><strong>16. Februar</strong></span>
+                    <p></p>
+                    <p>So umweltfreundlich ist das neue System!</p>  
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
+        </div>
+        <div class="col-8">
+            <div class="d-flex">
+                <div>
+                    <h3><strong><a href="schulnews0">Die Sicherheit unserer Daten</a></strong></h3>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div>
+                    <span class="badge" id="badge">Oberstufe</span> 
+                    <i class="pl-2 icon-ellipsis-vertical"></i>
+                    <span class="pl-2"><strong>Herr Lange</strong></span>
+                    <i class="pl-2 icon-ellipsis-vertical"></i>
+                    <span class="pl-2"><strong>16. Februar</strong></span>
+                    <p></p>
+                    <p>Das tut SCI um unsere Daten zu schützen</p>  
                 </div>
             </div>
         </div>
@@ -201,21 +265,20 @@
                         </tr>
                         <tr>
                             <th scope="row">3</th>
-                            <td>Rossi, Mario</td>
-                            <td>mario.rossi@schule.de</td>
+                            <td>Rossi, Maria</td>
+                            <td>maria.rossi@schule.de</td>
                             <td>Italienisch, Kunst</td>
                         </tr>
                         <tr>
                             <th scope="row">4</th>
-                            <td>Dupont, Jean</td>
-                            <td>jean.dupont@schule.de</td>
+                            <td>Dupont, Jolie</td>
+                            <td>jolie.dupont@schule.de</td>
                             <td>Französisch, Musik</td>
                         </tr>
                 </tbody>
             </table>
         </div>
     </div>
-     <!--Lehreremails noch einfügen-->
     </div>       
 
     <hr class="pb-5">
@@ -410,18 +473,18 @@
 
 
 function readmore(dots, moreText, btnText) {
-  var dotsT = document.getElementById(dots);
-  var moreTextT = document.getElementById(moreText);
-  var btnTextT = document.getElementById(btnText);
+  var dots = document.getElementById(dots);
+  var moreText = document.getElementById(moreText);
+  var btnText = document.getElementById(btnText);
 
-  if (dotsT.style.display === "none") {
-    dotsT.style.display = "inline";
-    btnTextT.innerHTML = "Read more";
-    moreTextT.style.display = "none";
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Mehr anzeigen";
+    moreText.style.display = "none";
   } else {
-    dotsT.style.display = "none";
-    btnTextT.innerHTML = "Read less";
-    moreTextT.style.display = "inline";
+    dots.style.display = "none";
+    btnText.innerHTML = "Weniger anzeigen";
+    moreText.style.display = "inline";
   }
 }
 </script>
