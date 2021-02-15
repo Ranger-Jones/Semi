@@ -71,10 +71,10 @@
                         <div class="form-group"> <!-- Date input -->
                             <div class="row">
                                 <div class="col-8">
-                                    <label for="date" class="col-md-8 col-form-label">Kontrolldatum</label>
+                                    <label for="submissionDate" class="col-md-8 col-form-label">Kontrolldatum</label>
                                     <input class="form-control" 
-                                            id="date" 
-                                            name="date" 
+                                            id="submissionDate" 
+                                            name="submissionDate" 
                                             placeholder="MM/DD/YYY" 
                                             type="text"/>
                                 </div>

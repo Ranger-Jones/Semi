@@ -8,7 +8,7 @@ body{
   z-index: 4;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 67vw;
   transition: 2s;
 }
 
@@ -10943,7 +10943,3 @@ a.text-dark:focus {
   }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e843127ffcca31f9b1445f3283b668f9a7e22182

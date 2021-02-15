@@ -34,6 +34,7 @@ Route::get('/m', 'MarkController@index');
 Route::get('/m/create', 'MarkController@create');
 Route::post('m/insert', 'MarkController@insert')->name("mark.insert");
 Route::patch('/m/update/{mark_id}', 'MarkController@edit');
+Route::post('/m/manage', 'MarkController@manage');
 Route::post('/m/find/', 'MarkController@find');
 Route::get('/m/show/{search}', 'MarkController@show');
 
@@ -70,7 +71,8 @@ Route::get('/schulnews', 'SchoolnewsController@index');
  
 Route::get('/schulnews', 'SchoolnewsController@index');
 Route::get('/schulnews/create', 'SchoolnewsController@create');
-Route::get('/schulnews/{newsid}', 'SchoolnewsController@show');
+Route::get('/schulnews/{article}', 'SchoolnewsController@show');
+Route::post('/schulnews/store', 'SchoolnewsController@store');
 
 Route::get('/notification/uncheck/{notification_id}', 'NotififactionsController@update');
 Route::post('/notification/uncheck/all', 'NotififactionsController@updateAll');

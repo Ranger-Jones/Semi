@@ -15,6 +15,11 @@ class CreateSchoolnewsTable extends Migration
     {
         Schema::create('schoolnews', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('content');
+            $table->string('author');
+            $table->string('topic')->nullable();
+            $table->string('images')->nullable();
             $table->timestamps();
         });
     }

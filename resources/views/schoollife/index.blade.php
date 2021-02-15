@@ -17,7 +17,7 @@
                     <div class="col-sm-4">
                         <div class="widget single-news">
                             <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#news">Schulnews</a>
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#news') ? 'active' : '' }}" href="#news">Schulnews</a>
                             </li>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
                                 <span class="gradient"></span>
                             </div>
                             <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#teacher">Lehrer</a>
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#teacher') ? 'active' : '' }}" href="#teacher">Lehrer</a>
                             </li>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                                 <span class="gradient"></span>
                             </div>
                             <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'register') ? 'active' : '' }}" href="#history">Historie der Schule</a>
+                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#history') ? 'active' : '' }}" href="#history">Historie der Schule</a>
                             </li>
                         </div>
                     </div>
@@ -66,80 +66,88 @@
     </div>
  
     <div class="row">
-        <div class="col-sm-4">
-            
-            <a href="/kolloquium">
-                <div class="widget single-news">
-                    <div class="image">
-                        <span class="newsimage">
-                            <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive newsarticle">
-                        </span>
-                        <span class="gradient"></span>
+        @foreach($lastarticles as $la)
+            <div class="col-sm-4">
+                
+                <a href="/schulnews/{{$la->id}}">
+                    <div class="widget single-news">
+                        <div class="image">
+                            <span class="newsimage">
+                                @php
+                                    $laimages = $la->images;
+                                    try {
+                                        $laimages = preg_split('~;~', $laimages);
+                                        
+                                        //removes unimportant records
+                                        $last = array_key_last($laimages);
+                                        unset($laimages[$last]);
+                                    } catch (Exception $e) {
+                                        dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
+                                    }
+
+                                    if($laimages == []){
+                                        $laimages[0] = '/default/symbol.jpg';
+                                    }
+                                @endphp
+                                <img src="/storage/{{$laimages[0]}}" class="img-responsive newsarticle">
+                            </span>
+                            <span class="gradient"></span>
+                        </div>
+                        <div class="details">
+                            <div class="category"><a href="">{{$la->topic}}</a></div>
+                            <!-- Der erste Link geht zu der Schulnews Seite, kannst du dan noch 3 andere mit einbauen? so haben wir schonmal den ersten; ich trag erstmal überall von 0 bis 3 die Anzahl ein ~ Josh -->
+                            <h3><a href="schulnews0">{{$la->title}}</a></h3>
+                            <time>{{$la->created_at->format('jS F Y h:i:s A')}}</time>
+                        </div>
                     </div>
-                    <div class="details">
-                        <div class="category"><a href="">News</a></div>
-                        <!-- Der erste Link geht zu der Schulnews Seite, kannst du dan noch 3 andere mit einbauen? so haben wir schonmal den ersten; ich trag erstmal überall von 0 bis 3 die Anzahl ein ~ Josh -->
-                        <h3><a href="schulnews0">Das umwerfende Terminal von SCI!</a></h3>
-                        <time>Heute, 17. Februar</time>
-                    </div>
-                </div>
-            </a>
-            
-        </div>
-    
-        <div class="col-sm-4">
-            <div class="widget single-news">
-                <div class="image">
-                    <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
-                    <span class="gradient"></span>
-                </div>
-                <div class="details">
-                    <div class="category"><a href="">News</a></div>
-                    <h3><a href="schulnews1">Das Innenleben des Prototypen</a></h3>
-                    <time>Heute, 17. Februar</time>
-                </div>
+                </a>
             </div>
-        </div>
-    
-        <div class="col-sm-4">
-            <div class="widget single-news">
-                <div class="image">
-                    <img src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" class="img-responsive">
-                    <span class="gradient"></span>
-                </div>
-                <div class="details">
-                    <div class="category"><a href="">News</a></div>
-                    <h3><a href="schulnews2">Ist das überhaupt gut für die Umwelt?</a></h3>
-                    <time>Gestern, 16. Februar</time>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div> 
 
     <hr class="pb-5">
-
-    <div class="row article p-4">
+    @foreach ($articles as $a)
+    <div class="row article-img p-4">
         <div class="col-4">
-            <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
-        </div>
+        @php
+            $laimages = $a->images;
+            try {
+                $laimages = preg_split('~;~', $laimages);
+                
+                //removes unimportant records
+                $last = array_key_last($laimages);
+                unset($laimages[$last]);
+            } catch (Exception $e) {
+                dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
+            }
+
+            if($laimages == []){
+                $laimages[0] = '/default/symbol.jpg';
+            }
+        @endphp
+            <img src="/storage/{{$laimages[0]}}" class="img-responsive newsarticle">
+                </div>
         <div class="col-8">
             <div class="d-flex">
                 <div>
-                    <h3><strong><a href="schulnews0">Das umwerfende Terminal von SCI!</a></strong></h3>
+                    <h3><strong><a href="schulnews0">{{$a->title}}</a></strong></h3>
                 </div>
             </div>
             <div class="d-flex">
                 <div>
                     <span class="badge" id="badge">Oberstufe</span> 
                     <i class="pl-2 icon-ellipsis-vertical"></i>
-                    <span class="pl-2"><strong>Herr Kaiser</strong></span>
+                    <span class="pl-2"><strong>$a->author</strong></span>
                     <i class="pl-2 icon-ellipsis-vertical"></i>
                     <span class="pl-2"><strong>17. Februar</strong></span>
                     <p></p>
-                    <p>Werfen Sie einen ersten Blick in das spannende Konzept des Terminals von SCI!</p>  
+                    <p>{{$a->content}}</p>  
                 </div>
             </div>
         </div>
+    </div>
+    @endforeach
+    <div class="row article-img p-4">
         <div class="col-4">
             <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
         </div>
@@ -161,6 +169,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row article-img p-4">
         <div class="col-4">
             <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
         </div>
@@ -182,6 +192,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row article-img p-4">
         <div class="col-4">
             <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
         </div>

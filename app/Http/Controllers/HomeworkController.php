@@ -116,24 +116,24 @@ class HomeworkController extends Controller
     public function store(Homework $homework)
     {
         $data = request()->validate([
-            'caption' => ['required', 'max:55'],
+            'caption' => ['required', 'max:500'],
             'task' => ['required', 'max:55000'],
             'subject' => ['required'],
             'image' => ['image','mimes:jpeg,png,jpg,gif,svg','max:16000'],
-            'date' => ['max:55']
+            'submissionDate' => ['max:55']
         ]);
         if(request('image') != null){
             $imagePath = request('image')->store('homework', 'public');
         }
         else{
-            $imagePath = "\uploads\pWLN9ASDKZgdUHZjaCg8sMebKvMuuYHbzATi1Gcd.jpeg";
+            $imagePath = 'unset';
         }
 
         if(!request('submissionDate')){
             $submissionDate = "N/A";
         }
         else{
-            $submissionDate = $data['date'];
+            $submissionDate = $data['submissionDate'];
         }
 
         $raw_data_subject = preg_split('~ - ~', $data['subject']);
@@ -171,7 +171,7 @@ class HomeworkController extends Controller
             $user->notifications()->create($notification_data);
         }
 
-        DB::table('homework')->insert($datadb);
+        Homework::create($datadb);
 
         $h = DB::table('homework')->where('currentDate', $currentDate)->first();
 

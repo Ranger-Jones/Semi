@@ -1,18 +1,18 @@
-.article{
+.article-img{
     transition: .25s;
     overflow: hidden;
 }
 
-.article:hover{
+.article-img:hover{
     background-color: #e8e8e8;
     
 }
 
-.article img{
+.article-img img{
     transition: transform .5s ease;
 }
 
-.article:hover img{
+.article-img:hover img{
     transform: scale(1.1);
 }
 
