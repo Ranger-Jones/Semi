@@ -37,8 +37,7 @@
                             <h1 class="display-1">Gliederung</h1>
                             <hr>
                         </div>
-                        <div class="col-6">
-                            <h1>Software</h1>
+                        <div class="col-6" style="font-size: 24px;">
                             <ul class="list-group">
                                 <li class="list-group-item">1.	Die Konsequenzen von Online-Learning an unserer Schule
                                     <ul class="list-group">
@@ -62,8 +61,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="col-6">
-                            <h1>Hardware</h1>
+                        <div class="col-6" style="font-size: 24px;">
                             <ul class="list-group">
                                 <li class="list-group-item">4.	Die Hardware Auswahl
                                     <ul class="list-group">
@@ -92,16 +90,73 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-1">Das Design der Website</h1>
+                                <h1 class="display-1">2.Das Design & die Funktionen der Website </h1>
                                 <hr>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
-                                    <div class="nav-textt-b">
-                                        <h3>Ein Beitrag von Joshua Nerling</h3>
-                                    </div>
+                                    <img src="/img/frontend.png" class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-4">Die Entwicklung der Startseite</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/startseite.png" class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-4">Die Entwicklung der Hausaufgaben</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <img src="/img/hausaufgaben.png" class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- ACHTUNG BAUSTOPPPPPPPPPPPPPPPP------------------------------------------------------------------------->
+            <div class="carousel-item active">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-4">Die Entwicklung der Hausaufgaben</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-between">
+                                <div class="col-12 mt-3">
+                                    <img src="/img/noten.png" class="img-responsive" alt="">
+                                    <a href="/m" class="btn btn-large btn-success text-center" style="height: 500px; font-size:100px;"> Los geht's </a>
                                 </div>
                             </div>
                         </div>
@@ -758,11 +813,9 @@
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
-                                    <div class="sizer">
-                                        <div class="embed-responsive embed-responsive-16by9">
-                                            <video src="/img/nieten.mp4" autoplay muted></video>
-                                        </div>
-                                    </div>
+                                    <video muted autoplay loop width="1000" id="video"> 
+                                        <source src="/img/nieten.mp4" type="video/mp4" />  <!-- Declaring it is a video and from where the file should be played from -->
+                                    </video>
                                 </div>
                             </div>
                         </div>
