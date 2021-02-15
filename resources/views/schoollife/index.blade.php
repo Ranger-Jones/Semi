@@ -137,7 +137,7 @@
                 <div>
                     <span class="badge" id="badge">Oberstufe</span> 
                     <i class="pl-2 icon-ellipsis-vertical"></i>
-                    <span class="pl-2"><strong>$a->author</strong></span>
+                    <span class="pl-2"><strong>{{$a->author}}</strong></span>
                     <i class="pl-2 icon-ellipsis-vertical"></i>
                     <span class="pl-2"><strong>17. Februar</strong></span>
                     <p></p>

@@ -241,15 +241,13 @@ class MarkController extends Controller
     public function show($search)
     {
 
-        $marks = Mark::where('user', auth()->user()->username)->get();
+        $marks = Mark::where('user', auth()->user()->name)->get();
         if($marks == []){
             return redirect('/m');
         }
 
         
-
         $result = [];
-
 
 
         foreach ($marks as $mark) {

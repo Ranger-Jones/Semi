@@ -41,6 +41,7 @@ class SubjectsController extends Controller
             'Geschichte',
             'Sozialkunde',
             'Relgion',
+            'Italienisch',
             'Ethik',
             'Mensch, Natur, Technik',
             'Naturwissenschaften & Technik',

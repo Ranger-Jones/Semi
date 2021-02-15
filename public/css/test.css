@@ -5,6 +5,10 @@
     padding-bottom: 10vh;
 }
 
+.sizer{
+    max-height: 700px;
+}
+
 
 .text-box-link {
     margin-left: 44vw;

@@ -94,7 +94,7 @@
                 <div class="d-flex justify-content-center">
                   <h1>{{$s->name}}</h1>
                 </div>
-                <div class="table100 ver1 m-b-110">
+                <div class="table100 ver3 m-b-110">
                     <div class="table100-head">
                         <table>
                             <thead>
@@ -118,7 +118,7 @@
                             @foreach($marks as $m)
                                 @if($s->name == $m->subject)
                                   <tr class="row100 body">
-                                      <td class="cell100 column1" scope="row">{{$m->id}}</td>
+                                      <td class="cell100 column1" scope="row">{{$m->created_at->format('jS F Y h:i:s A')}}</td>
                                       <td class="cell100 column2">{{$m->subject}}</td>
                                       <td class="cell100 column3">{{$m->mark}}</td>
                                       <td class="cell100 column4">{{$m->description}}</td>

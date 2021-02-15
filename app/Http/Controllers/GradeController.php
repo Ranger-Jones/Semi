@@ -116,18 +116,9 @@ class GradeController extends Controller
         $teacher = $grade_id->teacher;
         
         //Select all teachers -- again :()
-        $teachers = [];
-        $users = User::all();
-        foreach($users as $u){
-            $permissions = $u->permissions()->get();
-            foreach ($permissions as $p) {
-                if($p->permission == "Lehrer"){
-                    $teachers[] = $u;
-                }
-            }
-        }
-
-        $users = User::where('inclass', '!=', $grade_id->name)->get();
+        $teachers = User::where('role', 'Lehrer')->get();
+        $users = User::where('role', 'Schüler')->get();
+        
 
         return view('admin.grade.edit', compact('grade_id', 'teachers', 'teacher', 'users', 'students'));
     }

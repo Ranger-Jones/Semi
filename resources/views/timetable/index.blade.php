@@ -11,13 +11,13 @@
       </div> 
       <div class="row">
           <div class="col-sm-4">
-              <p>Klasse: A21/3</p>               
+              <p>Klasse: {{auth()->user()->inclass}}</p>               
           </div>
           <div class="col-sm-4">
-              <p>Datum: Mittwoch, 13.09.2021</p>               
+              <p>Datum: Mittwoch, 13.09.2043</p>               
            </div>
           <div class="col-sm-4">
-              <p>Letzte Änderung: </p>               
+              <p>Letzte Änderung: 12.09.2043</p>               
           </div>
       </div>
      
