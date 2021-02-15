@@ -29,7 +29,7 @@
           <table>
             <thead>
               <tr class="row100 head">
-                <th class="cell100 column1">Stunde</th>
+                <th class="cell100 column1" style="margin-right: 500px;">Stunde</th>
                 <th class="cell100 column2">Fach</th>
                 <th class="cell100 column3">Raum</th>
                 <th class="cell100 column4">Lehrer</th>

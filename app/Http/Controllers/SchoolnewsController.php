@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Schoolnews;
 use App\User;
+use Intervention\Image\Facades\Image;
 
 class SchoolnewsController extends Controller
 {
@@ -55,6 +56,7 @@ class SchoolnewsController extends Controller
 
         $dataFile = [];
         $images = "";
+        $firstimage = '';
 
         if($request->hasfile('filenames'))
         {
@@ -62,6 +64,11 @@ class SchoolnewsController extends Controller
             {
                 $name = $file->store('news', 'public');
                 $images = $images.$name.';';  
+                if($firstimage == ''){
+                    $image = Image::make(public_path("storage/{$name}"))->fit(1000, 1000);
+                    $image->save();
+                    $firstimage = $name;
+                }
             }
         }
         

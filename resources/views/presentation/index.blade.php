@@ -156,7 +156,7 @@
                             <div class="d-flex justify-content-between">
                                 <div class="col-12 mt-3">
                                     <img src="/img/noten.png" class="img-responsive" alt="">
-                                    <a href="/m" class="btn btn-large btn-success text-center" style="height: 500px; font-size:100px;"> Los geht's </a>
+                                    <a href="/m" target="_blank" class="btn btn-large btn-success text-center" style="height: 200px; margin-left: 65px; font-size:100px;"> Los geht's </a>
                                 </div>
                             </div>
                         </div>
