@@ -53,21 +53,24 @@ class MarkController extends Controller
 
         $role = auth()->user()->role;
 
-        
+        $subject_class = [];
+        if($role == 'Lehrer'){
+            $subject_class = Subject::where('teacher', auth()->user()->name)->get();
+        }
 
-        return view("marks.index", compact('role', 'subjects', 'marks'));
+        return view("marks.index", compact('role', 'subjects', 'marks', 'subject_class'));
     }
 
     //redirect with pregeneradet form for teacher to beeing faster in their working flow
     public function manage(){
         $data = request()->validate([
-            'class' => ['required', 'max:55'],
-            'subject' => ['required', 'max:55']
+            'subject_class' => ['required', 'max:55']
         ]);
 
-        $class = $data['class'];
-        $subject = $data['subject'];
+        $raw_subject_class = preg_split('~ - ~', $data['subject_class']);
 
+        $class = $raw_subject_class[1];
+        $subject = $raw_subject_class[0];
 
         return redirect('/m/create/'.$class.'/'.$subject);
     }
@@ -83,12 +86,13 @@ class MarkController extends Controller
         //get the data from the form, if neccessary;
         try {
             $data = request()->validate([
-                'class' => ['required', 'max:55'],
-                'subject' => ['required', 'max:55']
+                'subject_class' => ['required', 'max:55']
             ]);
     
-            $class = $data['class'];
-            $subject = $data['subject'];
+            $raw_subject_class = preg_split('~ - ~', $data['subject_class']);
+    
+            $class = $raw_subject_class[1];
+            $subject = $raw_subject_class[0];
         } catch (\Throwable $th) {
             $error = "Can't generate data from user input, no input available";
         }
@@ -100,7 +104,6 @@ class MarkController extends Controller
         
         
         $usernames = [];
-        $subjects = [];
 
         //proof that user is a teacher
         if($role != "Lehrer"){
@@ -111,27 +114,7 @@ class MarkController extends Controller
         $users = User::all();
 
         //allsubjects for select
-        $subjects = [
-            'Deutsch',
-            'Mathematik',
-            'Biologie',
-            'Chemie',
-            'Sport',
-            'Kunst',
-            'Englisch',
-            'Französisch',
-            'Latein',
-            'Geschichte',
-            'Sozialkunde',
-            'Relgion',
-            'Ethik',
-            'Mensch, Natur, Technik',
-            'Naturwissenschaften & Technik',
-            'Musik',
-            'Darstellen & Gestalten',
-            'Physik',
-            'Informatik'
-        ];
+        $subjects = Subject::where('teacher', auth()->user()->name)->get();
 
         foreach ($users as $user) {
             $usernames[] = $user->name;
@@ -143,37 +126,30 @@ class MarkController extends Controller
         
 
         if($subject != '' || $class != ''){
-            //List neccessary usernames, by teachers choice
 
+            // get subject id to fetch users
+            $subjectid = Subject::where([['teacher', auth()->user()->name], ['classe', $class], ['name', $subject]])->first();
+
+            //List neccessary usernames, by teachers choice
             foreach ($users as $u) {
                 //Get users subjects
                 $u_subjects = $u->subject;
                 $inclass = $u->inclass;
-                
 
                 if($inclass == $class){
                     
                     try {
-                        $u_subjects = preg_split('~:~', $u_subjects);
+                        $u_subjects = preg_split('~;~', $u_subjects);
                         
                         //removes unimportant records
                         $last = array_key_last($u_subjects);
                         unset($u_subjects[$last]);
-                        
-                        
-                        
-                        
                     } catch (Exception $e) {
                         dd('FEHLERFEHLERFEHLER->Überprüfe User Attribute:subject\nFehler: ' . $e->getMessage());
                     }
-
-                    
-                    
-                    //select the users with the right class and the right subject
-                    foreach ($u_subjects as $s) {
-                        if($s == strtolower($subject)){
+                    foreach ($u_subjects as $us) {
+                        if($subjectid->id == $us){
                             $s_users[] = $u;
-                            
                         }
                     }
                 }

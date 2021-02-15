@@ -33,7 +33,7 @@ class GradeController extends Controller
     {
         $users = User::all();
         $teacher = User::where('role', 'Lehrer')->get();
-        $students = User::where('role', 'Schüler')->get();
+        $students = User::where('role',  'Schüler')->get();
         
         return view("admin.grade.create", compact('users', 'teacher', 'students'));
     }
@@ -47,15 +47,13 @@ class GradeController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
-            'teacher' => ['required'],
-            'classe' => ['required'],
-            'students.*' => ['required']
+            'teacher' => 'required',
+            'classe' => 'required',
+            'students.*' => 'required'
         ]);
 
         $students = $request->students;
         $users = [];
-
-        dd($students);
 
         if($students != []){
             foreach ($students as $s) {

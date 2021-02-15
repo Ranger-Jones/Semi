@@ -182,13 +182,12 @@
                                                     <p class="card-text">{{$shortInfo}}</p>
                                                     <a id="{{$h->subject}}-tab" data-toggle="tab" href="#{{$h->subject}}" role="tab" aria-controls="{{$h->subject}}" aria-selected="false">{{$h->subject}}</a>
                                                     <a href="/h/{{$h->id}}" class="card-link">Mehr Informationen</a>
-                                                    
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <div class="d-flex justify-content-center mt-5">
-                                                    <p>Die Aufgabe wurde am: <strong>{{$ch['created_at']}}</strong> von dir abgehackt.</p>
+                                                <p>Die Aufgabe wurde am: <strong>@if($ch['created_at'] != null){{App\HomeworkCheck::where('id', $ch['id'])->first()->created_at->format('jS F Y h:i:s A')}}@endif</strong> von dir abgehackt.</p>
                                             </div>
                                         </div>
                                     @endif

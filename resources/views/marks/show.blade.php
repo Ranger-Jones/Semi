@@ -25,7 +25,7 @@
                     @csrf
                         <div class="searchbar">
                         <input class="search_input" type="text" name="subject" placeholder="Search...">
-                        <a href="#" type="submit" class="search_icon"><i class="fa-search"></i></a>
+                        <a href="#" type="submit" class="search_icon"><i class="fa fa-search"></i></a>
                         </div>
                     </form>
                 </div>

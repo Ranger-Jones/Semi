@@ -77,7 +77,7 @@ $(document).ready(function(){
  {
         html = '<tr>';
         html += '<td><select class="form-control" name="name[]">@foreach($usernames as $user)<option>{{$user}}</option>@endforeach</select></td>';        
-        html += '<td><select class="form-control" name="subject[]">@foreach($subjects as $s)<option>{{$s}}</option>@endforeach</select></td>';
+        html += '<td><select class="form-control" name="subject[]">@foreach($subjects as $s)<option>{{$s->name}}</option>@endforeach</select></td>';
         html += '<td><input type="text" name="mark[]" class="form-control"/></td>';
         html += '<td><input type="text" id="description" name="description[]" value class="form-control"/></td>';
         html += '<td><input type="text" name="teacher[]" class="form-control" value="{{auth()->user()->name}}"/></td>';

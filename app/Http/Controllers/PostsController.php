@@ -49,7 +49,7 @@ class PostsController extends Controller
     {
 
         $data = request()->validate([
-            'caption' => ['required', 'max:55'],
+            'caption' => ['required', 'max:500'],
             'description' => ['max:55000'],
             'topic' => [''],
             'addresses' => [''],
