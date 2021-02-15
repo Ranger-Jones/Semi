@@ -69,7 +69,7 @@
                 <div class="col-12">
                     <div class="d-block justify-content-center">
                         <div>
-                            <h2>Noten</h2>
+                            <h1>Noten</h1>
                         </div>
                     </div>
                 </div>
@@ -90,16 +90,18 @@
             </div>  
           </div> 
           @foreach($subjects as $s)
+          
             <div class="wrap-table100  mb-5">
+            <hr class="pb-3">
                 <div class="d-flex justify-content-center">
-                  <h1>{{$s->name}}</h1>
+                  <h2>{{$s->name}}</h2>
                 </div>
-                <div class="table100 ver3 m-b-110">
+                <div class="table100 ver1 mb-5">
                     <div class="table100-head">
                         <table>
                             <thead>
                                 <tr class="row100 head">
-                                    <th class="cell100 column1">#</th>
+                                    <th class="cell100 column1">Datum</th>
                                     <th class="cell100 column2">Fach</th>
                                     <th class="cell100 column3">Note</th>
                                     <th class="cell100 column4">Bemerkung</th>
@@ -136,7 +138,7 @@
                                       <td class="cell100 column2">sind</td>
                                       <td class="cell100 column3">keine</td>
                                       <td class="cell100 column4">Noten</td>
-                                      <td class="cell100 column5">verfügbar:(</td>
+                                      <td class="cell100 column5">verfügbar :(</td>
                                   </tr>
                             @endif
                             </tbody>

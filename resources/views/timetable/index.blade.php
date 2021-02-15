@@ -22,28 +22,37 @@
       </div>
      
     <!-- Stundenplan Timetable -->
-    <div class="row"> 
+    <div class="row wrap-table100 mb-5"> 
       <div class="col-12">
-        <table class="table table-hover">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Stunde</th>
-              <th scope="col">Fach</th>
-              <th scope="col">Raum</th>
-              <th scope="col">Lehrer</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+        <div class="table100 ver1 mb-5">
+        <div class="table100-head">
+          <table>
+            <thead>
+              <tr class="row100 head">
+                <th class="cell100 column1">Stunde</th>
+                <th class="cell100 column2">Fach</th>
+                <th class="cell100 column3">Raum</th>
+                <th class="cell100 column4">Lehrer</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="table100-body js-pscroll">
+          <table>
+            <tbody>
+              <tr class="row100 body">
                 @foreach($result as $key => $value)
-                  <td>{{$value}}</td>
-                  @if($key == 3 || $key == 7 || $key == 12)
-                  </tr><tr>
-                  @endif
+                <td class="cell100 column3">{{$value}}</td>
+                @if($key == 3 || $key == 7 || $key == 12)
+              </tr>
+              <tr class="row100 body">
+                @endif
                 @endforeach
-            </tr>
-          </tbody>
-        </table>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
       </div>
     </div>
 
@@ -57,52 +66,62 @@
 
 
     <!-- kompletter Stundenplan-->
-    <div class="row">
+    <div class="row wrap-table100 mb-5">
       <div class="col-12">
-        <table class="table table-hover" id="timetable">
-          <thead class="thead-dark">
-            <th scope="col">Stunde</th>
-            <th scope="col">Montag</th>
-            <th scope="col">Dienstag</th>
-            <th scope="col">Mittwoch</th>
-            <th scope="col">Donnerstag</th>
-            <th scope="col">Freitag</th>
-          </thead>
-          <tbody>
-            <tr>
-             <th scope="row">1./2.</th>
-             <td>Deutsch</td>
-             <td>Englisch</td>
-             <td>Mathe</td>
-             <td>Sport</td>
-             <td>Informatik</td>
-            </tr>
-            <tr>
-             <th scope="row">3./4.</th>
-             <td>Musik</td>
-             <td>Physik</td>
-             <td>Englisch</td>
-             <td>Geschichte</td>
-             <td>Chemie</td>
-            </tr>
-            <tr>
-             <th scope="row">5./6.</th>
-             <td>Französisch</td>
-             <td>Mathe</td>
-             <td>Italienisch</td>
-             <td>Physik</td>
-             <td>Deutsch</td>
-            </tr>
-            <tr>
-             <th scope="row">7./8.</th>
-             <td>Informatik</td>
-             <td>-</td>
-             <td>-</td>
-             <td>Deutsch</td>
-             <td>Geschichte</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="table100 ver1 mb-5" id="timetable">
+          <div class="table100-head">
+            <table>
+              <thead>
+                <tr class="row100 head">
+                  <th class="cell100 column1">Stunde</th>
+                  <th class="cell100 column2">Montag</th>
+                  <th class="cell100 column3">Dienstag</th>
+                  <th class="cell100 column4">Mittwoch</th>
+                  <th class="cell100 column5">Donnerstag</th>
+                  <th class="cell100 column6">Freitag</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="table100-body js-pscroll">
+            <table>
+              <tbody>
+                <tr class="row100 body">
+                  <td class="cell100 column1" scope="row">1./2.</td>
+                  <td class="cell100 column2">Deutsch</td>
+                  <td class="cell100 column3">Englisch</td>
+                  <td class="cell100 column4">Mathe</td>
+                  <td class="cell100 column5">Sport</td>
+                  <td class="cell100 column6">Informatik</td>
+                </tr>
+                <tr class="row100 body">
+                 <td class="cell100 column1" scope="row">3./4.</td>
+                 <td class="cell100 column2">Musik</td>
+                 <td class="cell100 column3">Physik</td>
+                 <td class="cell100 column4">Englisch</td>
+                 <td class="cell100 column5">Geschichte</td>
+                 <td class="cell100 column6">Chemie</td>
+                </tr>
+                <tr class="row100 body">
+                 <td class="cell100 column1" scope="row">5./6.</td>
+                 <td class="cell100 column2">Französisch</td>
+                 <td class="cell100 column3">Mathe</td>
+                 <td class="cell100 column4">Italienisch</td>
+                 <td class="cell100 column5">Physik</td>
+                 <td class="cell100 column6">Deutsch</td>
+                </tr>
+                <tr class="row100 body">
+                 <td class="cell100 column1" scope="row">7./8.</td>
+                 <td class="cell100 column2">Informatik</td>
+                 <td class="cell100 column3">-</td>
+                 <td class="cell100 column4">-</td>
+                 <td class="cell100 column5">Deutsch</td>
+                 <td class="cell100 column6">Geschichte</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
 </div>
