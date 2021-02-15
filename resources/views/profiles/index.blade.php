@@ -7,7 +7,7 @@
   <a href="#posts" id="posts" class="a_show-hide">Beiträge</a>
   @if($user->id == auth()->user()->id)
   <a href="#marks" id="marks" class="a_show-hide">Noten</a>
-  <a href="#contact" id="contact" class="a_show-hide">Benachrichtigen</a>
+  <a href="#contact" id="contact" class="a_show-hide">Benachrichtigungen</a>
   @else
   <a href="#contact2" id="contact2" class="a_show-hide">Kontaktieren</a>
   @endif
@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="div_posts profile_sec">
-        <div style="background: url(https://c4.wallpaperflare.com/wallpaper/515/115/741/spacex-spacesuit-elon-musk-wallpaper-thumb.jpg)" class="page-holder bg-cover">
+        <div style="background: url()" class="page-holder bg-cover">
 
 
             <header class="text-center text-white py-5">
@@ -73,7 +73,7 @@
     </div>
     @if($user->id == auth()->user()->id)
     <div class="div_marks profile_sec" >
-        <div style="background: url(https://images-cdn.9gag.com/photo/aYYYxpV_700b.jpg)" class="page-holder bg-cover">
+        <div style="background: url()" class="page-holder bg-cover">
 
 
             <header class="text-center text-white py-5">
@@ -143,7 +143,7 @@
     </div>
     <div class="div_contact profile_sec">
         
-            <div style="background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVkVAqC90Ovwf1zgjfSXlGLtpMgPHaNaL5wg&usqp=CAU)" class="page-holder bg-cover">
+            <div style="background: url()" class="page-holder bg-cover">
 
 
                 <header class="text-center text-white py-5">

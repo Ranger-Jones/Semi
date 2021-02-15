@@ -252,10 +252,10 @@
                         <table>
                             <thead>
                                 <tr class="row100 head">
-                                    <th class="cell100 column1">#</th>
-                                    <th class="cell100 column2">Name</th>
-                                    <th class="cell100 column3">E-Mail-Adresse</th>
-                                    <th class="cell100 column4">Fächerkombination</th>
+                                    <th class="cell100 column12">#</th>
+                                    <th class="cell100 column22">Name</th>
+                                    <th class="cell100 column32">E-Mail-Adresse</th>
+                                    <th class="cell100 column42">Fächerkombination</th>
                                 </tr>
                             </thead>
                         </table>
@@ -264,28 +264,28 @@
                     <table>
                         <tbody>
                             <tr class="row100 body">
-                                <td class="cell100 column1" scope="row">1</td>
-                                <td class="cell100 column2">Mustermann, Max</td>
-                                <td class="cell100 column3">max.mustermann@schule.de</td>
-                                <td class="cell100 column4">Deutsch, Mathe</td>
+                                <td class="cell100 column12" scope="row">1</td>
+                                <td class="cell100 column22">Mustermann, Max</td>
+                                <td class="cell100 column32">max.mustermann@schule.de</td>
+                                <td class="cell100 column42">Deutsch, Mathe</td>
                             </tr>
                             <tr class="row100 body">
-                                <td class="cell100 column1" scope="row">2</td>
-                                <td class="cell100 column2">Smith, John</td>
-                                <td class="cell100 column3">john.smith@schule.de</td>
-                                <td class="cell100 column4">Englisch, Ethik</td>
+                                <td class="cell100 column12" scope="row">2</td>
+                                <td class="cell100 column22">Smith, John</td>
+                                <td class="cell100 column32">john.smith@schule.de</td>
+                                <td class="cell100 column42">Englisch, Ethik</td>
                             </tr>
                             <tr class="row100 body">
-                                <td class="cell100 column1" scope="row">3</td>
-                                <td class="cell100 column2">Rossi, Maria</td>
-                                <td class="cell100 column3">maria.rossi@schule.de</td>
-                                <td class="cell100 column4">Italienisch, Kunst</td>
+                                <td class="cell100 column12" scope="row">3</td>
+                                <td class="cell100 column22">Rossi, Maria</td>
+                                <td class="cell100 column32">maria.rossi@schule.de</td>
+                                <td class="cell100 column42">Italienisch, Kunst</td>
                             </tr>
                             <tr class="row100 body">
-                                <td class="cell100 column1" scope="row">4</td>
-                                <td class="cell100 column2">Dupont, Jolie</td>
-                                <td class="cell100 column3">jolie.dupont@schule.de</td>
-                                <td class="cell100 column4">Französisch, Musik</td>
+                                <td class="cell100 column12" scope="row">4</td>
+                                <td class="cell100 column22">Dupont, Jolie</td>
+                                <td class="cell100 column32">jolie.dupont@schule.de</td>
+                                <td class="cell100 column42">Französisch, Musik</td>
                             </tr>
                         </tbody>
                     </table>

@@ -25,33 +25,33 @@
     <div class="row wrap-table100 mb-5"> 
       <div class="col-12">
         <div class="table100 ver1 mb-5">
-        <div class="table100-head">
-          <table>
-            <thead>
-              <tr class="row100 head">
-                <th class="cell100 column1">Stunde</th>
-                <th class="cell100 column2">Fach</th>
-                <th class="cell100 column3">Raum</th>
-                <th class="cell100 column4">Lehrer</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div class="table100-body js-pscroll">
-          <table>
-            <tbody>
-              <tr class="row100 body">
-                @foreach($result as $key => $value)
-                <td class="cell100 column3">{{$value}}</td>
-                @if($key == 3 || $key == 7 || $key == 12)
-              </tr>
-              <tr class="row100 body">
-                @endif
-                @endforeach
-              </tr>
-            </tbody>
-          </table>
-        </div>
+          <div class="table100-head">
+            <table>
+              <thead>
+                <tr class="row100 head">
+                  <th class="cell100 column11">Stunde</th>
+                  <th class="cell100 column21">Fach</th>
+                  <th class="cell100 column31">Raum</th>
+                  <th class="cell100 column41">Lehrer</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="table100-body js-pscroll">
+            <table>
+              <tbody>
+                <tr class="row100 body">
+                  @foreach($result as $key => $value)
+                  <td class="cell100 column31">{{$value}}</td>
+                  @if($key == 3 || $key == 7 || $key == 12)
+                </tr>
+                <tr class="row100 body">
+                  @endif
+                  @endforeach
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

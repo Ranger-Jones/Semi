@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-                <h3 class="well">Lade deinen News Artikel hoch :)</h3>
+                <h3 class="well">Lade deinen News Artikel hoch</h3>
                 <form method="post" action="/schulnews/store" enctype="multipart/form-data">
                 @csrf
                     <div class="form-group">
@@ -20,10 +20,11 @@
                     <div class="form-group">
                         <label for="topic">Welches Themengebiet?</label>
                         <select class="form-control" id="topic" name='topic'>
-                        <option>BDSM</option>
-                        <option>Hardcore</option>
-                        <option>German</option>
-                        <option>Herr Kramß</option>
+                        <option>Oberstufe</option>
+                        <option>Bis 10. Klasse</option>
+                        <option>Mathemathik & NwuT</option>
+                        <option>Gesellschaftswissenschaftliche</option>
+                        <option>Sprache, Literatur, Kunst</option>
                         <option>Anderes</option>
                         </select>
                     </div>
