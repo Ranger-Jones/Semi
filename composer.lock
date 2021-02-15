@@ -816,6 +816,10 @@
             "keywords": [
                 "scraper"
             ],
+            "support": {
+                "issues": "https://github.com/FriendsOfPHP/Goutte/issues",
+                "source": "https://github.com/FriendsOfPHP/Goutte/tree/v4.0.1"
+            },
             "time": "2020-10-14T06:49:09+00:00"
         },
         {

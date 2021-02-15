@@ -758,11 +758,10 @@
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
-                                    <div class="view">
-                                        <video class="video-fluid" autoplay loop muted style="max-height: 700px; ">
-                                            <source src="/img/nieten.mp4" type="video/mp4" />
-                                        </video>
-                                        <div class="mask rgba-indigo-light"></div>
+                                    <div class="sizer">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <video src="/img/nieten.mp4" autoplay muted></video>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
