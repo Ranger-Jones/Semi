@@ -35,7 +35,7 @@
             <div class="d-block">
                 <h4>Bilder</h4>
             </div>
-            <img src="{{$post->image}}" alt="alex in unterhose" class="w-50">
+            <img src="{{$post->image}}" alt="Kein Bild gefunden" class="w-50">
         </div>
     </div>
 

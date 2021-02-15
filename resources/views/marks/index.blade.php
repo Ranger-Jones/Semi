@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="d-block justify-content-center">
-                        <div>
+                        <div class="mr-3">
                             <h1>Noten</h1>
                         </div>
                     </div>
@@ -101,11 +101,11 @@
                         <table>
                             <thead>
                                 <tr class="row100 head">
-                                    <th class="cell100 column1">Datum</th>
-                                    <th class="cell100 column2">Fach</th>
-                                    <th class="cell100 column3">Note</th>
-                                    <th class="cell100 column4">Bemerkung</th>
-                                    <th class="cell100 column5">Fachlehrer</th>
+                                    <th class="cell100 column11">Datum</th>
+                                    <th class="cell100 column21">Fach</th>
+                                    <th class="cell100 column31">Note</th>
+                                    <th class="cell100 column41">Bemerkung</th>
+                                    <th class="cell100 column51">Fachlehrer</th>
                                 </tr>
                             </thead>
                         </table>
@@ -120,11 +120,11 @@
                             @foreach($marks as $m)
                                 @if($s->name == $m->subject)
                                   <tr class="row100 body">
-                                      <td class="cell100 column1" scope="row">{{$m->created_at->format('jS F Y h:i:s A')}}</td>
-                                      <td class="cell100 column2">{{$m->subject}}</td>
-                                      <td class="cell100 column3">{{$m->mark}}</td>
-                                      <td class="cell100 column4">{{$m->description}}</td>
-                                      <td class="cell100 column5">{{$m->teacher}}</td>
+                                      <td class="cell100 column11" scope="row">{{$m->created_at->format('jS F Y h:i:s A')}}</td>
+                                      <td class="cell100 column21">{{$m->subject}}</td>
+                                      <td class="cell100 column31">{{$m->mark}}</td>
+                                      <td class="cell100 column41">{{$m->description}}</td>
+                                      <td class="cell100 column51">{{$m->teacher}}</td>
                                   </tr>
                               
                                 @php
@@ -134,11 +134,11 @@
                             @endforeach
                             @if(!$marksthere)
                                   <tr class="row100 body">
-                                      <td class="cell100 column1" scope="row">Leider</td>
-                                      <td class="cell100 column2">sind</td>
-                                      <td class="cell100 column3">keine</td>
-                                      <td class="cell100 column4">Noten</td>
-                                      <td class="cell100 column5">verfügbar :(</td>
+                                      <td class="cell100 column11" scope="row">Leider</td>
+                                      <td class="cell100 column21">sind</td>
+                                      <td class="cell100 column31">keine</td>
+                                      <td class="cell100 column41">Noten</td>
+                                      <td class="cell100 column51">verfügbar :(</td>
                                   </tr>
                             @endif
                             </tbody>
