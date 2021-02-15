@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 @if(!$isTeacher)
-                <ul class="nav nav-tabs flex-column border-0 pt-4 pl-4 pb-4" id="myTab" role="tablist">
+                <ul class="nav nav-tabs justify-content-left border-0 pt-4 pl-4 pb-4" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link" id="offers-tab" data-toggle="tab" href="#offers" role="tab" aria-controls="offers" aria-selected="false"><i class="icofont-sale-discount"></i>Alle Hausaufgaben</a>
                     </li>
@@ -155,7 +155,7 @@
                         </div>
                     </div>
                     <div class="tab-pane  fade show" id="chronic" role="tabpanel" aria-labelledby="chronic-tab">
-                        <h4 class="font-weight-bold mt-0 mb-4">Hausaufgaben chronik</h4>
+                        <h4 class="font-weight-bold mt-0 mb-4">Hausaufgaben Chronik</h4>
                             <div class="row mb-4 pb-2">
                                 @foreach($homeworks as $h)
                                     @foreach($checkedHomework as $ch)
@@ -245,7 +245,7 @@
                                             <div class="card offer-card shadow-sm">
                                                 <div class="card-body">
                                                     
-                                                        Haha
+                                                        
                                                     
                                                 </div>
                                             </div>

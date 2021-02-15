@@ -6,7 +6,7 @@
         <div class="d-flex justify-content-center">
             <div>
                 <h1>Das Schulleben im von-Bülow-Gymnasium</h1>
-                <p></p>
+                <br>
             </div>
         </div>  
     </div>
@@ -15,7 +15,7 @@
             <div id="navbar">
                 <div class="row stickyDiv">
                     <div class="col-sm-4">
-                        <div class="widget single-news">
+                        <div class="widget single-news" id="newsL">
                             <li class="nav-item">
                                 <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#news') ? 'active' : '' }}" href="#news">Schulnews</a>
                             </li>
@@ -23,10 +23,7 @@
                     </div>
 
                     <div class="col-sm-4">
-                        <div class="widget single-news">
-                            <div class="image"> 
-                                <span class="gradient"></span>
-                            </div>
+                        <div class="widget single-news" id="teacherM">
                             <li class="nav-item">
                                 <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#teacher') ? 'active' : '' }}" href="#teacher">Lehrer</a>
                             </li>
@@ -35,9 +32,6 @@
 
                     <div class="col-sm-4">
                         <div class="widget single-news">
-                            <div class="image"> 
-                                <span class="gradient"></span>
-                            </div>
                             <li class="nav-item">
                                 <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#history') ? 'active' : '' }}" href="#history">Historie der Schule</a>
                             </li>
@@ -67,8 +61,7 @@
  
     <div class="row">
         @foreach($lastarticles as $la)
-            <div class="col-sm-4">
-                
+            <div class="col-sm-4">      
                 <a href="/schulnews/{{$la->id}}">
                     <div class="widget single-news">
                         <div class="image">
@@ -147,6 +140,7 @@
         </div>
     </div>
     @endforeach
+<!--
     <div class="row article-img p-4">
         <div class="col-4">
             <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
@@ -216,7 +210,7 @@
             </div>
         </div>
     </div>
-
+ -->
     <!--
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
@@ -252,43 +246,51 @@
          </div>
       </div>
       <div class="row">
-        <div class="col-12 offset-7">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">E-Mail-Adresse</th>
-                        <th scope="col">Fächerkombination</th>
-                    </tr>
-                </thead>
-                <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mustermann, Max</td>
-                            <td>max.mustermann@schule.de</td>
-                            <td>Deutsch, Mathe</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Smith, John</td>
-                            <td>john.smith@schule.de</td>
-                            <td>Englisch, Ethik</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Rossi, Maria</td>
-                            <td>maria.rossi@schule.de</td>
-                            <td>Italienisch, Kunst</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Dupont, Jolie</td>
-                            <td>jolie.dupont@schule.de</td>
-                            <td>Französisch, Musik</td>
-                        </tr>
-                </tbody>
-            </table>
+        <div class="col-12 wrap-table100  mb-5">
+            <div class="table100 ver1 mb-5">
+                    <div class="table100-head">
+                        <table>
+                            <thead>
+                                <tr class="row100 head">
+                                    <th class="cell100 column1">#</th>
+                                    <th class="cell100 column2">Name</th>
+                                    <th class="cell100 column3">E-Mail-Adresse</th>
+                                    <th class="cell100 column4">Fächerkombination</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                <div class="table100-body js-pscroll">
+                    <table>
+                        <tbody>
+                            <tr class="row100 body">
+                                <td class="cell100 column1" scope="row">1</td>
+                                <td class="cell100 column2">Mustermann, Max</td>
+                                <td class="cell100 column3">max.mustermann@schule.de</td>
+                                <td class="cell100 column4">Deutsch, Mathe</td>
+                            </tr>
+                            <tr class="row100 body">
+                                <td class="cell100 column1" scope="row">2</td>
+                                <td class="cell100 column2">Smith, John</td>
+                                <td class="cell100 column3">john.smith@schule.de</td>
+                                <td class="cell100 column4">Englisch, Ethik</td>
+                            </tr>
+                            <tr class="row100 body">
+                                <td class="cell100 column1" scope="row">3</td>
+                                <td class="cell100 column2">Rossi, Maria</td>
+                                <td class="cell100 column3">maria.rossi@schule.de</td>
+                                <td class="cell100 column4">Italienisch, Kunst</td>
+                            </tr>
+                            <tr class="row100 body">
+                                <td class="cell100 column1" scope="row">4</td>
+                                <td class="cell100 column2">Dupont, Jolie</td>
+                                <td class="cell100 column3">jolie.dupont@schule.de</td>
+                                <td class="cell100 column4">Französisch, Musik</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
     </div>       
