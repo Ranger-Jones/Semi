@@ -109,14 +109,15 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-4">Die Entwicklung der Startseite</h1>
+                                <h1 class="display-4">2.1 Die Entwicklung der Startseite</h1>
                                 <hr>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 mt-3">
-                                <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-between">
+                                <div class="col-12 mt-3">
                                     <img src="/img/startseite.png" class="img-responsive" alt="">
+                                    <a href="/vbg" target="_blank" class="btn btn-large btn-success text-center" style="height: 200px; margin-left: 65px; font-size:100px;"> Los geht's </a>
                                 </div>
                             </div>
                         </div>
@@ -128,14 +129,15 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-4">Die Entwicklung der Hausaufgaben</h1>
+                                <h1 class="display-4">2.1 Die Entwicklung der Hausaufgaben</h1>
                                 <hr>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 mt-3">
-                                <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-between">
+                                <div class="col-12 mt-3">
                                     <img src="/img/hausaufgaben.png" class="img-responsive" alt="">
+                                    <a href="/h" target="_blank" class="btn btn-large btn-success text-center" style="height: 200px; margin-left: 65px; font-size:100px;"> Los geht's </a>
                                 </div>
                             </div>
                         </div>
@@ -143,12 +145,12 @@
                 </div>
             </div>
 <!-- ACHTUNG BAUSTOPPPPPPPPPPPPPPPP------------------------------------------------------------------------->
-            <div class="carousel-item active">
+            <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100">
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-4">Die Entwicklung der Hausaufgaben</h1>
+                                <h1 class="display-4">2.1 Die Entwicklung der Noten</h1>
                                 <hr>
                             </div>
                         </div>
@@ -163,6 +165,31 @@
                     </div>
                 </div>
             </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-4">2.2 Sprachen</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-between">
+                                <div class="col-3 mt-3">
+                                    <img src="/img/csslogo.png" class="img-responsive" alt="">
+                                </div>
+                                <div class="col-3 mt-3">
+                                    <img src="/img/jslogo.png" class="img-responsive" alt="">
+                                </div>
+                                <div class="col-3 mt-3">
+                                    <img src="/img/jquery.gif" class="img-responsive" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Rangers Part kommt ab hier -->
             <!-- |Das Backend| -->
             <div class="carousel-item">
@@ -170,7 +197,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-1">Das Back-End</h1>
+                                <h1 class="display-1">3. Das Back-End</h1>
                                 <hr>
                             </div>
                         </div>
@@ -192,7 +219,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-4">Die Herangehensweise</h1>
+                                <h1 class="display-4">3.1 Die Herangehensweise</h1>
                                 <hr>
                             </div>
                         </div>
@@ -271,7 +298,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-4">Die Verständigung mittels Git</h1>
+                                <h1 class="display-4">3.2 Die Verständigung mittels Git</h1>
                                 <hr>
                             </div>
                         </div>
@@ -312,7 +339,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-4">Laravel als Framework</h1>
+                                <h1 class="display-4">3.3 Laravel als Framework</h1>
                                 <hr>
                             </div>
                         </div>
@@ -591,7 +618,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-4">Fehler bei der Entwicklung</h1>
+                                <h1 class="display-4">3.5 Fehler bei der Entwicklung</h1>
                                 <hr>
                             </div>
                         </div>
@@ -613,7 +640,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-1">Der Bauprozess des Terminals</h1>
+                                <h1 class="display-1">4. Die Lösung</h1>
                                 <hr>
                             </div>
                         </div>
@@ -634,7 +661,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Die Form</h1>
+                                <h1>4.1 Die Form</h1>
                                 <hr>
                             </div>
                         </div>
@@ -653,7 +680,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Der Standfuß</h1>
+                                <h1>4.2 Der Bauprozess</h1>
                                 <hr>
                             </div>
                         </div>
@@ -672,7 +699,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Die Säule</h1>
+                                <h1>4.2 Der Bauprozess</h1>
                                 <hr>
                             </div>
                         </div>
@@ -691,7 +718,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Das Touchscreengehäuse</h1>
+                                <h1>4.2 Der Bauprozess</h1>
                                 <hr>
                             </div>
                         </div>
@@ -710,14 +737,14 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Die Funktionsweise</h1>
+                                <h1>4.3 Die Funktion</h1>
                                 <hr>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 mt-3">
-                                <div class="d-flex justify-content-center">
-                                    <img src="/img/fertig.JPG" style="max-height: 700px; " class="img-responsive" alt="">
+                            <div class="d-flex justify-content-between">
+                                <div class="col-12 mt-3">
+                                    <a href="/schulnews/6" target="_blank" class="btn btn-large btn-success text-center" style="height: 200px; margin-left: 65px; font-size:100px;"> Los geht's </a>
                                 </div>
                             </div>
                         </div>
@@ -729,7 +756,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Das Material</h1>
+                                <h1>4.4 Das Material</h1>
                                 <hr>
                             </div>
                         </div>
@@ -748,7 +775,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Die Werkzeuge</h1>
+                                <h1>4.5 Die Werkzeuge</h1>
                                 <hr>
                             </div>
                         </div>
@@ -767,7 +794,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Die Tafelschere</h1>
+                                <h1>4.5 Werkzeuge</h1>
                                 <hr>
                             </div>
                         </div>
@@ -786,7 +813,7 @@
                     <div class="d-block">
                         <div class="row mt-3">
                             <div class="col-12">
-                                <h1>Die Kantbank - klein & groß</h1>
+                                <h1>4.5 Die Kantbank - klein & groß</h1>
                                 <hr>
                             </div>
                         </div>
@@ -806,7 +833,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Die Nieten</h1>
+                                <h1>4.6 Die Nieten</h1>
                                 <hr>
                             </div>
                         </div>
@@ -827,7 +854,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Die Farben</h1>
+                                <h1>4.7 Die Farben</h1>
                                 <hr>
                             </div>
                         </div>
@@ -846,7 +873,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1>Preis des Terminals</h1>
+                                <h1>4.8 Preis</h1>
                                 <hr>
                             </div>
                         </div>
@@ -866,7 +893,7 @@
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-1">Die Hardware Auswahl</h1>
+                                <h1 class="display-1">5. Die Hardware</h1>
                                 <hr>
                             </div>
                         </div>
@@ -887,7 +914,7 @@
                     <div class="d-block">
                         <div class="row mt-3">
                             <div class="col-12">
-                                <h1>Welche Kriterien sind zu beachten? Weg zu den 2 Produkten</h1>
+                                <h1>5.1 Kriterien</h1>
                                 <hr>
                             </div>
                         </div>
@@ -904,7 +931,7 @@
                     <div class="d-block">
                         <div class="row mt-3">
                             <div class="col-12">
-                                <h1>Raspberry Pi 3 & Viewsonic TD2220-2</h1>
+                                <h1>5.2 Komponenten</h1>
                                 <hr>
                             </div>
                         </div>
@@ -919,13 +946,34 @@
                     </div>
                 </div>
             </div>
+            <div class="carousel-item" id="#planing">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-4">5.3 Fehler bei der Entwicklung</h1>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mt-3">
+                                <div class="d-flex justify-content-center">
+                                    <div class="nav-textt-b">
+                                        <h3>Kommunikation, Zeitmanagement, Übersichtlichkeit</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- **Umweltpart von Josh** -->
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100">
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-1">Umweltaspekt</h1>
+                                <h1 class="display-1">6. Umweltaspekt</h1>
                                 <hr>
                             </div>
                         </div>
@@ -946,7 +994,7 @@
                     <div class="d-block">
                         <div class="row mt-3">
                             <div class="col-12">
-                                <h1>Paierherstellung & Server</h1>
+                                <h1>Papierherstellung und Server</h1>
                                 <hr>
                             </div>
                         </div>
@@ -961,23 +1009,47 @@
                     </div>
                 </div>
             </div>
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="d-flex justify-content-between">
+                                <div class="col-12 mt-3">
+                                    <a href="/schulnews/7" target="_blank" class="btn btn-large btn-success text-center" style="height: 200px; margin-left: 65px; font-size:100px;"> Los geht's </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- ** Datenschutz & -sicherheit von Joan-->
             <div class="carousel-item">
                 <div class="d-flex align-items-center justify-content-center min-vh-100">
                     <div class="d-block">
                         <div class="row">
                             <div class="col-12">
-                                <h1 class="display-1">Datenschutz</h1>
+                                <h1 class="display-4">8. Datenschutz</h1>
                                 <hr>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 mt-3">
-                                <div class="d-flex justify-content-center">
-                                    <div class="nav-textt-b">
-                                        <h3>Ein Beitrag von Joan William Lange</h3>
-                                    </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="col-12 mt-3">
+                                    <a href="/schulnews/3" target="_blank" class="btn btn-large btn-success text-center" style="height: 200px; margin-left: 65px; font-size:100px;"> Los geht's </a>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fazit-->
+            <div class="carousel-item">
+                <div class="d-flex align-items-center justify-content-center min-vh-100">
+                    <div class="d-block">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1 class="display-1">8. Fazit</h1>
+                                <hr>
                             </div>
                         </div>
                     </div>

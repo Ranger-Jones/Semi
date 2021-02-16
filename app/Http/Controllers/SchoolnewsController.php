@@ -35,7 +35,7 @@ class SchoolnewsController extends Controller
         }
 
         if($images == []){
-            $images[0] = '/default/symbol.jpg';
+            $images[0] = '/default/symbol.jpeg';
         }
         $firstimage = $images[0];
 
@@ -49,9 +49,9 @@ class SchoolnewsController extends Controller
     public function store(Request $request){
         $data = request()->validate([
             'caption' => 'required', 'max:55000',
-            'content' => 'required', 'max:55',
+            'content' => 'required', 'max:555555',
             'topic' => 'required',
-            'filenames.*' => 'image','mimes:jpeg,png,jpg,gif,svg','max:16000'
+            'filenames.*' => 'image'
         ]);
 
         $dataFile = [];

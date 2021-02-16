@@ -47,6 +47,9 @@
                     <li class="nav-item">
                         <a class="nav-link" id="chronic-tab" data-toggle="tab" href="#chronic" role="tab" aria-controls="chronic" aria-selected="false"><i class="icofont-sale-discount"></i>Hausaufgabenchronik</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="kalendar-tab" data-toggle="tab" href="#kalendar" role="tab" aria-controls="kalendar" aria-selected="false"><i class="icofont-sale-discount"></i>Kalender</a>
+                    </li>
                     @foreach($subjects as $s)
                     <li class="nav-item">
                         <a class="nav-link" id="{{$s->name}}-tab" data-toggle="tab" href="#{{$s->name}}" role="tab" aria-controls="{{$s->name}}" aria-selected="false"><i class="icofont-sale-discount"></i> {{$s->name}}</a>
@@ -154,12 +157,71 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="tab-pane  fade show" id="chronic" role="tabpanel" aria-labelledby="chronic-tab">
-                        <h4 class="font-weight-bold mt-0 mb-4">Hausaufgaben Chronik</h4>
-                            <div class="row mb-4 pb-2">
-                                @foreach($homeworks as $h)
-                                    @foreach($checkedHomework as $ch)
-                                        @if($h->id == $ch['homework_id'])                 
+                    <div class="tab-pane  fade show" id="kalendar" role="tabpanel" aria-labelledby="kalendar-tab">
+                        <h4 class="font-weight-bold mt-0 mb-4">Kalender</h4>
+                        <div class="row mb-4 pb-2">
+                        <div class="month">      
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      September<br>
+      <span style="font-size:18px">2043</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>Mo</li>
+  <li>Di</li>
+  <li>Mi</li>
+  <li>Do</li>
+  <li>Fr</li>
+  <li>Sa</li>
+  <li>So</li>
+</ul>
+
+<ul class="days">  
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li>10</li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
+</ul>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show" id="unchecked" role="tabpanel" aria-labelledby="unchecked-tab">
+                        <h4 class="font-weight-bold mt-0 mb-4">Ungelesene Hausaufgaben</h4>
+                        <div class="row mb-4 pb-2">
+                            @foreach($subjects as $s)
+                                @foreach($uncheckedHomework as $h)
+                                    @if($s->name == $h->subject)
                                         <div class="col-md-6 mb-3">
                                             <div class="card offer-card shadow-sm">
                                                 <div class="card-body">
@@ -169,25 +231,17 @@
                                                         if(strlen($shortInfo) == 200){
                                                             $shortInfo = $shortInfo."...";
                                                         }
+                                                        
                                                     @endphp
                                                     <div class="d-flex justify-content-between">
                                                         <h5 class="card-title"><a href="/profile/{{$teacher->id}}"><img src="{{$teacher->profile->profileimage()}}"></a>{{$h->teacher}}</h5>
-                                                        
-                                                        <form class="form-inline" action="/hcheck/store/{{$h->id}}" method="post">
-                                                        @csrf
-                                                            <i class="fa fa-check"></i><input class="btn btn-link" type="submit" value="Fertig">
-                                                        </form>
-                                                    </div>
-                                                    <h6 class="card-subtitle mb-2 text-block"><strong>{{$h->caption}}</strong></h6>
+                                                        <a href="/h/{{$h->id}}" class="card-link text-dark" title="Klicke hier, um die Aufgabe abzuhacken"><i class="fa fa-check"></i>Fertig</a>
+                                                    </div>                                                    <h6 class="card-subtitle mb-2 text-block"><strong>{{$h->caption}}</strong></h6>
                                                     <p class="card-text">{{$shortInfo}}</p>
                                                     <a id="{{$h->subject}}-tab" data-toggle="tab" href="#{{$h->subject}}" role="tab" aria-controls="{{$h->subject}}" aria-selected="false">{{$h->subject}}</a>
                                                     <a href="/h/{{$h->id}}" class="card-link">Mehr Informationen</a>
+                                                    
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="d-flex justify-content-center mt-5">
-                                                <p>Die Aufgabe wurde am: <strong>@if($ch['created_at'] != null){{App\HomeworkCheck::where('id', $ch['id'])->first()->created_at->format('jS F Y h:i:s A')}}@endif</strong> von dir abgehackt.</p>
                                             </div>
                                         </div>
                                     @endif
@@ -195,6 +249,7 @@
                             @endforeach
                         </div>
                     </div>
+                    
                     @foreach($subjects as $s)
                     <div class="tab-pane  fade show" id="{{$s->name}}" role="tabpanel" aria-labelledby="{{$s->name}}-tab">
                         <h4 class="font-weight-bold mt-0 mb-4">{{$s->name}} Hausaufgaben</h4>
@@ -225,6 +280,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                 @endif
                             @endforeach
                         </div>
@@ -292,4 +348,13 @@
         @endif
     </div>
 </div>
+<script>
+$(document).ready(function(){
+  $ ("#timetable").hide();
+  $("button").click(function(){
+    $("#timetable").toggle(1000);
+  });
+
+});
+</script>
 @endsection
