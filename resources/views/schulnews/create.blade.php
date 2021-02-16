@@ -20,6 +20,7 @@
                     <div class="form-group">
                         <label for="topic">Welches Themengebiet?</label>
                         <select class="form-control" id="topic" name='topic'>
+                        <option>Alle Schüler</option>
                         <option>Oberstufe</option>
                         <option>Bis 10. Klasse</option>
                         <option>Mathemathik & NwuT</option>

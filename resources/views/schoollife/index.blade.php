@@ -16,14 +16,17 @@
                 <div class="row stickyDiv">
                     <div class="col-sm-4">
                         <div class="widget single-news" id="newsL">
-                            <li class="nav-item">
-                                <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#news') ? 'active' : '' }}" href="#news">Schulnews</a>
-                            </li>
+                            
+                                <li class="nav-item">
+                                    <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#news') ? 'active' : '' }}" href="#news">Schulnews</a>
+                                </li>
+                            
                         </div>
                     </div>
 
                     <div class="col-sm-4">
                         <div class="widget single-news" id="teacherM">
+                            
                             <li class="nav-item">
                                 <a class="nav-link nav-textt nav-link-text {{ (request()->segment(1) == 'vbg#teacher') ? 'active' : '' }}" href="#teacher">Lehrer</a>
                             </li>
@@ -79,19 +82,19 @@
                                     }
 
                                     if($laimages == []){
-                                        $laimages[0] = '/default/symbol.jpg';
+                                        $laimages[0] = '/default/symbol.jpeg';
                                     }
                                 @endphp
                                 <img src="/storage/{{$laimages[0]}}" class="img-responsive newsarticle">
                             </span>
                             <span class="gradient"></span>
                         </div>
-                        <div class="details">
+                        
                             <div class="newscategory"><a href="schulnews0">{{$la->topic}}</a></div>
                             <!-- Der erste Link geht zu der Schulnews Seite, kannst du dan noch 3 andere mit einbauen? so haben wir schonmal den ersten; ich trag erstmal überall von 0 bis 3 die Anzahl ein ~ Josh -->
                             <div class="titlenews"><h3><a href="schulnews0">{{$la->title}}</a></h3></div>
                             <div class="newstime"><time>{{$la->created_at->format('jS F Y h:i:s A')}}</time></div>
-                        </div>
+                        
                     </div>
                 </a>
             </div>
@@ -115,7 +118,7 @@
             }
 
             if($laimages == []){
-                $laimages[0] = '/default/symbol.jpg';
+                $laimages[0] = '/default/symbol.jpeg';
             }
         @endphp
             <img src="/storage/{{$laimages[0]}}" class="img-responsive newsarticle">
@@ -128,7 +131,7 @@
             </div>
             <div class="d-flex">
                 <div>
-                    <span class="badge" id="badge">Oberstufe</span> 
+                    <span class="badge" id="badge">{{$la->topic}}</span> 
                     <i class="pl-2 icon-ellipsis-vertical"></i>
                     <span class="pl-2"><strong>{{$a->author}}</strong></span>
                     <i class="pl-2 icon-ellipsis-vertical"></i>
@@ -427,7 +430,7 @@
                                 <p>1949</p>
                             </div>
                             <h2 class="news-title">Gründung der DDR</h2>
-                            <p>Mit der Gründung der DDR wurden die Schulkonzepte verändert. Somit wurde unser Gymnasium zur EOS für das „Erfurter-Land“. Die EOS war damals ein elitäres Internat, in welchem Schüler von der neunten bis zwölften Klasse in Fächern wie Deutsch, Mathematik, oder auch Staatsbürgerkunde und Russisch unterrichtet wurden. Das Leben spielte sich damals größtenteils im Internat selber ab. Dadurch kam ein recht familiäres Verhältnis zwischen Schülern und auch Lehrern Zustande. Die Internatsräume für die Mädchen befanden sich im obersten Stockwerk der Schule, während die Jungen im oberen Stockwerk des ehemaligen Gasthofs „Drei Rosen“ der Brüdergemeine untergebracht waren.</p>
+                            <p>Mit der Gründung der DDR wurden die Schulkonzepte verändert. Somit wurde unser Gymnasium zur EOS für das „Erfurter-Land“. Die EOS war damals ein elitäres Internat, in welchem Schüler von der neunten bis zwölften Klasse in Fächern wie Deutsch, Mathematik, oder auch Staatsbürgerkunde und Russisch unterrichtet wurden. Das Leben spielte sich damals größtenteils im Internat selber ab.</p>
                             <a class="read-more" href="#">Mehr anzeigen</a>
                         </div>
                     </div>
@@ -447,7 +450,7 @@
                                 <p>1989 - 1994</p>
                             </div>
                             <h2 class="news-title">Die Wende und ihre Folgen</h2>
-                            <p>Nach der Wende 1989 wurde das Internat als solches nicht direkt aufgelöst, sondern erst im Jahre 1991 offiziell als Gymnasium genutzt. Jedoch bestanden von 1991 bis zum Jahre 1994 noch Schlafräume im ehemaligen Gasthof „Drei Rosen“. In diesen wurden die Mädchen und Jungen der letzten Jahrgänge der EOS untergebracht, welche sozusagen die letzten Überbleibsel der Zeit der Erweiterten Oberschule waren. Als 1994 der letzte Jahrgang das Internat verließ, wurde auch das Internat offiziell geschlossen.</p>
+                            <p>Nach der Wende 1989 wurde das Internat als solches nicht direkt aufgelöst, sondern erst im Jahre 1991 offiziell als Gymnasium genutzt. Jedoch bestanden von 1991 bis zum Jahre 1994 noch Schlafräume im ehemaligen Gasthof „Drei Rosen“. Als 1994 der letzte Jahrgang das Internat verließ, wurde auch das Internat offiziell geschlossen.</p>
                             <a class="read-more" href="#">Mehr anzeigen</a>
                         </div>
                     </div>
