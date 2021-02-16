@@ -21,7 +21,7 @@
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
                                     <div class="nav-textt-b">
-                                        <h1>Eine Produktvorstellung</h1>
+                                        <h1>Die Produktvorstellung vom T-21</h1>
                                     </div>
                                 </div>
                             </div>
@@ -37,42 +37,51 @@
                             <h1 class="display-1">Gliederung</h1>
                             <hr>
                         </div>
-                        <div class="col-6" style="font-size: 24px;">
+                        <div class="col-6" style="font-size: 16px;">
                             <ul class="list-group">
                                 <li class="list-group-item">1.	Die Konsequenzen von Online-Learning an unserer Schule
                                     <ul class="list-group">
-                                        <li class="list-group-item">a.	Entstehung und Entwicklung der Idee</li>
+                                        <li class="list-group-item">1.1	Entstehung und Entwicklung der Idee</li>
                                     </ul>
                                 </li>
-                                <li class="list-group-item">2.	Das Design der Website
+                                <li class="list-group-item">2.	Das Design & die Funktionen der Website 
                                     <ul class="list-group">
-                                        <li class="list-group-item">a.	Funktionen</li>
-                                        <li class="list-group-item">b.	Effizienz</li>
+                                        <li class="list-group-item">2.1	Entwicklung</li>
+                                        <li class="list-group-item">2.2	Sprachen</li>
                                     </ul>
                                 </li>
                                 <li class="list-group-item">3.	Das Back-End
                                     <ul class="list-group">
-                                        <li class="list-group-item">a.	Planung und Herangehensweise</li>
-                                        <li class="list-group-item">b.	Verständigung mit Git</li>
-                                        <li class="list-group-item">c.	Laravel als Framework</li>
-                                        <li class="list-group-item">d.	Codebeispiel</li>
-                                        <li class="list-group-item">e.	Fehler bei der Entwicklung</li>
+                                        <li class="list-group-item">3.1 Planung und Herangehensweise</li>
+                                        <li class="list-group-item">3.2 Verständigung mit Git</li>
+                                        <li class="list-group-item">3.3 Laravel als Framework</li>
+                                        <li class="list-group-item">3.4	Codebeispiel</li>
+                                        <li class="list-group-item">3.5	Fehler bei der Entwicklung</li>
                                     </ul>
                                 </li>
+                                
                             </ul>
                         </div>
-                        <div class="col-6" style="font-size: 24px;">
+                        <div class="col-6" style="font-size: 16px;">
                             <ul class="list-group">
-                                <li class="list-group-item">4.	Die Hardware Auswahl
+                                
+                                <li class="list-group-item">4.	Die Lösung
                                     <ul class="list-group">
-                                        <li class="list-group-item">a.	Kriterien</li>
-                                        <li class="list-group-item">b.	Fehler bei der Inkraftsetzung</li>
+                                        <li class="list-group-item">4.1	Form</li>
+                                        <li class="list-group-item">4.2	Bauprozess</li>
+                                        <li class="list-group-item">4.3	Funktion</li>
+                                        <li class="list-group-item">4.4	Material</li>
+                                        <li class="list-group-item">4.5	Werkzeuge & Gerätschaften</li>
+                                        <li class="list-group-item">4.6	Nieten</li>
+                                        <li class="list-group-item">4.7	Farbe</li>
+                                        <li class="list-group-item">4.8	Preis</li>
                                     </ul>
                                 </li>
-                                <li class="list-group-item">5.	Die Lösung
+                                <li class="list-group-item">5.	Die Hardware Auswahl
                                     <ul class="list-group">
-                                        <li class="list-group-item">a.	Vorteile</li>
-                                        <li class="list-group-item">b.	Nachteile</li>
+                                        <li class="list-group-item">5.1	Kriterien</li>
+                                        <li class="list-group-item">5.2	Komponenten</li>
+                                        <li class="list-group-item">5.3	Fehler bei der Inkraftsetzung</li>
                                     </ul>
                                 </li>
                                 <li class="list-group-item">6.	Umweltaspekt</li>
@@ -177,13 +186,13 @@
                         <div class="row">
                             <div class="d-flex justify-content-between">
                                 <div class="col-3 mt-3">
-                                    <img src="/img/csslogo.png" class="img-responsive" alt="">
+                                    <img src="/img/csslogo.png" class="img-responsive" style="max-height: 400px;" alt="">
                                 </div>
                                 <div class="col-3 mt-3">
-                                    <img src="/img/jslogo.png" class="img-responsive" alt="">
+                                    <img src="/img/jslogo.png" class="img-responsive" style="max-height: 400px;" alt="">
                                 </div>
                                 <div class="col-3 mt-3">
-                                    <img src="/img/jquery.gif" class="img-responsive" alt="">
+                                    <img src="/img/jquery.gif" class="img-responsive" style="max-height: 400px;" alt="">
                                 </div>
                             </div>
                         </div>
@@ -469,7 +478,7 @@
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
-                                    <img src="/img/controller-code.png" style="max-height: 700px; " class="img-responsive" alt="">
+                                    <img src="/img/controller-code.png" style="max-height: 900px; " class="img-responsive" alt="">
                                 </div>
                             </div>
                         </div>
@@ -507,8 +516,8 @@
                         <div class="row">
                             <div class="col-12 mt-3">
                                 <div class="d-flex justify-content-center">
-                                    <img src="/img/umodel-code.png" style="max-height: 450px; " class="img-responsive pl-5" alt="">
-                                    <img src="/img/hmodel-code.png" style="max-height: 450px; " class="img-responsive pr-5" alt="">
+                                    <img src="/img/umodel-code.png" style="max-height: 550px; " class="img-responsive pl-5" alt="">
+                                    <img src="/img/hmodel-code.png" style="max-height: 550px; " class="img-responsive pr-5" alt="">
                                 </div>
                             </div>
                         </div>
