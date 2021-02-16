@@ -140,7 +140,7 @@
         </div>
     </div>
     @endforeach
-<!--
+<!---->
     <div class="row article-img p-4">
         <div class="col-4">
             <img class="img-responsive w-100 image1" src="https://www.ingame.de/bilder/2020/05/04/13749084/1562685927-tesla-elon-musk-pokemon-minecraft-twitter-auto-spiel-RPfU0WR7nec.jpg" alt="Image not found">
@@ -317,8 +317,11 @@
                                 <p>1764</p>
                             </div>
                             <h2 class="news-title">Gründung der Brüdergemeine Neudietendorf</h2>
-                            <p>Obwohl die Neudietendorfer Brüdergemeine in sich schon länger bestand, wird 1764 als das offizielle Gründungsjahr<span id="dots1">...</span><span id="more1">der Neudietendorfer Brüdergemeine bezeichnet. Mit steigender Einwohnerzahl musste neben einer Kirche und einigen Manufakturen auch eine Schule gebaut werden. Dort sollten Anfangs vor allem die Kinder der Missionare unterrichtet werden, um durch die ständige Abwesenheit der Eltern einen Familienersatz dargestellt zu bekommen. Ab dem 19. Jahrhundert, sollte das Schulsystem erheblich erweitert werden und auch für Kinder, die nicht Teil der Gemeine waren, zugänglich sein. Auch der Adel setzte auf die Ausbildung der Herrnhuter, da sie stets auf christlicher Grundlage stattfand.</span></p>
-                            <a class="read-more" onclick="readmore('dots1', 'more1', 'myBtn1')" id="myBtn1" style="cursor:pointer">Mehr anzeigen</a>
+                            <p class="">Obwohl die Neudietendorfer Brüdergemeine in sich schon länger bestand, wird 1764 als das offizielle Gründungsjahr<span id="dots1">...</span></p>
+                            <a class="read-more showSingle" target="1" id="myBtn1" style="cursor:pointer">Mehr anzeigen</a>
+                            <div class="targetDiv" id="div1">
+                                der Neudietendorfer Brüdergemeine bezeichnet. Mit steigender Einwohnerzahl musste neben einer Kirche und einigen Manufakturen auch eine Schule gebaut werden. Dort sollten Anfangs vor allem die Kinder der Missionare unterrichtet werden, um durch die ständige Abwesenheit der Eltern einen Familienersatz dargestellt zu bekommen. Ab dem 19. Jahrhundert, sollte das Schulsystem erheblich erweitert werden und auch für Kinder, die nicht Teil der Gemeine waren, zugänglich sein. Auch der Adel setzte auf die Ausbildung der Herrnhuter, da sie stets auf christlicher Grundlage stattfand.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6 news-item right">
@@ -484,7 +487,7 @@
 
 
 <script>
-
+/*
 
 function readmore(dots, moreText, btnText) {
   var dots = document.getElementById(dots);
@@ -501,5 +504,15 @@ function readmore(dots, moreText, btnText) {
     moreText.style.display = "inline";
   }
 }
+*/
+jQuery(function() {
+  jQuery('#showall').click(function() {
+    jQuery('.targetDiv').show();
+  });
+  jQuery('.showSingle').click(function() {
+    jQuery('.targetDiv').hide();
+    jQuery('#div' + $(this).attr('target')).show();
+  });
+});
 </script>
 @endsection
