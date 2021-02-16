@@ -12,10 +12,15 @@
     <div class="row">
         <div class="col-12">
             <h1 class="display-1">Quellen</h1>
-            <a class="btn-link text-success mr-5">Bild-Quellen</a>
-            <a class="btn-link text-primary">Text-Quellen</a>
         </div>
     </div>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <h4 class="text-success">Bild-Quellen</h4>
+            <h4 class="text-primary">Text-Quellen</h4>
+        </div>
+    </div>
+    
     <hr>
     <div class="row">
         <div class="col-12">
@@ -50,16 +55,16 @@
     <div class="row">
         <div class="col-12">
             <h1><!--Quellen hier einfügen--></h1>
-            <a href="https://carbon.now.sh/" class="btn btn-link text-success">https://carbon.now.sh/, 13.02.2021 - 13:55</a>
-            <a href="https://mitrodigitalmarketing.com/wp-content/uploads/2017/12/Top-5-Programming-Languages-featured.png" class="btn btn-link text-success">https://mitrodigitalmarketing.com/wp-content/uploads/2017/12/Top-5-Programming-Languages-featured.png, 13.02.2021 - 12:36</a>
-            <a href="https://www.netsolutions.com/insights/wp-content/uploads/2019/05/Laravel-MVC-architecture.jpg" class="btn btn-link text-success">https://www.netsolutions.com/insights/wp-content/uploads/2019/05/Laravel-MVC-architecture.jpg, 13.02.2021 - 12:13</a>
-            <a href="https://miro.medium.com/max/900/1*j2GtIrbQBiYiAwBGXuBCVw.png" class="btn btn-link text-success">https://miro.medium.com/max/900/1*j2GtIrbQBiYiAwBGXuBCVw.png, 13.02.2021 - 12:56</a>
-            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-gtjD0wp0QJuTGvA0pjHgFYgWPmzb92tu-w&usqp=CAU" class="btn btn-link text-success">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-gtjD0wp0QJuTGvA0pjHgFYgWPmzb92tu-w&usqp=CAU, 13.02.2021 - 13:07</a>
-            <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1200px-Git-logo.svg.png" class="btn btn-link text-success">https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1200px-Git-logo.svg.png, 13.02.2021 - 13:09</a>
-            <a href="https://www.nethues.com/blog/wp-content/uploads/2019/03/Laravel-Trends.png" class="btn btn-link text-success">https://www.nethues.com/blog/wp-content/uploads/2019/03/Laravel-Trends.png, 13.02.2021 - 13:25</a>
-            <a href="https://www.ptsecurity.com/upload/corporate/ww-en/images/analytics/article_304693/304693_6.jpg" class="btn btn-link text-success">https://www.ptsecurity.com/upload/corporate/ww-en/images/analytics/article_304693/304693_6.jpg, 13.02.2021 - 13:49</a>
-            <a href="" class="btn btn-link text-success"></a>
-            <a href="" class="btn btn-link text-success"></a>
+            <a href="https://carbon.now.sh/" class="btn btn-link text-success">N.N.: Code-Editor https://carbon.now.sh/, 13.02.2021 - 13:55</a>
+            <a href="https://mitrodigitalmarketing.com/wp-content/uploads/2017/12/Top-5-Programming-Languages-featured.png" class="btn btn-link text-success">N.N.: Programmiersprachen https://mitrodigitalmarketing.com/wp-content/uploads/2017/12/Top-5-Programming-Languages-featured.png, 13.02.2021 - 12:36</a>
+            <a href="https://www.netsolutions.com/insights/wp-content/uploads/2019/05/Laravel-MVC-architecture.jpg" class="btn btn-link text-success">N.N.: MVC https://www.netsolutions.com/insights/wp-content/uploads/2019/05/Laravel-MVC-architecture.jpg, 13.02.2021 - 12:13</a>
+            <a href="https://miro.medium.com/max/900/1*j2GtIrbQBiYiAwBGXuBCVw.png" class="btn btn-link text-success">N.N.: Code-Editor https://miro.medium.com/max/900/1*j2GtIrbQBiYiAwBGXuBCVw.png, 13.02.2021 - 12:56</a>
+            <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-gtjD0wp0QJuTGvA0pjHgFYgWPmzb92tu-w&usqp=CAU" class="btn btn-link text-success">N.N.: Frameworks https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-gtjD0wp0QJuTGvA0pjHgFYgWPmzb92tu-w&usqp=CAU, 13.02.2021 - 13:07</a>
+            <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1200px-Git-logo.svg.png" class="btn btn-link text-success">N.N.: Git https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1200px-Git-logo.svg.png, 13.02.2021 - 13:09</a>
+            <a href="https://www.nethues.com/blog/wp-content/uploads/2019/03/Laravel-Trends.png" class="btn btn-link text-success">N.N.: Laravel-Trends https://www.nethues.com/blog/wp-content/uploads/2019/03/Laravel-Trends.png, 13.02.2021 - 13:25</a>
+            <a href="https://www.ptsecurity.com/upload/corporate/ww-en/images/analytics/article_304693/304693_6.jpg" class="btn btn-link text-success">N.N.: Security risks https://www.ptsecurity.com/upload/corporate/ww-en/images/analytics/article_304693/304693_6.jpg, 13.02.2021 - 13:49</a>
+            <a href="https://informatik.bildung-rp.de/fileadmin/user_upload/informatik.bildung-rp.de/Fortbildung/html/D1-MVCNotenstatistik/mvc0_0.html" class="btn btn-link text-primary">N.N.: Model-View-Controller-Konzept https://informatik.bildung-rp.de/fileadmin/user_upload/informatik.bildung-rp.de/Fortbildung/html/D1-MVCNotenstatistik/mvc0_0.html, 13.02.2021 - 20:44</a>
+            <a href="https://laravel.com/docs/8.x/routing" class="btn btn-link text-primary">Taylor Otwell: Routing https://laravel.com/docs/8.x/routing, 13.02.2021</a>
             <a href="" class="btn btn-link text-success"></a>
             <a href="" class="btn btn-link text-success"></a>
             <a href="" class="btn btn-link text-success"></a>
